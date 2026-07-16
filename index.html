@@ -1,144 +1,340 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tianjun Gu (Grady) - Personal Page</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F4F9FF">
+  <meta name="description" content="Tianjun (Grady) Gu researches spatial intelligence, long-form video understanding, world models, and embodied AI.">
+  <meta property="og:title" content="Tianjun (Grady) Gu | Academic Homepage">
+  <meta property="og:description" content="Research in spatial intelligence, long-form video understanding, world models, and embodied AI.">
+  <meta property="og:type" content="website">
+  <title>Tianjun (Grady) Gu | Academic Homepage</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tianjun Gu",
+    "alternateName": "Grady Gu",
+    "url": "https://grady10086.github.io/tianjungu.github.io/",
+    "email": "mailto:TianjunGu_Grady@outlook.com",
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "East China Normal University"},
+    "sameAs": [
+      "https://github.com/Grady10086",
+      "https://scholar.google.com/citations?user=RtYRKvEAAAAJ",
+      "https://www.linkedin.com/in/tianjun-gu-851166404"
+    ]
+  }
+  </script>
 </head>
 <body>
-    <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="profile-img">
-                <img src="your-photo.jpg" alt="Tianjun Gu">
-            </div>
-            <h1>Tianjun Gu (顾天钧)</h1>
-            <p class="alias">Grady</p>
-            <p class="position">MPS Candidate, ECNU</p>
-            <p class="position">Intern @ Tencent Youtu Lab</p>
-            
-            <div class="social-links">
-                <a href="mailto:TianjunGu_Grady@outlook.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/your-github" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="ai ai-google-scholar"></i><i class="fas fa-graduation-cap"></i></a>
-                <a href="https://linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <div class="location">
-                <i class="fas fa-map-marker-alt"></i> Shanghai, China
-            </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="wordmark" href="#about" aria-label="Tianjun Gu, home">
+        <span class="wordmark-mark">TG</span>
+        <span class="wordmark-name">Tianjun Gu</span>
+      </a>
+
+      <button class="nav-toggle icon-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation" data-nav-toggle>
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+
+      <div class="nav-links" id="nav-links" data-nav-links>
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#service">Service</a>
+        <a class="nav-cv" href="assets/documents/Tianjun_Gu_CV.pdf" target="_blank" rel="noopener">CV <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="profile shell" id="about">
+      <figure class="profile-photo reveal">
+        <img src="assets/profile/tianjun-gu-avatar.jpg" alt="Portrait of Tianjun Gu" width="1080" height="1620">
+      </figure>
+
+      <div class="profile-main reveal">
+        <p class="eyebrow">M.S. Student · Spatial Intelligence</p>
+        <h1>Tianjun <span>(Grady)</span> Gu</h1>
+        <p class="profile-lead">I study how multimodal agents perceive, remember, and reason about spatially and dynamically evolving worlds.</p>
+        <div class="profile-bio">
+          <p>I am a master's student at <strong>East China Normal University</strong>, advised by Prof. Lizhuang Ma and Prof. Xin Tan. I am currently a visiting research intern with the <strong>NYU AI4CE Lab</strong> and <strong>Tsinghua University Spatial Intelligence Lab</strong>.</p>
+          <p>My research focuses on spatial intelligence, long-form video understanding, world models, and embodied AI, with an emphasis on structured spatial reasoning, memory, and reliable decision-making in open-world environments.</p>
         </div>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Bio -->
-            <section id="bio">
-                <h2>About Me</h2>
-                <p>
-                    I am a first-year Master of Professional Studies (MPS) student at <b>East China Normal University</b> (ECNU), mentored by Prof. Xin Tan and Prof. Lizhuang Ma. Currently, I am also a Research Intern at <b>Tencent Youtu Lab</b> and <b>Tsinghua University Spatial Intelligence Lab</b>.
-                </p>
-                <p>
-                    My research interests include <b>Spatial Intelligence</b>, <b>Embodied AI</b>, <b>Multimodal Large Language Models (MLLMs)</b>, and <b>AIGC</b>. I focus on building intelligent agents that can understand and interact with the physical world through dynamic and intent-driven understanding.
-                </p>
-            </section>
-
-            <!-- News -->
-            <section id="news">
-                <h2>News</h2>
-                <ul>
-                    <li>[2025.06] Joined <b>Tencent Youtu Lab</b> as an Algorithm Intern Researcher.</li>
-                    <li>[2025.03] One paper on low-light vision was accepted by <b>ICCV 2025</b> as a poster.</li>
-                    <li>[2024.09] Started my MPS at East China Normal University (Rank 1st).</li>
-                    <li>[2024.01] Joined <b>Baidu</b> as an AIGC Large Model Intern.</li>
-                </ul>
-            </section>
-
-            <!-- Publications -->
-            <section id="publications">
-                <h2>Publications</h2>
-                
-                <div class="pub-item">
-                    <div class="pub-thumb"><img src="paper1-thumb.jpg" alt="EscherVerse"></div>
-                    <div class="pub-info">
-                        <span class="pub-title">EscherVerse: An Open World Benchmark and Dataset for Teleo-Spatial Intelligence with Physical-Dynamic and Intent-Driven Understanding</span><br>
-                        <strong>Tianjun Gu</strong>, Shao Zeng, Chenghua Gong, et al.<br>
-                        <em>Submitted to CVPR 2026</em>
-                    </div>
-                </div>
-
-                <div class="pub-item">
-                    <div class="pub-thumb"><img src="paper2-thumb.jpg" alt="DORAEMON"></div>
-                    <div class="pub-info">
-                        <span class="pub-title">DORAEMON: Decentralized Ontology-aware Reliable Agent with Enhanced Memory Oriented Navigation</span><br>
-                        <strong>Tianjun Gu</strong>, Linfeng Li, Xuhong Wang, et al.<br>
-                        <em>Submitted to ICLR 2026 (Scores: 8866)</em>
-                    </div>
-                </div>
-
-                <div class="pub-item">
-                    <div class="pub-thumb"><img src="paper3-thumb.jpg" alt="ICCV2025"></div>
-                    <div class="pub-info">
-                        <span class="pub-title">From Enhancement to Understanding: Build a Generalized Bridge for Low-light Vision via Semantically Consistent Unsupervised Fine-tuning</span><br>
-                        Sen Wang, Shao Zeng, <strong>Tianjun Gu</strong>, et al.<br>
-                        <em>ICCV 2025 Poster</em>
-                    </div>
-                </div>
-
-                <div class="pub-item">
-                    <div class="pub-info">
-                        <span class="pub-title">Efficient multimodal large language models: A survey</span><br>
-                        Yizhang Jin*, Jian Li*, <strong>Tianjun Gu*</strong>, et al.<br>
-                        <em>Visual Intelligence 3 (1), 27, 2024</em>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experience -->
-            <section id="experience">
-                <h2>Work Experience</h2>
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <strong>Tencent (Youtu Lab)</strong> <span>Jun. 2025 – Present</span>
-                    </div>
-                    <div class="exp-sub">Algorithm Intern Researcher | Shanghai, China</div>
-                    <ul>
-                        <li>Iteratively updated spatial understanding models and constructed multi-dimensional benchmarks.</li>
-                        <li>Trained base models via SFT/GRPO and integrated spatial understanding encoders.</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <strong>Baidu (MEG)</strong> <span>Jan. 2024 – Jul. 2025</span>
-                    </div>
-                    <div class="exp-sub">AIGC Large Model Algorithm Intern | Shanghai, China</div>
-                    <ul>
-                        <li>Managed LoRA fine-tuning for image generation and built automated training pipelines.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Education -->
-            <section id="education">
-                <h2>Education</h2>
-                <p>
-                    <strong>East China Normal University</strong>, MPS in CS (GPA: 3.8/4.0, Rank 1) <span class="date">2024 - 2027</span><br>
-                    <strong>Shanghai Normal University</strong>, BSc in CS (GPA: 3.9/4.0) <span class="date">2020 - 2024</span>
-                </p>
-            </section>
-
-            <!-- Honors -->
-            <section id="honors">
-                <h2>Honors & Awards</h2>
-                <ul>
-                    <li>First Prize in the Outstanding Academic Scholarship (ECNU)</li>
-                    <li>Meritorious Winner, The Mathematical Contest in Modeling (MCM)</li>
-                    <li>National Third Prize, Lanqiao Cup</li>
-                </ul>
-            </section>
-
+        <div class="profile-links" aria-label="Profiles and contact">
+          <a href="mailto:TianjunGu_Grady@outlook.com"><i data-lucide="mail" aria-hidden="true"></i>Email</a>
+          <a href="https://scholar.google.com/citations?user=RtYRKvEAAAAJ" target="_blank" rel="noopener"><i data-lucide="graduation-cap" aria-hidden="true"></i>Google Scholar</a>
+          <a href="https://github.com/Grady10086" target="_blank" rel="noopener"><i data-lucide="github" aria-hidden="true"></i>GitHub</a>
+          <a href="https://www.linkedin.com/in/tianjun-gu-851166404" target="_blank" rel="noopener"><i data-lucide="linkedin" aria-hidden="true"></i>LinkedIn</a>
+          <a href="assets/documents/Tianjun_Gu_CV.pdf" target="_blank" rel="noopener"><i data-lucide="file-text" aria-hidden="true"></i>CV</a>
         </div>
+      </div>
+
+      <aside class="profile-aside reveal" aria-label="Current academic information">
+        <div class="aside-block">
+          <p class="aside-label">Current</p>
+          <p><strong>NYU CREO / AI4CE</strong><br>Visiting Research Intern</p>
+          <p><strong>Tsinghua Spatial Intelligence Lab</strong><br>Visiting Research Intern</p>
+          <p><strong>East China Normal University</strong><br>Graduate Researcher</p>
+        </div>
+        <div class="aside-block">
+          <p class="aside-label">Research interests</p>
+          <p>Spatial intelligence<br>Long-form video understanding<br>World models<br>Embodied AI</p>
+        </div>
+        <div class="availability"><span aria-hidden="true"></span>Preparing for Fall 2027 PhD applications</div>
+      </aside>
+    </section>
+
+    <section class="section section-news" id="news">
+      <div class="shell news-layout">
+        <div class="section-title reveal">
+          <p class="section-index">News</p>
+          <h2>Recent updates</h2>
+        </div>
+        <ol class="news-list reveal">
+          <li><time>2026</time><p>Started visiting research at NYU's Center for Robotics and Embodied Intelligence, working with Prof. Chen Feng and the AI4CE Lab.</p></li>
+          <li><time>2026</time><p><a href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener">Towards Spatial Supersensing in the Wild</a> was accepted to ECCV 2026.</p></li>
+          <li><time>2026</time><p>Joined Meituan's Infrastructure R&amp;D Platform / M17 as a Foundation Model Research Intern.</p></li>
+          <li><time>2025</time><p>Joined Tsinghua University Spatial Intelligence Lab as a visiting research intern.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section shell" id="publications">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">Research</p>
+          <h2>Selected publications</h2>
+        </div>
+        <p>Representative work in spatial reasoning, video understanding, and embodied intelligence. * denotes equal contribution.</p>
+      </div>
+
+      <div class="publication-list featured-publications">
+        <article class="publication reveal">
+          <a class="publication-thumb" href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener" aria-label="Open VSI-Super-Wild project page">
+            <img src="assets/projects/vsi-illustration.webp" alt="VSI-Super-Wild world-state reasoning illustration" width="1000" height="562">
+          </a>
+          <div class="publication-body">
+            <p class="venue">ECCV 2026 · Accepted</p>
+            <h3>Towards Spatial Supersensing in the Wild</h3>
+            <p class="authors"><strong>Tianjun Gu*</strong>, Tianyu Xin*, Kuan Zhang*, Bowen Yang, Kok-Chung Chua, Peize Li, Xinran Zhang, Yupeng Chen, Qiyue Zhao, Qinlei Xie, Jianhang Liu, Yucheng Lu, Yinan Han, Marco Pavone, Yiming Li†</p>
+            <p class="summary">A long-form benchmark for continual agent-object-environment world-state reasoning across 442 videos and 284.52 hours.</p>
+            <div class="paper-links"><a href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener">Project</a></div>
+          </div>
+        </article>
+
+        <article class="publication reveal">
+          <div class="publication-thumb manuscript-thumb" aria-label="Private manuscript">
+            <i data-lucide="layers-3" aria-hidden="true"></i>
+            <span>SESB</span>
+            <small>Private manuscript</small>
+          </div>
+          <div class="publication-body">
+            <p class="venue">NeurIPS 2026 · Under Review</p>
+            <h3>Self-Evolving Spatial Belief for Video Spatial Reasoning</h3>
+            <p class="authors"><strong>Tianjun Gu</strong>, Shao Zeng, Ruixin Zhang, Haoran Li, Chenghua Gong, Haonan Wang, Yuan Xie, Jingyu Gong, Jingyun Zhang, Jun Wang, Rizen Guo, Lizhuang Ma, Shouhong Ding, Xin Tan</p>
+            <p class="summary">Manuscript available upon request.</p>
+            <div class="paper-links"><a href="mailto:TianjunGu_Grady@outlook.com?subject=SESB%20manuscript%20request">Request manuscript</a></div>
+          </div>
+        </article>
+
+        <article class="publication reveal">
+          <a class="publication-thumb contain" href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener" aria-label="Open EscherVerse paper">
+            <img src="assets/projects/escherverse.webp" alt="Conceptual illustration of teleo-spatial intelligence" width="1200" height="600" loading="lazy">
+          </a>
+          <div class="publication-body">
+            <p class="venue">Nature Communications · Revision</p>
+            <h3>Vision-language models lag human performance on physical dynamics and intent reasoning</h3>
+            <p class="authors"><strong>Tianjun Gu</strong>, Jingyu Gong, Zhizhong Zhang, Yuan Xie, Lizhuang Ma, Xin Tan, Athanasios V</p>
+            <p class="summary">EscherVerse evaluates physical dynamics and human-intent reasoning over 11,328 real-world videos.</p>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener">arXiv</a></div>
+          </div>
+        </article>
+
+        <article class="publication reveal">
+          <a class="publication-thumb mark-thumb" href="https://grady10086.github.io/DORAEMON/" target="_blank" rel="noopener" aria-label="Open DORAEMON project page">
+            <img src="assets/projects/doraemon-mark.webp" alt="DORAEMON project mark" width="296" height="320" loading="lazy">
+          </a>
+          <div class="publication-body">
+            <p class="venue">IEEE TMM · Under Review</p>
+            <h3>DORAEMON: Decentralized Ontology-aware Reliable Agent with Enhanced Memory Oriented Navigation</h3>
+            <p class="authors"><strong>Tianjun Gu</strong>, Linfeng Li, Xuhong Wang, Chenghua Gong, Jingyu Gong, Zhizhong Zhang, Yuan Xie, Lizhuang Ma, Xin Tan</p>
+            <p class="summary">A zero-shot navigation framework with hierarchical semantic-spatial memory, topological memory, and safety-aware VLM planning.</p>
+            <div class="paper-links">
+              <a href="https://arxiv.org/abs/2505.21969" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://grady10086.github.io/DORAEMON/" target="_blank" rel="noopener">Project</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="additional-publications reveal">
+        <h3>Additional publications</h3>
+        <article>
+          <time>2025</time>
+          <div><p class="venue">Visual Intelligence · 3:27</p><h4>Efficient Multimodal Large Language Models: A Survey</h4><p>Yizhang Jin*, Jian Li*, <strong>Tianjun Gu*</strong>, Yexin Liu, Bo Zhao, Jinxiang Lai, Zhenye Gan, Yabiao Wang, Chengjie Wang, Xin Tan, Lizhuang Ma</p></div>
+          <a href="https://doi.org/10.1007/s44267-025-00099-6" target="_blank" rel="noopener">Paper</a>
+        </article>
+        <article>
+          <time>2025</time>
+          <div><p class="venue">ICCV 2025</p><h4>From Enhancement to Understanding: Build a Generalized Bridge for Low-light Vision via Semantically Consistent Unsupervised Fine-tuning</h4><p>Sen Wang, Shao Zeng, <strong>Tianjun Gu</strong>, Zhizhong Zhang, Ruixin Zhang, Shouhong Ding, Jingyun Zhang, Jun Wang, Xin Tan, Yuan Xie, Lizhuang Ma</p></div>
+          <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Wang_From_Enhancement_to_Understanding_Build_a_Generalized_Bridge_for_Low-light_ICCV_2025_paper.html" target="_blank" rel="noopener">Paper</a>
+        </article>
+        <article>
+          <time>2024</time>
+          <div><p class="venue">Journal of Graphics · 45(1):102</p><h4>Diversified Generation of Theatrical Masks Based on SASGAN</h4><p><strong>Tianjun Gu</strong>, Suya Xiong, Xiao Lin</p></div>
+          <a href="https://doi.org/10.11996/JG.j.2095-302X.2024010102" target="_blank" rel="noopener">DOI</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-experience" id="experience">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div><p class="section-index">Experience</p><h2>Research &amp; industry</h2></div>
+          <p>Research remains the main thread, supported by experience in foundation-model training, data engines, and deployed vision systems.</p>
+        </div>
+
+        <div class="experience-columns">
+          <div class="experience-column reveal">
+            <h3>Research experience</h3>
+            <article>
+              <time>Jul. 2026 — Present</time>
+              <h4>Visiting Research Intern</h4>
+              <p class="organization">NYU Center for Robotics and Embodied Intelligence (CREO) · AI4CE Lab</p>
+              <p class="advisor">Advisor: Chen Feng · NYU Tandon School of Engineering</p>
+              <ul>
+                <li>Investigating spatial representation learning for MLLMs by testing whether complementary multi-view, panoramic, and egocentric observations yield more viewpoint-consistent scene representations and improve cross-view grounding and spatial reasoning.</li>
+              </ul>
+            </article>
+            <article>
+              <time>Nov. 2025 — Present</time>
+              <h4>Visiting Research Intern</h4>
+              <p class="organization">Tsinghua University Spatial Intelligence Lab · Beijing, China</p>
+              <p class="advisor">Advisor: Yiming Li</p>
+              <ul>
+                <li>First-authored <em>Towards Spatial Supersensing in the Wild</em> (ECCV 2026), introducing VSI-Super-Wild, a four-task benchmark for continual agent-object-environment world-state reasoning with <strong>442 videos</strong> (<strong>284.52 hours</strong>) and <strong>6,980 human-verified QA pairs</strong>; evaluated <strong>13 MLLMs</strong> and found average performance drop from <strong>35.0</strong> on 0-10-minute videos to <strong>26.3</strong> beyond 120 minutes.</li>
+                <li>Contributed to additional collaborative projects on generalist agents and foundation-model evaluation, including <a href="https://arxiv.org/abs/2605.09965" target="_blank" rel="noopener"><em>Towards Generalist Game Players: An Investigation of Foundation Models in the Game Multiverse</em></a>.</li>
+              </ul>
+            </article>
+            <article>
+              <time>Sep. 2024 — Present</time>
+              <h4>Graduate Researcher</h4>
+              <p class="organization">East China Normal University · Shanghai, China</p>
+              <p class="advisor">Advisors: Lizhuang Ma and Xin Tan</p>
+              <ul>
+                <li>Developed DORAEMON, a zero-shot navigation framework with hierarchical semantic-spatial and topological memory and safety-aware VLM planning; achieved state-of-the-art SR and SPL on HM3D, MP3D, and GOAT.</li>
+                <li>Contributed to national-level, municipal, and industry-sponsored research programs on embodied intelligence, autonomous driving, agent evaluation and safety, and AI-enabled social simulation.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="experience-column reveal">
+            <h3>Industry experience</h3>
+            <article>
+              <time>Mar. 2026 — Present</time>
+              <h4>Foundation Model Research Intern</h4>
+              <p class="organization">Meituan · Infrastructure R&amp;D Platform / M17 · Shanghai, China</p>
+              <ul>
+                <li>Improved LongCat-Flash-3B's omni-modal capabilities, focusing on multilingual instruction following through targeted data construction, supervised post-training, and systematic evaluation.</li>
+                <li>Built an end-to-end GUI-agent data engine for LongCat-Flash, converting web-sourced videos into interaction trajectories and training data across generation, quality control, and model post-training.</li>
+                <li>Explored interactive world models through task formulation, data and benchmark design, and multi-turn interaction and memory evaluation.</li>
+              </ul>
+            </article>
+            <article>
+              <time>Jun. 2025 — Mar. 2026</time>
+              <h4>Research Intern</h4>
+              <p class="organization">Tencent Youtu Lab · Shanghai, China</p>
+              <ul>
+                <li>Led SESB (NeurIPS 2026 under review), an inference-time spatial memory with query-relevant belief access, targeted video retrieval, and local updates; achieved <strong>87.1</strong> on VSI-Bench, versus <strong>50.8</strong> with static belief and <strong>59.9</strong> under the same frame budget.</li>
+                <li>Led the EscherVerse study (Nature Communications, Revision), building the dataset from <strong>11,328 videos</strong>, with an <strong>8,000-example benchmark</strong> and a <strong>35,963-example instruction-tuning set</strong>.</li>
+                <li>Explored autonomous research agents and automated research workflows, and supported post-training of Youtu foundation models through data construction, training-pipeline development, and evaluation.</li>
+              </ul>
+            </article>
+            <article>
+              <time>Jan. 2024 — Jul. 2025</time>
+              <h4>AIGC Multi-Model Algorithm Intern</h4>
+              <p class="organization">Baidu · MEG / Library Strategy Group · Shanghai, China</p>
+              <ul>
+                <li>Built scenario- and character-specific LoRA datasets and fine-tuned image-generation models, improving animated-character consistency by 38 percentage points.</li>
+                <li>Developed automated multi-character LoRA training pipelines and supported the production launch of Baidu Wenku's one-sentence comic feature.</li>
+              </ul>
+            </article>
+            <article>
+              <time>Sep. 2022 — Jun. 2023</time>
+              <h4>Machine Vision Algorithm Engineer</h4>
+              <p class="organization">SAIC Anji Intelligent IoT Technology Co., Ltd. · Shanghai, China</p>
+              <ul>
+                <li>Built cross-site warehouse vision datasets using CenterNet-based candidate mining, similarity filtering, and end-to-end preprocessing pipelines.</li>
+                <li>Trained and deployed workwear-detection models across multiple warehouse sites, iterating through on-site evaluation, error analysis, and operational feedback.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="service">
+      <div class="academic-details">
+        <div class="detail-group reveal">
+          <p class="section-index">Education</p>
+          <article><div><h3>East China Normal University</h3><p>M.S. · GPA 91/100 (3.8/4.0) · Rank 1 in cohort</p><p>Advisors: Lizhuang Ma and Xin Tan · Shanghai, China</p></div><div><time>Sep. 2024 — Jun. 2027 (expected)</time><strong>First-Class Scholarship</strong></div></article>
+          <article><div><h3>Shanghai Normal University</h3><p>B.S. · GPA 92/100 (3.9/4.0)</p><p>Shanghai, China</p></div><div><time>Oct. 2020 — Jun. 2024</time><strong>First-Class Scholarship</strong></div></article>
+        </div>
+        <div class="detail-group reveal">
+          <p class="section-index">Academic service</p>
+          <article><div><h3>Reviewer</h3><p>NeurIPS · ECCV</p></div></article>
+          <article><div><h3>Conference Volunteer</h3><p>CCF CAD/CG</p></div></article>
+        </div>
+      </div>
+
+      <div class="credentials-grid">
+        <div class="detail-group reveal">
+          <p class="section-index">Honors and awards</p>
+          <ul class="credential-list">
+            <li>National-level Excellent Completion Award, Undergraduate Innovation and Entrepreneurship Program (PI).</li>
+            <li>Provincial/Municipal-level Excellent Completion Award, Undergraduate Innovation and Entrepreneurship Program (PI).</li>
+            <li>Meritorious Winner, Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling.</li>
+            <li>Third Prize, National College Student Mathematics Competition.</li>
+          </ul>
+        </div>
+        <div class="detail-group reveal">
+          <p class="section-index">Technical skills</p>
+          <dl class="skill-list">
+            <div><dt>Research</dt><dd>Spatial intelligence, embodied AI, world models, VLMs, long-video understanding, benchmark design.</dd></div>
+            <div><dt>Engineering</dt><dd>Python, C++, PyTorch, distributed training, vLLM, FlashAttention, ms-swift, Linux, Docker, SFT, GRPO.</dd></div>
+            <div><dt>Languages</dt><dd>Chinese (native), English (professional working proficiency).</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact shell reveal" aria-labelledby="contact-title">
+      <p class="section-index">Contact</p>
+      <h2 id="contact-title">Research conversations are always welcome.</h2>
+      <p>I am preparing for Fall 2027 PhD applications and remain open to research collaborations and aligned research internships.</p>
+      <a href="mailto:TianjunGu_Grady@outlook.com">TianjunGu_Grady@outlook.com <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>© <span data-year></span> Tianjun Gu</p>
+      <div><a href="https://scholar.google.com/citations?user=RtYRKvEAAAAJ" target="_blank" rel="noopener">Scholar</a><a href="https://github.com/Grady10086" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/tianjun-gu-851166404" target="_blank" rel="noopener">LinkedIn</a></div>
+      <a href="#about">Back to top <i data-lucide="arrow-up" aria-hidden="true"></i></a>
     </div>
+  </footer>
 </body>
 </html>
