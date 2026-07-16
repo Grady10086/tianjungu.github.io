@@ -460,16 +460,6 @@ a:focus-visible {
   object-fit: contain;
 }
 
-.publication.publication-full-figure {
-  grid-template-columns: 300px minmax(0, 1fr);
-}
-
-.publication-full-figure .publication-thumb {
-  width: 300px;
-  height: auto;
-  aspect-ratio: 1200 / 1419;
-}
-
 .publication-thumb.contain img {
   padding: 8px;
   object-fit: contain;
@@ -903,14 +893,6 @@ a:focus-visible {
     height: 116px;
   }
 
-  .publication.publication-full-figure {
-    grid-template-columns: 240px minmax(0, 1fr);
-  }
-
-  .publication-full-figure .publication-thumb {
-    width: 240px;
-  }
-
   .experience-columns,
   .academic-details,
   .credentials-grid {
@@ -1047,14 +1029,6 @@ a:focus-visible {
     height: 88px;
   }
 
-  .publication.publication-full-figure {
-    grid-template-columns: 180px minmax(0, 1fr);
-  }
-
-  .publication-full-figure .publication-thumb {
-    width: 180px;
-  }
-
   .mark-thumb img {
     height: 66px;
   }
@@ -1121,19 +1095,10 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .publication.publication-full-figure {
-    grid-template-columns: 1fr;
-  }
-
   .publication-thumb {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 7;
-  }
-
-  .publication-full-figure .publication-thumb {
-    width: 100%;
-    aspect-ratio: 1200 / 1419;
   }
 
   .mark-thumb img {
