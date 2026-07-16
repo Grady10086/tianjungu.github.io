@@ -712,54 +712,6 @@ a:focus-visible {
   font-size: 9px;
 }
 
-.credentials-grid {
-  display: grid;
-  margin-top: 64px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 80px;
-}
-
-.credential-list,
-.skill-list {
-  margin: 0;
-  padding: 18px 0;
-  color: var(--muted);
-  border-top: 1px solid var(--soft-line);
-  border-bottom: 1px solid var(--soft-line);
-  font-size: 10px;
-}
-
-.credential-list {
-  padding-left: 1.4em;
-}
-
-.credential-list li + li {
-  margin-top: 8px;
-}
-
-.credential-list li::marker {
-  color: var(--maui);
-}
-
-.skill-list div {
-  display: grid;
-  grid-template-columns: 82px minmax(0, 1fr);
-  gap: 14px;
-}
-
-.skill-list div + div {
-  margin-top: 10px;
-}
-
-.skill-list dt {
-  color: var(--ink);
-  font-weight: 700;
-}
-
-.skill-list dd {
-  margin: 0;
-}
-
 .contact {
   padding-top: 86px;
   padding-bottom: 86px;
@@ -896,8 +848,7 @@ a:focus-visible {
   }
 
   .experience-columns,
-  .academic-details,
-  .credentials-grid {
+  .academic-details {
     gap: 44px;
   }
 }
@@ -1059,8 +1010,7 @@ a:focus-visible {
   }
 
   .experience-columns,
-  .academic-details,
-  .credentials-grid {
+  .academic-details {
     grid-template-columns: 1fr;
     gap: 56px;
   }
