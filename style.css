@@ -123,14 +123,12 @@ a:focus-visible {
   flex: 0 0 auto;
   overflow: hidden;
   border-radius: 8px;
-  background: var(--bright-white);
 }
 
 .wordmark-mark img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 50% 18%;
+  object-fit: contain;
 }
 
 .wordmark-name {
