@@ -110,8 +110,13 @@ const sendAnalyticsEvent = (name, parameters = {}) => {
 const outreachRef = new URLSearchParams(window.location.search).get("ref");
 
 if (outreachRef && /^[a-z0-9_-]{1,64}$/i.test(outreachRef)) {
+  const outreachEventName = `outreach_${outreachRef.toLowerCase().replace(/-/g, "_").slice(0, 30)}`;
+
   sendAnalyticsEvent("outreach_visit", {
     outreach_ref: outreachRef,
+    transport_type: "beacon",
+  });
+  sendAnalyticsEvent(outreachEventName, {
     transport_type: "beacon",
   });
 }
