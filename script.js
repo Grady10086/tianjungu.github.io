@@ -101,3 +101,45 @@ document.querySelectorAll("[data-year]").forEach((element) => {
 window.addEventListener("DOMContentLoaded", () => {
   window.lucide?.createIcons();
 });
+
+const sendAnalyticsEvent = (name, parameters = {}) => {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", name, parameters);
+};
+
+const outreachRef = new URLSearchParams(window.location.search).get("ref");
+
+if (outreachRef && /^[a-z0-9_-]{1,64}$/i.test(outreachRef)) {
+  sendAnalyticsEvent("outreach_visit", {
+    outreach_ref: outreachRef,
+    transport_type: "beacon",
+  });
+}
+
+const classifyResourceLink = (anchor) => {
+  const href = anchor.getAttribute("href") || "";
+
+  if (href.startsWith("mailto:")) return "email";
+  if (href.includes("Tianjun_Gu_CV.pdf")) return "cv";
+  if (href.includes("scholar.google.")) return "scholar";
+  if (href.includes("linkedin.com")) return "linkedin";
+  if (href.includes("github.com")) return "github";
+  if (href.includes("arxiv.org") || href.includes("doi.org") || href.includes("openaccess.thecvf.com")) return "paper";
+  if (anchor.closest(".publication")) return "project";
+
+  return null;
+};
+
+document.addEventListener("click", (event) => {
+  const anchor = event.target.closest("a[href]");
+  if (!anchor) return;
+
+  const resourceType = classifyResourceLink(anchor);
+  if (!resourceType) return;
+
+  sendAnalyticsEvent("resource_click", {
+    resource_type: resourceType,
+    resource_label: anchor.textContent.trim().replace(/\s+/g, " ").slice(0, 80),
+    transport_type: "beacon",
+  });
+});

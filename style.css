@@ -1098,3 +1098,38 @@ a:focus-visible {
     transform: none;
   }
 }
+
+.privacy-page {
+  max-width: 760px;
+  min-height: 100vh;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.privacy-page h1 {
+  margin: 12px 0 28px;
+  color: var(--ink);
+  font-family: "Newsreader", serif;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.privacy-page p {
+  margin: 0 0 18px;
+  color: var(--ink);
+  line-height: 1.75;
+}
+
+.privacy-page a {
+  color: var(--marina);
+  text-underline-offset: 3px;
+}
+
+.privacy-back {
+  display: inline-flex;
+  margin-bottom: 52px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
