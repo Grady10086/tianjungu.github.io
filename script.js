@@ -108,17 +108,28 @@ const sendAnalyticsEvent = (name, parameters = {}) => {
 };
 
 const outreachRef = new URLSearchParams(window.location.search).get("ref");
+const validOutreachRef = outreachRef && /^[a-z0-9_-]{1,64}$/i.test(outreachRef)
+  ? outreachRef
+  : null;
+const outreachEventName = validOutreachRef
+  ? `outreach_${validOutreachRef.toLowerCase().replace(/-/g, "_").slice(0, 20)}`
+  : null;
 
-if (outreachRef && /^[a-z0-9_-]{1,64}$/i.test(outreachRef)) {
-  const outreachEventName = `outreach_${outreachRef.toLowerCase().replace(/-/g, "_").slice(0, 30)}`;
-
+if (validOutreachRef) {
   sendAnalyticsEvent("outreach_visit", {
-    outreach_ref: outreachRef,
+    outreach_ref: validOutreachRef,
     transport_type: "beacon",
   });
   sendAnalyticsEvent(outreachEventName, {
     transport_type: "beacon",
   });
+
+  window.setTimeout(() => {
+    if (document.visibilityState !== "visible") return;
+    sendAnalyticsEvent(`${outreachEventName}_engaged`, {
+      transport_type: "beacon",
+    });
+  }, 15000);
 }
 
 const classifyResourceLink = (anchor) => {
@@ -147,4 +158,10 @@ document.addEventListener("click", (event) => {
     resource_label: anchor.textContent.trim().replace(/\s+/g, " ").slice(0, 80),
     transport_type: "beacon",
   });
+
+  if (outreachEventName) {
+    sendAnalyticsEvent(`${outreachEventName}_${resourceType}`, {
+      transport_type: "beacon",
+    });
+  }
 });
