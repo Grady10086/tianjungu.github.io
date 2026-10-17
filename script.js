@@ -2,6 +2,46 @@ const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
 const navAnchors = [...document.querySelectorAll(".nav-links a[href^='#']")];
+const themeToggle = document.querySelector("[data-theme-toggle]");
+const newsFeed = document.querySelector("[data-news-feed]");
+const newsToggle = document.querySelector("[data-news-toggle]");
+
+const applyTheme = (theme, persist = false) => {
+  const isDark = theme === "dark";
+  document.documentElement.dataset.theme = isDark ? "dark" : "light";
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", isDark ? "#0E1015" : "#F3F7FB");
+
+  if (themeToggle) {
+    const nextTheme = isDark ? "light" : "dark";
+    const label = `Switch to ${nextTheme} theme`;
+    themeToggle.setAttribute("aria-label", label);
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.setAttribute("title", label);
+    themeToggle.innerHTML = `<i data-lucide="${isDark ? "sun" : "moon"}" aria-hidden="true"></i>`;
+    window.lucide?.createIcons();
+  }
+
+  if (persist) {
+    try {
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    } catch (_) {
+      // The theme still applies when storage is unavailable.
+    }
+  }
+};
+
+applyTheme(document.documentElement.dataset.theme);
+
+themeToggle?.addEventListener("click", () => {
+  applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true);
+});
+
+newsToggle?.addEventListener("click", () => {
+  const expanded = !newsFeed.classList.contains("is-expanded");
+  newsFeed.classList.toggle("is-expanded", expanded);
+  newsToggle.setAttribute("aria-expanded", String(expanded));
+  newsToggle.querySelector("span").textContent = expanded ? "Show fewer updates" : "Show all updates";
+});
 
 const setNavOpen = (open) => {
   if (!navToggle || !navLinks) return;
@@ -93,6 +133,95 @@ if ("IntersectionObserver" in window) {
 
   sections.forEach((section) => sectionObserver.observe(section));
 }
+
+const scrollFocusGroups = [...document.querySelectorAll("[data-scroll-focus]")];
+
+if (!reducedMotion && scrollFocusGroups.length) {
+  const groups = scrollFocusGroups.map((group) => ({
+    element: group,
+    items: [...group.querySelectorAll("[data-scroll-item]")],
+    counter: group.dataset.scrollCounter
+      ? document.querySelector(group.dataset.scrollCounter)
+      : null,
+  })).filter((group) => group.items.length);
+
+  const setScrollFocus = (group, activeIndex) => {
+    group.items.forEach((item, index) => {
+      item.classList.toggle("is-scroll-active", index === activeIndex);
+    });
+
+    const progress = `${((activeIndex + 1) / group.items.length) * 100}%`;
+    group.element.style.setProperty("--focus-progress", progress);
+
+    if (group.counter) {
+      group.counter.textContent = String(activeIndex + 1).padStart(2, "0");
+      group.counter.closest(".publication-progress")?.style.setProperty("--publication-progress", progress);
+    }
+  };
+
+  const updateScrollFocus = () => {
+    const focalLine = window.innerHeight * 0.52;
+
+    groups.forEach((group) => {
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      group.items.forEach((item, index) => {
+        const rect = item.getBoundingClientRect();
+        const distance = Math.abs(rect.top + rect.height / 2 - focalLine);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      setScrollFocus(group, closestIndex);
+    });
+  };
+
+  let focusFrame = null;
+  const requestScrollFocusUpdate = () => {
+    if (focusFrame !== null) return;
+    focusFrame = window.requestAnimationFrame(() => {
+      updateScrollFocus();
+      focusFrame = null;
+    });
+  };
+
+  groups.forEach((group) => {
+    group.element.classList.add("has-scroll-focus");
+    group.items.forEach((item, index) => {
+      item.addEventListener("mouseenter", () => setScrollFocus(group, index));
+      item.addEventListener("focusin", () => setScrollFocus(group, index));
+    });
+  });
+
+  updateScrollFocus();
+  window.addEventListener("scroll", requestScrollFocusUpdate, { passive: true });
+  window.addEventListener("resize", requestScrollFocusUpdate);
+}
+
+const companionTargets = [...document.querySelectorAll("[data-companion]")];
+let companionLeaveTimer = null;
+
+const setCompanionActive = (active) => {
+  window.clearTimeout(companionLeaveTimer);
+  if (active) {
+    document.body.classList.add("companion-active");
+    return;
+  }
+
+  companionLeaveTimer = window.setTimeout(() => {
+    document.body.classList.remove("companion-active");
+  }, 120);
+};
+
+companionTargets.forEach((target) => {
+  target.addEventListener("mouseenter", () => setCompanionActive(true));
+  target.addEventListener("mouseleave", () => setCompanionActive(false));
+  target.addEventListener("focusin", () => setCompanionActive(true));
+  target.addEventListener("focusout", () => setCompanionActive(false));
+});
 
 document.querySelectorAll("[data-year]").forEach((element) => {
   element.textContent = new Date().getFullYear();
