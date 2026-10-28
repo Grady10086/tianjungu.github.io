@@ -55,7 +55,7 @@ This checklist is the release gate for the academic homepage. Each iteration is 
 
 ## Iteration 2: Research Identity
 
-- [x] Interactive Observe–Revise–Reuse cycle in the first viewport
+- [x] Interactive Observe–Revise–Reason cycle in the first viewport
 - [x] Shared state between the hero cycle and Research Focus
 - [x] Research-led eyebrow instead of degree-status labeling
 - [x] Original social sharing preview and complete Open Graph metadata
@@ -70,7 +70,7 @@ This checklist is the release gate for the academic homepage. Each iteration is 
 
 ## Iteration 4: Research Trajectory
 
-- [x] Thematic Observe–Revise–Reuse matrix for core publications
+- [x] Thematic Observe–Revise–Reason matrix for core publications
 - [x] Honest separation between core trajectory and earlier work
 - [x] Atlas state synchronized with publication scroll focus
 - [x] Pointer and keyboard interaction without hover-only content
