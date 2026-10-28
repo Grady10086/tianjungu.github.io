@@ -1695,6 +1695,11 @@ body.companion-active .wordmark-mark img {
     font-size: 7px;
   }
 
+  .atlas-axis,
+  .atlas-row {
+    column-gap: 12px;
+  }
+
   .atlas-axis span:not(:first-child) {
     padding-inline: 5px;
   }
