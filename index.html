@@ -8,8 +8,19 @@
   <meta property="og:title" content="Tianjun Gu | Academic Homepage">
   <meta property="og:description" content="Research on active observation and revisable memory for embodied world understanding.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://grady10086.github.io/tianjungu.github.io/">
+  <meta property="og:image" content="https://grady10086.github.io/tianjungu.github.io/assets/social-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tianjun Gu — research on embodied and multimodal intelligence">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tianjun Gu | Academic Homepage">
+  <meta name="twitter:description" content="Research on active observation and revisable memory for embodied world understanding.">
+  <meta name="twitter:image" content="https://grady10086.github.io/tianjungu.github.io/assets/social-preview.jpg">
+  <link rel="canonical" href="https://grady10086.github.io/tianjungu.github.io/">
   <title>Tianjun Gu | Academic Homepage</title>
   <script>
+    document.documentElement.classList.add("js");
     try {
       document.documentElement.dataset.theme = localStorage.getItem("theme") === "dark" ? "dark" : "light";
     } catch (_) {
@@ -73,6 +84,7 @@
         </button>
       </div>
     </nav>
+    <div class="page-progress" aria-hidden="true"><i data-page-progress></i></div>
   </header>
 
   <main id="main">
@@ -82,9 +94,16 @@
       </figure>
 
       <div class="profile-main reveal">
-        <p class="eyebrow">M.S. Student · Embodied &amp; Multimodal Intelligence</p>
+        <p class="eyebrow">Embodied &amp; Multimodal Intelligence</p>
         <h1>Tianjun Gu</h1>
         <p class="profile-lead">I study how embodied agents turn selective experience into reusable world knowledge through active observation and revisable memory.</p>
+        <nav class="hero-cycle" aria-label="Research cycle">
+          <a class="is-cycle-active" href="#focus-observe" data-cycle-link="observe" data-cycle-index="1"><span>01</span><strong>Observe</strong><small>Select evidence</small></a>
+          <i aria-hidden="true"></i>
+          <a href="#focus-revise" data-cycle-link="revise" data-cycle-index="2"><span>02</span><strong>Revise</strong><small>Update belief</small></a>
+          <i aria-hidden="true"></i>
+          <a href="#focus-reuse" data-cycle-link="reuse" data-cycle-index="3"><span>03</span><strong>Reuse</strong><small>Transfer knowledge</small></a>
+        </nav>
       </div>
 
       <div class="profile-bio reveal">
@@ -118,19 +137,20 @@
     <section class="research-focus shell reveal" aria-labelledby="focus-title">
       <div class="focus-intro">
         <p class="section-index">Research focus</p>
+        <p class="focus-mode" aria-hidden="true"><span>World-state cycle</span><strong data-focus-mode>Observe</strong></p>
         <h2 id="focus-title">Understanding beyond experience.</h2>
         <p class="focus-statement">How can an embodied agent build an understanding of the world that goes beyond its own experience?</p>
       </div>
       <div class="focus-grid" data-scroll-focus>
-        <article data-scroll-item data-companion="observe">
+        <article id="focus-observe" data-scroll-item data-companion="observe" data-focus-label="Observe">
           <span>01</span>
           <div><h3>Active observation</h3><p>Choose when to inspect a new viewpoint, revisit the world, or retrieve earlier evidence in order to resolve consequential uncertainty under limited observation budgets.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">SESB</a><a href="#paper-doraemon">DORAEMON</a></div></div>
         </article>
-        <article data-scroll-item data-companion="remember">
+        <article id="focus-revise" data-scroll-item data-companion="remember" data-focus-label="Revise">
           <span>02</span>
           <div><h3>Revisable world memory</h3><p>Maintain entities, relations, and events with provenance, temporal scope, and uncertainty, while distinguishing genuine world change from interpretation error or missing evidence.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">SESB</a><a href="#paper-vsi">VSI-Super-Wild</a></div></div>
         </article>
-        <article data-scroll-item data-companion="reason">
+        <article id="focus-reuse" data-scroll-item data-companion="reason" data-focus-label="Reuse">
           <span>03</span>
           <div><h3>Reusable world knowledge</h3><p>Test what remains useful when goals and questions change, distinguishing what frozen memory can support from what requires renewed observation.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-vsi">VSI-Super-Wild</a><a href="#paper-escher">EscherVerse</a></div></div>
         </article>
@@ -145,14 +165,15 @@
         </div>
         <div class="news-feed reveal" data-news-feed>
         <ol class="news-list" id="news-list">
-          <li><time>Sep. 2026</time><p>Our EscherVerse manuscript is under review.</p></li>
-          <li><time>2026</time><p>Started visiting research at NYU's Center for Robotics and Embodied Intelligence, working with Prof. Chen Feng and the AI4CE Lab.</p></li>
-          <li><time>2026</time><p><a href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener">Towards Spatial Supersensing in the Wild</a> was accepted to ECCV 2026.</p></li>
-          <li><time>2026</time><p>Joined Meituan's Infrastructure R&amp;D Platform / M17 as a Foundation Model Research Intern.</p></li>
-          <li><time>2025</time><p>Joined Tsinghua University Spatial Intelligence Lab as a visiting research intern.</p></li>
-          <li><time>2025</time><p><a href="https://doi.org/10.1007/s44267-025-00099-6" target="_blank" rel="noopener">Efficient Multimodal Large Language Models: A Survey</a> was published in <em>Visual Intelligence</em>.</p></li>
-          <li><time>2025</time><p><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Wang_From_Enhancement_to_Understanding_Build_a_Generalized_Bridge_for_Low-light_ICCV_2025_paper.html" target="_blank" rel="noopener">From Enhancement to Understanding</a> was accepted to ICCV 2025 as a poster.</p></li>
-          <li><time>2024</time><p><a href="https://doi.org/10.11996/JG.j.2095-302X.2024010102" target="_blank" rel="noopener">Diversified Generation of Theatrical Masks Based on SASGAN</a> was published in the <em>Journal of Graphics</em>.</p></li>
+          <li class="news-featured"><time>Oct. 2026</time><span class="news-category is-publication">Publication</span><p>Our work <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener"><em>Vision-language models lag human performance on physical dynamics and intent reasoning</em></a> was accepted by <em>Nature Communications</em>.</p></li>
+          <li><time>2026</time><span class="news-category is-research">Research</span><p>Started visiting research at NYU's Center for Robotics and Embodied Intelligence, working with Prof. Chen Feng and the AI4CE Lab.</p></li>
+          <li><time>2026</time><span class="news-category is-publication">Publication</span><p><a href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener">Towards Spatial Supersensing in the Wild</a> was accepted to ECCV 2026 as a poster.</p></li>
+          <li><time>2026</time><span class="news-category is-experience">Experience</span><p>Joined Meituan's LongCat team to conduct research on multimodal foundation models.</p></li>
+          <li><time>2025</time><span class="news-category is-experience">Experience</span><p>Joined Tsinghua University Spatial Intelligence Lab as a visiting research intern.</p></li>
+          <li><time>2025</time><span class="news-category is-publication">Publication</span><p><a href="https://doi.org/10.1007/s44267-025-00099-6" target="_blank" rel="noopener">Efficient Multimodal Large Language Models: A Survey</a> was published in <em>Visual Intelligence</em>.</p></li>
+          <li><time>2025</time><span class="news-category is-publication">Publication</span><p><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Wang_From_Enhancement_to_Understanding_Build_a_Generalized_Bridge_for_Low-light_ICCV_2025_paper.html" target="_blank" rel="noopener">From Enhancement to Understanding</a> was accepted to ICCV 2025 as a poster.</p></li>
+          <li><time>Sep. 2024</time><span class="news-category is-research">Research</span><p>Joined the DMCV Lab as a research master's student, advised by Prof. Xin Tan and Prof. Lizhuang Ma.</p></li>
+          <li><time>2024</time><span class="news-category is-publication">Publication</span><p><a href="https://doi.org/10.11996/JG.j.2095-302X.2024010102" target="_blank" rel="noopener">Diversified Generation of Theatrical Masks Based on SASGAN</a> was published in the <em>Journal of Graphics</em>.</p></li>
         </ol>
         <button class="news-toggle" type="button" aria-expanded="false" aria-controls="news-list" data-news-toggle>
           <span>Show all updates</span><i data-lucide="chevron-down" aria-hidden="true"></i>
@@ -167,19 +188,42 @@
           <p class="section-index">Research</p>
           <h2>Selected publications</h2>
           <div class="publication-progress" aria-hidden="true">
-            <span data-scroll-current>01</span><i></i><span>04</span>
+            <span data-scroll-current>01</span><i></i><span>07</span>
           </div>
         </div>
         <p>Representative work in spatial reasoning, video understanding, and embodied intelligence. * denotes equal contribution.</p>
       </div>
 
+      <div class="publication-atlas reveal" data-publication-atlas>
+        <div class="atlas-intro">
+          <p class="section-index">Core research trajectory</p>
+          <h3>From selective evidence to reusable world knowledge.</h3>
+        </div>
+        <div class="atlas-matrix" aria-label="Thematic map of representative publications">
+          <div class="atlas-axis" aria-hidden="true"><span>Representative work</span><span>Observe</span><span>Revise</span><span>Reuse</span></div>
+          <a class="atlas-row" href="#paper-doraemon" data-atlas-paper="paper-doraemon">
+            <span class="atlas-name"><small>01</small>DORAEMON</span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell"><i></i></span>
+          </a>
+          <a class="atlas-row" href="#paper-sesb" data-atlas-paper="paper-sesb">
+            <span class="atlas-name"><small>02</small>SESB</span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell"><i></i></span>
+          </a>
+          <a class="atlas-row" href="#paper-vsi" data-atlas-paper="paper-vsi">
+            <span class="atlas-name"><small>03</small>VSI-Super-Wild</span><span class="atlas-cell"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span>
+          </a>
+          <a class="atlas-row" href="#paper-escher" data-atlas-paper="paper-escher">
+            <span class="atlas-name"><small>04</small>EscherVerse</span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell"><i></i></span><span class="atlas-cell is-covered"><i></i></span>
+          </a>
+        </div>
+      </div>
+
       <div class="publication-list featured-publications" data-scroll-focus data-scroll-counter="[data-scroll-current]">
         <article class="publication reveal" id="paper-vsi" data-scroll-item data-companion="world">
+          <span class="paper-index" aria-hidden="true">01</span>
           <a class="publication-thumb" href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener" aria-label="Open VSI-Super-Wild project page">
             <img src="assets/projects/vsi-teaser.jpg" alt="VSI-Super-Wild paper teaser illustrating agent, object, and environment world-state reasoning" width="1200" height="676">
           </a>
           <div class="publication-body">
-            <p class="venue">ECCV 2026 · Poster</p>
+            <p class="venue"><span>ECCV 2026</span><span class="publication-status">Poster</span></p>
             <h3>Towards Spatial Supersensing in the Wild</h3>
             <p class="authors"><strong>Tianjun Gu*</strong>, Tianyu Xin*, Kuan Zhang*, Bowen Yang, Kok-Chung Chua, Peize Li, Xinran Zhang, Yupeng Chen, Qiyue Zhao, Qinlei Xie, Jianhang Liu, Yucheng Lu, Yinan Han, Marco Pavone, Yiming Li†</p>
             <p class="summary"><strong>What it contributes.</strong> A long-form benchmark that tests whether MLLMs can maintain and update agent-object-environment world states across 442 videos and 284.52 hours.</p>
@@ -188,11 +232,12 @@
         </article>
 
         <article class="publication reveal" id="paper-sesb" data-scroll-item data-companion="belief">
+          <span class="paper-index" aria-hidden="true">02</span>
           <div class="publication-thumb" aria-label="SESB paper overview figure">
             <img src="assets/projects/sesb-overview.jpg" alt="SESB paper overview showing query-driven spatial belief evolution from video evidence" width="1200" height="676" loading="lazy">
           </div>
           <div class="publication-body">
-            <p class="venue">Under Review</p>
+            <p class="venue"><span>Under Review</span></p>
             <h3>Self-Evolving Spatial Belief for Video Spatial Reasoning</h3>
             <p class="authors"><strong>Tianjun Gu</strong>, Shao Zeng, Ruixin Zhang, Haoran Li, Chenghua Gong, Haonan Wang, Yuan Xie, Jingyu Gong, Jingyun Zhang, Jun Wang, Rizen Guo, Lizhuang Ma, Shouhong Ding, Xin Tan</p>
             <p class="summary"><strong>What it contributes.</strong> A self-evolving spatial belief that retrieves evidence, revises intermediate representations, and supports query-driven reasoning over long videos.</p>
@@ -201,51 +246,76 @@
         </article>
 
         <article class="publication reveal" id="paper-escher" data-scroll-item data-companion="intent">
+          <span class="paper-index" aria-hidden="true">03</span>
           <a class="publication-thumb" href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener" aria-label="Open EscherVerse paper">
             <img src="assets/projects/escher-panel-a.jpg" alt="EscherVerse Figure 1 panel contrasting geometric perception with teleo-spatial intelligence across six capabilities" width="1200" height="676" loading="lazy">
           </a>
           <div class="publication-body">
-            <p class="venue">Under Review</p>
+            <p class="venue"><span>Nature Communications</span><span class="publication-status">Accepted</span></p>
             <h3>Vision-language models lag human performance on physical dynamics and intent reasoning</h3>
             <p class="authors"><strong>Tianjun Gu</strong>, Jingyu Gong, Zhizhong Zhang, Yuan Xie, Lizhuang Ma, Xin Tan, Athanasios V</p>
             <p class="summary"><strong>What it contributes.</strong> EscherVerse exposes the gap between current VLMs and humans in physical-dynamics and intent reasoning across 11,328 real-world videos.</p>
-            <div class="paper-links"><a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener">arXiv</a></div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener">Paper</a></div>
           </div>
         </article>
 
         <article class="publication reveal" id="paper-doraemon" data-scroll-item data-companion="navigate">
+          <span class="paper-index" aria-hidden="true">04</span>
           <a class="publication-thumb" href="https://grady10086.github.io/DORAEMON/" target="_blank" rel="noopener" aria-label="Open DORAEMON project page">
             <img src="assets/projects/doraemon-fig4.jpg" alt="DORAEMON Figure 4 showing its topological map and hierarchical construction" width="1200" height="708" loading="lazy">
           </a>
           <div class="publication-body">
-            <p class="venue">Under Review</p>
+            <p class="venue"><span>Under Review</span></p>
             <h3>DORAEMON: Decentralized Ontology-aware Reliable Agent with Enhanced Memory Oriented Navigation</h3>
             <p class="authors"><strong>Tianjun Gu</strong>, Linfeng Li, Xuhong Wang, Chenghua Gong, Jingyu Gong, Zhizhong Zhang, Yuan Xie, Lizhuang Ma, Xin Tan</p>
             <p class="summary"><strong>What it contributes.</strong> A zero-shot navigation framework that connects hierarchical semantic-spatial memory, topological memory, and safety-aware VLM planning.</p>
             <div class="paper-links">
-              <a href="https://arxiv.org/abs/2505.21969" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/abs/2505.21969" target="_blank" rel="noopener">Paper</a>
               <a href="https://grady10086.github.io/DORAEMON/" target="_blank" rel="noopener">Project</a>
             </div>
           </div>
         </article>
-      </div>
 
-      <div class="additional-publications reveal">
-        <h3>Additional publications</h3>
-        <article>
-          <time>2025</time>
-          <div><p class="venue">Visual Intelligence · 3:27</p><h4>Efficient Multimodal Large Language Models: A Survey</h4><p>Yizhang Jin*, Jian Li*, <strong>Tianjun Gu*</strong>, Yexin Liu, Bo Zhao, Jinxiang Lai, Zhenye Gan, Yabiao Wang, Chengjie Wang, Xin Tan, Lizhuang Ma</p></div>
-          <a href="https://doi.org/10.1007/s44267-025-00099-6" target="_blank" rel="noopener">Paper</a>
+        <article class="publication reveal" id="paper-efficient-mllm" data-scroll-item data-companion="survey">
+          <span class="paper-index" aria-hidden="true">05</span>
+          <a class="publication-thumb" href="https://doi.org/10.1007/s44267-025-00099-6" target="_blank" rel="noopener" aria-label="Open efficient multimodal large language models survey">
+            <img src="assets/projects/efficient-mllm-architecture.jpg" alt="Architecture of an efficient multimodal large language model with a lightweight vision encoder, token compression, and efficient projector" width="1200" height="676" loading="lazy">
+          </a>
+          <div class="publication-body">
+            <p class="venue"><span>Visual Intelligence</span><span class="publication-status">2025</span></p>
+            <h3>Efficient Multimodal Large Language Models: A Survey</h3>
+            <p class="authors">Yizhang Jin*, Jian Li*, <strong>Tianjun Gu*</strong>, Yexin Liu, Bo Zhao, Jinxiang Lai, Zhenye Gan, Yabiao Wang, Chengjie Wang, Xin Tan, Lizhuang Ma</p>
+            <p class="summary"><strong>What it contributes.</strong> A systematic review of efficient MLLMs spanning lightweight vision encoders, visual-token compression, efficient projectors, language models, and training strategies.</p>
+            <div class="paper-links"><a href="https://doi.org/10.1007/s44267-025-00099-6" target="_blank" rel="noopener">Paper</a></div>
+          </div>
         </article>
-        <article>
-          <time>2025</time>
-          <div><p class="venue">ICCV 2025 · Poster</p><h4>From Enhancement to Understanding: Build a Generalized Bridge for Low-light Vision via Semantically Consistent Unsupervised Fine-tuning</h4><p>Sen Wang, Shao Zeng, <strong>Tianjun Gu</strong>, Zhizhong Zhang, Ruixin Zhang, Shouhong Ding, Jingyun Zhang, Jun Wang, Xin Tan, Yuan Xie, Lizhuang Ma</p></div>
-          <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Wang_From_Enhancement_to_Understanding_Build_a_Generalized_Bridge_for_Low-light_ICCV_2025_paper.html" target="_blank" rel="noopener">Paper</a>
+
+        <article class="publication reveal" id="paper-low-light" data-scroll-item data-companion="enhance">
+          <span class="paper-index" aria-hidden="true">06</span>
+          <a class="publication-thumb" href="https://openaccess.thecvf.com/content/ICCV2025/html/Wang_From_Enhancement_to_Understanding_Build_a_Generalized_Bridge_for_Low-light_ICCV_2025_paper.html" target="_blank" rel="noopener" aria-label="Open low-light vision paper">
+            <img src="assets/projects/low-light-understanding-teaser.jpg" alt="Framework connecting low-light enhancement with semantic understanding for improved generalization" width="1200" height="676" loading="lazy">
+          </a>
+          <div class="publication-body">
+            <p class="venue"><span>ICCV 2025</span><span class="publication-status">Poster</span></p>
+            <h3>From Enhancement to Understanding: Build a Generalized Bridge for Low-light Vision via Semantically Consistent Unsupervised Fine-tuning</h3>
+            <p class="authors">Sen Wang, Shao Zeng, <strong>Tianjun Gu</strong>, Zhizhong Zhang, Ruixin Zhang, Shouhong Ding, Jingyun Zhang, Jun Wang, Xin Tan, Yuan Xie, Lizhuang Ma</p>
+            <p class="summary"><strong>What it contributes.</strong> An unsupervised fine-tuning framework that bridges low-light enhancement and high-level understanding through semantic consistency across generative and discriminative tasks.</p>
+            <div class="paper-links"><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Wang_From_Enhancement_to_Understanding_Build_a_Generalized_Bridge_for_Low-light_ICCV_2025_paper.html" target="_blank" rel="noopener">Paper</a></div>
+          </div>
         </article>
-        <article>
-          <time>2024</time>
-          <div><p class="venue">Journal of Graphics · 45(1):102</p><h4>Diversified Generation of Theatrical Masks Based on SASGAN</h4><p><strong>Tianjun Gu</strong>, Suya Xiong, Xiao Lin</p></div>
-          <a href="https://doi.org/10.11996/JG.j.2095-302X.2024010102" target="_blank" rel="noopener">DOI</a>
+
+        <article class="publication reveal" id="paper-sasgan" data-scroll-item data-companion="generate">
+          <span class="paper-index" aria-hidden="true">07</span>
+          <a class="publication-thumb" href="https://doi.org/10.11996/JG.j.2095-302X.2024010102" target="_blank" rel="noopener" aria-label="Open SASGAN theatrical masks paper">
+            <img src="assets/projects/sasgan-theatrical-masks.jpg" alt="Representative theatrical mask samples used in the SASGAN study" width="1200" height="676" loading="lazy">
+          </a>
+          <div class="publication-body">
+            <p class="venue"><span>Journal of Graphics</span><span class="publication-status">2024</span></p>
+            <h3>Diversified Generation of Theatrical Masks Based on SASGAN</h3>
+            <p class="authors"><strong>Tianjun Gu</strong>, Suya Xiong, Xiao Lin</p>
+            <p class="summary"><strong>What it contributes.</strong> A self-attention StyleGAN variant for diversified theatrical-mask generation, paired with DDG-based augmentation for limited-domain training data.</p>
+            <div class="paper-links"><a href="https://doi.org/10.11996/JG.j.2095-302X.2024010102" target="_blank" rel="noopener">Paper</a></div>
+          </div>
         </article>
       </div>
     </section>
@@ -308,7 +378,7 @@
               <p class="organization">Tencent Youtu Lab · Shanghai, China</p>
               <ul>
                 <li>Led SESB (under review), an inference-time spatial memory with query-relevant belief access, targeted video retrieval, and local updates; achieved <strong>87.1</strong> on VSI-Bench, versus <strong>50.8</strong> with static belief and <strong>59.9</strong> under the same frame budget.</li>
-                <li>Led the EscherVerse study (under review), building the dataset from <strong>11,328 videos</strong>, with an <strong>8,000-example benchmark</strong> and a <strong>35,963-example instruction-tuning set</strong>.</li>
+                <li>Led the EscherVerse study (accepted by <em>Nature Communications</em>), building the dataset from <strong>11,328 videos</strong>, with an <strong>8,000-example benchmark</strong> and a <strong>35,963-example instruction-tuning set</strong>.</li>
                 <li>Explored autonomous research agents and automated research workflows, and supported post-training of Youtu foundation models through data construction, training-pipeline development, and evaluation.</li>
               </ul>
             </article>
@@ -335,7 +405,7 @@
         </div>
         <div class="detail-group reveal">
           <p class="section-index">Academic service</p>
-          <article><div><h3>Reviewer</h3><p>NeurIPS · ECCV · Frontiers of Computer Science</p></div></article>
+          <article><div><h3>Reviewer</h3><p>NeurIPS · ECCV · WWW · Frontiers of Computer Science</p></div></article>
           <article><div><h3>Conference Volunteer</h3><p>CCF CAD/CG</p></div></article>
         </div>
       </div>

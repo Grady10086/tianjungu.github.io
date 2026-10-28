@@ -5,6 +5,13 @@ const navAnchors = [...document.querySelectorAll(".nav-links a[href^='#']")];
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const newsFeed = document.querySelector("[data-news-feed]");
 const newsToggle = document.querySelector("[data-news-toggle]");
+const pageProgress = document.querySelector("[data-page-progress]");
+const focusMode = document.querySelector("[data-focus-mode]");
+const profile = document.querySelector(".profile");
+const cycleLinks = [...document.querySelectorAll("[data-cycle-link]")];
+const cycleLines = [...document.querySelectorAll(".hero-cycle > i")];
+const atlasRows = [...document.querySelectorAll("[data-atlas-paper]")];
+let activePublicationId = "paper-vsi";
 
 const applyTheme = (theme, persist = false) => {
   const isDark = theme === "dark";
@@ -43,6 +50,36 @@ newsToggle?.addEventListener("click", () => {
   newsToggle.querySelector("span").textContent = expanded ? "Show fewer updates" : "Show all updates";
 });
 
+const setCycleState = (activeLink) => {
+  if (!activeLink || !profile) return;
+  const activeIndex = Number(activeLink.dataset.cycleIndex || 1);
+  cycleLinks.forEach((link) => link.classList.toggle("is-cycle-active", link === activeLink));
+  cycleLines.forEach((line, index) => line.classList.toggle("is-cycle-complete", index < activeIndex - 1));
+  profile.dataset.cycleActive = activeLink.dataset.cycleLink;
+  profile.style.setProperty("--cycle-progress", String(activeIndex / cycleLinks.length));
+};
+
+cycleLinks.forEach((link) => {
+  link.addEventListener("pointerenter", () => setCycleState(link));
+  link.addEventListener("focus", () => setCycleState(link));
+  link.addEventListener("click", () => setCycleState(link));
+});
+
+setCycleState(cycleLinks[0]);
+
+const setAtlasState = (paperId) => {
+  atlasRows.forEach((row) => row.classList.toggle("is-atlas-active", row.dataset.atlasPaper === paperId));
+};
+
+atlasRows.forEach((row) => {
+  row.addEventListener("pointerenter", () => setAtlasState(row.dataset.atlasPaper));
+  row.addEventListener("pointerleave", () => setAtlasState(activePublicationId));
+  row.addEventListener("focus", () => setAtlasState(row.dataset.atlasPaper));
+  row.addEventListener("blur", () => setAtlasState(activePublicationId));
+});
+
+setAtlasState(activePublicationId);
+
 const setNavOpen = (open) => {
   if (!navToggle || !navLinks) return;
 
@@ -72,6 +109,12 @@ window.addEventListener("resize", () => {
 
 const updateHeader = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 10);
+
+  if (pageProgress) {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+    pageProgress.parentElement.style.setProperty("--page-progress", progress.toFixed(4));
+  }
 };
 
 updateHeader();
@@ -135,6 +178,7 @@ if ("IntersectionObserver" in window) {
 }
 
 const scrollFocusGroups = [...document.querySelectorAll("[data-scroll-focus]")];
+let focusModeTimer = null;
 
 if (!reducedMotion && scrollFocusGroups.length) {
   const groups = scrollFocusGroups.map((group) => ({
@@ -154,8 +198,22 @@ if (!reducedMotion && scrollFocusGroups.length) {
     group.element.style.setProperty("--focus-progress", progress);
 
     if (group.counter) {
+      activePublicationId = group.items[activeIndex].id;
+      setAtlasState(activePublicationId);
       group.counter.textContent = String(activeIndex + 1).padStart(2, "0");
       group.counter.closest(".publication-progress")?.style.setProperty("--publication-progress", progress);
+    }
+
+    const nextLabel = group.items[activeIndex]?.dataset.focusLabel;
+    if (nextLabel && focusMode && focusMode.textContent !== nextLabel) {
+      const matchingCycleLink = cycleLinks.find((link) => link.dataset.cycleLink === nextLabel.toLowerCase());
+      setCycleState(matchingCycleLink);
+      window.clearTimeout(focusModeTimer);
+      focusMode.classList.add("is-changing");
+      focusModeTimer = window.setTimeout(() => {
+        focusMode.textContent = nextLabel;
+        focusMode.classList.remove("is-changing");
+      }, reducedMotion ? 0 : 120);
     }
   };
 
@@ -222,6 +280,22 @@ companionTargets.forEach((target) => {
   target.addEventListener("focusin", () => setCompanionActive(true));
   target.addEventListener("focusout", () => setCompanionActive(false));
 });
+
+if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
+  document.querySelectorAll(".publication-thumb").forEach((thumb) => {
+    thumb.addEventListener("pointermove", (event) => {
+      const rect = thumb.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width - 0.5) * -6;
+      const y = ((event.clientY - rect.top) / rect.height - 0.5) * -6;
+      thumb.style.setProperty("--media-x", `${x.toFixed(2)}px`);
+      thumb.style.setProperty("--media-y", `${y.toFixed(2)}px`);
+    });
+    thumb.addEventListener("pointerleave", () => {
+      thumb.style.removeProperty("--media-x");
+      thumb.style.removeProperty("--media-y");
+    });
+  });
+}
 
 document.querySelectorAll("[data-year]").forEach((element) => {
   element.textContent = new Date().getFullYear();
