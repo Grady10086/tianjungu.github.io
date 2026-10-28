@@ -1691,6 +1691,14 @@ body.companion-active .wordmark-mark img {
     gap: 24px;
   }
 
+  .atlas-axis {
+    font-size: 7px;
+  }
+
+  .atlas-axis span:not(:first-child) {
+    padding-inline: 5px;
+  }
+
   .atlas-intro h3 {
     max-width: 560px;
   }
