@@ -102,7 +102,7 @@
           <i aria-hidden="true"></i>
           <a href="#focus-revise" data-cycle-link="revise" data-cycle-index="2"><span>02</span><strong>Revise</strong><small>Update belief</small></a>
           <i aria-hidden="true"></i>
-          <a href="#focus-reason" data-cycle-link="reason" data-cycle-index="3"><span>03</span><strong>Reason</strong><small>Reason with memory</small></a>
+          <a href="#focus-evolve" data-cycle-link="evolve" data-cycle-index="3"><span>03</span><strong>Evolve</strong><small>Evolve with evidence</small></a>
         </nav>
       </div>
 
@@ -144,13 +144,13 @@
       <div class="focus-grid" data-scroll-focus>
         <article id="focus-observe" data-scroll-item data-companion="observe" data-focus-label="Observe">
           <span>01</span>
-          <div><h3>Active observation</h3><p>Choose when to inspect a new viewpoint, revisit the world, or retrieve earlier evidence in order to resolve consequential uncertainty under limited observation budgets.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">SESB</a><a href="#paper-doraemon">DORAEMON</a></div></div>
+          <div><h3>Active observation</h3><p>Choose when to inspect a new viewpoint, revisit the world, or retrieve earlier evidence in order to resolve consequential uncertainty under limited observation budgets.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">Self-Evolving Spatial Belief</a><a href="#paper-doraemon">DORAEMON</a></div></div>
         </article>
         <article id="focus-revise" data-scroll-item data-companion="remember" data-focus-label="Revise">
           <span>02</span>
-          <div><h3>Revisable world memory</h3><p>Maintain entities, relations, and events with provenance, temporal scope, and uncertainty, while distinguishing genuine world change from interpretation error or missing evidence.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">SESB</a><a href="#paper-vsi">VSI-Super-Wild</a></div></div>
+          <div><h3>Revisable world memory</h3><p>Maintain entities, relations, and events with provenance, temporal scope, and uncertainty, while distinguishing genuine world change from interpretation error or missing evidence.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">Self-Evolving Spatial Belief</a><a href="#paper-vsi">VSI-Super-Wild</a></div></div>
         </article>
-        <article id="focus-reason" data-scroll-item data-companion="reason" data-focus-label="Reason">
+        <article id="focus-evolve" data-scroll-item data-companion="evolve" data-focus-label="Evolve">
           <span>03</span>
           <div><h3>Reusable world knowledge</h3><p>Test what remains useful when goals and questions change, distinguishing what frozen memory can support from what requires renewed observation.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-vsi">VSI-Super-Wild</a><a href="#paper-escher">EscherVerse</a></div></div>
         </article>
@@ -165,7 +165,7 @@
         </div>
         <div class="news-feed reveal" data-news-feed>
         <ol class="news-list" id="news-list">
-          <li class="news-featured"><time>Oct. 2026</time><span class="news-category is-publication">Publication</span><p>Our work <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener"><em>Vision-language models lag human performance on physical dynamics and intent reasoning</em></a> was accepted by <em>Nature Communications</em>.</p></li>
+          <li class="news-featured"><time>Oct. 2026</time><span class="news-category is-publication">Publication</span><p>Our work <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener"><em>Vision-language models lag human performance on physical dynamics and intent reasoning</em></a> was accepted in principle at <em>Nature Communications</em>.</p></li>
           <li><time>2026</time><span class="news-category is-research">Research</span><p>Started visiting research at NYU's Center for Robotics and Embodied Intelligence, working with Prof. Chen Feng and the AI4CE Lab.</p></li>
           <li><time>2026</time><span class="news-category is-publication">Publication</span><p><a href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener">Towards Spatial Supersensing in the Wild</a> was accepted to ECCV 2026 as a poster.</p></li>
           <li><time>2026</time><span class="news-category is-experience">Experience</span><p>Joined Meituan's LongCat team to conduct research on multimodal foundation models.</p></li>
@@ -200,12 +200,12 @@
           <h3>From selective evidence to reusable world knowledge.</h3>
         </div>
         <div class="atlas-matrix" aria-label="Thematic map of representative publications">
-          <div class="atlas-axis" aria-hidden="true"><span>Representative work</span><span>Observe</span><span>Revise</span><span>Reason</span></div>
+          <div class="atlas-axis" aria-hidden="true"><span>Representative work</span><span>Observe</span><span>Revise</span><span>Evolve</span></div>
           <a class="atlas-row" href="#paper-doraemon" data-atlas-paper="paper-doraemon">
             <span class="atlas-name"><small>01</small>DORAEMON</span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell"><i></i></span>
           </a>
           <a class="atlas-row" href="#paper-sesb" data-atlas-paper="paper-sesb">
-            <span class="atlas-name"><small>02</small>SESB</span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell"><i></i></span>
+            <span class="atlas-name"><small>02</small>Self-Evolving Belief</span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell"><i></i></span>
           </a>
           <a class="atlas-row" href="#paper-vsi" data-atlas-paper="paper-vsi">
             <span class="atlas-name"><small>03</small>VSI-Super-Wild</span><span class="atlas-cell"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span>
@@ -233,15 +233,15 @@
 
         <article class="publication reveal" id="paper-sesb" data-scroll-item data-companion="belief">
           <span class="paper-index" aria-hidden="true">02</span>
-          <div class="publication-thumb" aria-label="SESB paper overview figure">
-            <img src="assets/projects/sesb-overview.jpg" alt="SESB paper overview showing query-driven spatial belief evolution from video evidence" width="1200" height="676" loading="lazy">
+          <div class="publication-thumb" aria-label="Self-Evolving Spatial Belief paper overview figure">
+            <img src="assets/projects/sesb-overview.jpg" alt="Self-Evolving Spatial Belief paper overview showing query-driven belief evolution from video evidence" width="1200" height="676" loading="lazy">
           </div>
           <div class="publication-body">
             <p class="venue"><span>Under Review</span></p>
             <h3>Self-Evolving Spatial Belief for Video Spatial Reasoning</h3>
             <p class="authors"><strong>Tianjun Gu</strong>, Shao Zeng, Ruixin Zhang, Haoran Li, Chenghua Gong, Haonan Wang, Yuan Xie, Jingyu Gong, Jingyun Zhang, Jun Wang, Rizen Guo, Lizhuang Ma, Shouhong Ding, Xin Tan</p>
             <p class="summary"><strong>What it contributes.</strong> A self-evolving spatial belief that retrieves evidence, revises intermediate representations, and supports query-driven reasoning over long videos.</p>
-            <div class="paper-links"><a href="mailto:Grady10086@gmail.com?subject=SESB%20manuscript%20request">Request manuscript</a></div>
+            <div class="paper-links"><a href="mailto:Grady10086@gmail.com?subject=Self-Evolving%20Spatial%20Belief%20manuscript%20request">Request manuscript</a></div>
           </div>
         </article>
 
@@ -251,7 +251,7 @@
             <img src="assets/projects/escher-panel-a.jpg" alt="EscherVerse Figure 1 panel contrasting geometric perception with teleo-spatial intelligence across six capabilities" width="1200" height="676" loading="lazy">
           </a>
           <div class="publication-body">
-            <p class="venue"><span>Nature Communications</span><span class="publication-status">Accepted</span></p>
+            <p class="venue"><span>Nature Communications</span><span class="publication-status">Accepted in principle</span></p>
             <h3>Vision-language models lag human performance on physical dynamics and intent reasoning</h3>
             <p class="authors"><strong>Tianjun Gu</strong>, Jingyu Gong, Zhizhong Zhang, Yuan Xie, Lizhuang Ma, Xin Tan, Athanasios V</p>
             <p class="summary"><strong>What it contributes.</strong> EscherVerse exposes the gap between current VLMs and humans in physical-dynamics and intent reasoning across 11,328 real-world videos.</p>
@@ -377,8 +377,8 @@
               <h4>Research Intern</h4>
               <p class="organization">Tencent Youtu Lab · Shanghai, China</p>
               <ul>
-                <li>Led SESB (under review), an inference-time spatial memory with query-relevant belief access, targeted video retrieval, and local updates; achieved <strong>87.1</strong> on VSI-Bench, versus <strong>50.8</strong> with static belief and <strong>59.9</strong> under the same frame budget.</li>
-                <li>Led the EscherVerse study (accepted by <em>Nature Communications</em>), building the dataset from <strong>11,328 videos</strong>, with an <strong>8,000-example benchmark</strong> and a <strong>35,963-example instruction-tuning set</strong>.</li>
+                <li>Led an under-review study on self-evolving spatial belief for video spatial reasoning, developing an inference-time memory with query-relevant belief access, targeted video retrieval, and local updates; achieved <strong>87.1</strong> on VSI-Bench, versus <strong>50.8</strong> with static belief and <strong>59.9</strong> under the same frame budget.</li>
+                <li>Led the EscherVerse study (accepted in principle at <em>Nature Communications</em>), building the dataset from <strong>11,328 videos</strong>, with an <strong>8,000-example benchmark</strong> and a <strong>35,963-example instruction-tuning set</strong>.</li>
                 <li>Explored autonomous research agents and automated research workflows, and supported post-training of Youtu foundation models through data construction, training-pipeline development, and evaluation.</li>
               </ul>
             </article>
