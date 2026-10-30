@@ -11,7 +11,7 @@ const profile = document.querySelector(".profile");
 const cycleLinks = [...document.querySelectorAll("[data-cycle-link]")];
 const cycleLines = [...document.querySelectorAll(".hero-cycle > i")];
 const atlasRows = [...document.querySelectorAll("[data-atlas-paper]")];
-let activePublicationId = "paper-vsi";
+let activePublicationId = "paper-escher";
 
 const applyTheme = (theme, persist = false) => {
   const isDark = theme === "dark";
