@@ -283,18 +283,25 @@ body.companion-active .wordmark-mark img {
 .profile {
   display: grid;
   min-height: auto;
-  padding-top: 88px;
-  padding-bottom: 42px;
+  padding-top: 78px;
+  padding-bottom: 56px;
   align-content: start;
-  grid-template-columns: 188px minmax(0, 1fr);
-  column-gap: 44px;
-  row-gap: 0;
+  grid-template-columns: 220px minmax(0, 1fr);
+  column-gap: clamp(52px, 7vw, 92px);
+}
+
+.profile-rail {
+  min-width: 0;
+}
+
+.profile-content {
+  min-width: 0;
 }
 
 .profile-photo {
   position: relative;
-  width: 188px;
-  height: 244px;
+  width: 220px;
+  height: 286px;
   margin: 0;
   align-self: start;
   overflow: hidden;
@@ -347,9 +354,9 @@ body.companion-active .wordmark-mark img {
 }
 
 .profile h1 {
-  margin: 13px 0 18px;
+  margin: 13px 0 16px;
   font-family: "Newsreader", Georgia, serif;
-  font-size: 64px;
+  font-size: 58px;
   font-weight: 600;
   line-height: 1;
 }
@@ -359,10 +366,10 @@ body.companion-active .wordmark-mark img {
 }
 
 .profile-lead {
-  max-width: 760px;
+  max-width: 720px;
   margin: 0;
   font-family: "Newsreader", Georgia, serif;
-  font-size: 31px;
+  font-size: 28px;
   font-weight: 500;
   line-height: 1.28;
 }
@@ -370,7 +377,7 @@ body.companion-active .wordmark-mark img {
 .hero-cycle {
   display: grid;
   max-width: 690px;
-  margin-top: 28px;
+  margin-top: 30px;
   align-items: center;
   grid-template-columns: auto minmax(24px, 1fr) auto minmax(24px, 1fr) auto;
   gap: 12px;
@@ -443,12 +450,12 @@ body.companion-active .wordmark-mark img {
 }
 
 .profile-bio {
-  grid-column: 1 / -1;
   width: 100%;
-  max-width: none;
-  margin-top: 28px;
+  max-width: 780px;
+  margin-top: 30px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.75;
 }
 
 .profile-bio p {
@@ -461,22 +468,22 @@ body.companion-active .wordmark-mark img {
 }
 
 .profile-links {
-  display: flex;
-  grid-column: 1 / -1;
-  margin-top: 12px;
-  gap: 18px;
-  flex-wrap: wrap;
+  display: grid;
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .profile-links a {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  min-height: 38px;
+  gap: 7px;
   color: var(--marina);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   text-decoration: none;
-  min-height: 40px;
 }
 
 .profile-links a:hover {
@@ -489,48 +496,39 @@ body.companion-active .wordmark-mark img {
   stroke-width: 1.8;
 }
 
-.profile-aside {
-  display: grid;
-  grid-column: 1 / -1;
-  margin-top: 10px;
-  padding: 26px 0 0;
-  align-items: start;
-  border-top: 1px solid var(--line);
-  grid-template-columns: 1.25fr 1fr 1fr;
-  gap: 34px;
+.profile-affiliations {
+  margin-top: 26px;
 }
 
-.aside-block {
-  padding: 0;
+.profile-affiliations > div {
+  padding: 12px 0 11px;
+  border-bottom: 1px solid var(--soft-line);
 }
 
-.aside-block + .aside-block {
-  padding: 0 0 0 34px;
-  border-top: 0;
-  border-left: 1px solid var(--soft-line);
-}
-
-.aside-block > p:not(.aside-label) {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.65;
-}
-
-.aside-block strong {
+.profile-affiliations strong {
+  display: block;
   color: var(--ink);
+  font-size: 11px;
   font-weight: 600;
+  line-height: 1.35;
+}
+
+.profile-affiliations span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
 }
 
 .availability {
   display: flex;
-  min-height: 100%;
-  padding: 2px 0 0 34px;
+  margin-top: 24px;
+  padding: 17px 0 0;
   align-items: flex-start;
   gap: 9px;
   color: var(--muted);
-  border-top: 0;
-  border-left: 1px solid var(--soft-line);
+  border-top: 1px solid var(--line);
   font-size: 12px;
   font-weight: 600;
 }
@@ -1441,38 +1439,13 @@ body.companion-active .wordmark-mark img {
   .profile {
     min-height: auto;
     padding-top: 72px;
-    grid-template-columns: 148px minmax(0, 1fr);
-    column-gap: 32px;
-    row-gap: 0;
+    grid-template-columns: 180px minmax(0, 1fr);
+    column-gap: 38px;
   }
 
   .profile-photo {
-    width: 148px;
-    height: 192px;
-  }
-
-  .profile-aside {
-    display: grid;
-    grid-column: 1 / -1;
-    padding: 24px 0 0;
-    border-top: 1px solid var(--line);
-    border-left: 0;
-    grid-template-columns: 1fr 1fr;
-    gap: 26px;
-  }
-
-  .profile-aside .aside-block {
-    padding: 0;
-  }
-
-  .profile-aside .aside-block + .aside-block {
-    padding: 0 0 0 26px;
-    border-top: 0;
-    border-left: 1px solid var(--soft-line);
-  }
-
-  .profile-aside .availability {
-    grid-column: 1 / -1;
+    width: 180px;
+    height: 234px;
   }
 
   .profile h1 {
@@ -1578,17 +1551,30 @@ body.companion-active .wordmark-mark img {
     padding-top: 54px;
     padding-bottom: 52px;
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 34px;
   }
 
-  .profile-bio,
-  .profile-links {
-    margin-top: 0;
+  .profile-rail {
+    display: grid;
+    align-items: start;
+    grid-template-columns: 136px minmax(0, 1fr);
+    column-gap: 20px;
   }
 
   .profile-photo {
     width: 136px;
     height: 176px;
+  }
+
+  .profile-links {
+    margin-top: 18px;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-row: 2;
+  }
+
+  .profile-affiliations {
+    margin-top: 0;
   }
 
   .profile h1 {
@@ -1650,29 +1636,6 @@ body.companion-active .wordmark-mark img {
   .focus-grid.has-scroll-focus article.is-scroll-active {
     opacity: 1;
     transform: translateX(0);
-  }
-
-  .profile-aside {
-    display: grid;
-    padding: 24px 0 0;
-    border-top: 1px solid var(--line);
-    border-left: 0;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-  }
-
-  .aside-block {
-    padding: 0;
-  }
-
-  .aside-block + .aside-block {
-    padding: 0 0 0 22px;
-    border-top: 0;
-    border-left: 1px solid var(--soft-line);
-  }
-
-  .availability {
-    grid-column: 1 / -1;
   }
 
   .section {
@@ -1817,23 +1780,18 @@ body.companion-active .wordmark-mark img {
 
 @media (max-width: 480px) {
   .profile-links {
-    gap: 14px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .profile-photo {
-    width: min(44vw, 168px);
+    width: 120px;
     height: auto;
     aspect-ratio: 3 / 4;
   }
 
-  .profile-aside {
-    grid-template-columns: 1fr;
-  }
-
-  .aside-block + .aside-block {
-    padding: 20px 0 0;
-    border-top: 1px solid var(--soft-line);
-    border-left: 0;
+  .profile-rail {
+    grid-template-columns: 120px minmax(0, 1fr);
+    column-gap: 18px;
   }
 
   .publication {

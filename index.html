@@ -89,14 +89,39 @@
 
   <main id="main">
     <section class="profile shell" id="about">
-      <figure class="profile-photo reveal">
-        <img src="assets/profile/tianjun-gu-avatar.jpg" alt="Portrait of Tianjun Gu" width="1080" height="1620">
-      </figure>
+      <aside class="profile-rail reveal" aria-label="Academic profile">
+        <figure class="profile-photo">
+          <img src="assets/profile/tianjun-gu-avatar.jpg" alt="Portrait of Tianjun Gu" width="1080" height="1620">
+        </figure>
 
-      <div class="profile-main reveal">
-        <p class="eyebrow">Embodied &amp; Multimodal Intelligence</p>
-        <h1>Tianjun Gu</h1>
-        <p class="profile-lead">I study how embodied agents turn selective experience into reusable world knowledge through active observation and revisable memory.</p>
+        <div class="profile-links" aria-label="Profiles and contact">
+          <a href="mailto:Grady10086@gmail.com"><i data-lucide="mail" aria-hidden="true"></i>Email</a>
+          <a href="https://scholar.google.com/citations?user=RtYRKvEAAAAJ" target="_blank" rel="noopener"><i data-lucide="graduation-cap" aria-hidden="true"></i>Scholar</a>
+          <a href="https://github.com/Grady10086" target="_blank" rel="noopener"><i data-lucide="github" aria-hidden="true"></i>GitHub</a>
+          <a href="https://www.linkedin.com/in/tianjun-gu-851166404" target="_blank" rel="noopener"><i data-lucide="linkedin" aria-hidden="true"></i>LinkedIn</a>
+          <a href="assets/documents/Tianjun_Gu_CV.pdf" target="_blank" rel="noopener"><i data-lucide="file-text" aria-hidden="true"></i>CV</a>
+        </div>
+
+        <div class="profile-affiliations" aria-label="Current affiliations">
+          <p class="aside-label">Current affiliations</p>
+          <div><strong>NYU CREO / AI4CE</strong><span>Visiting Research Intern</span></div>
+          <div><strong>Tsinghua Spatial Intelligence Lab</strong><span>Visiting Research Intern</span></div>
+          <div><strong>DMCV Lab</strong><span>Graduate Researcher · SJTU–ECNU</span></div>
+        </div>
+      </aside>
+
+      <div class="profile-content reveal">
+        <div class="profile-main">
+          <p class="eyebrow">Embodied &amp; Multimodal Intelligence</p>
+          <h1>Tianjun Gu</h1>
+          <p class="profile-lead">I study how embodied agents turn selective experience into reusable world knowledge through active observation and revisable memory.</p>
+        </div>
+
+        <div class="profile-bio">
+          <p>I am a master's student at <strong>East China Normal University</strong>, advised by Prof. Lizhuang Ma and Prof. Xin Tan. I am currently a visiting research intern with the <strong>NYU AI4CE Lab</strong> and <strong>Tsinghua University Spatial Intelligence Lab</strong>.</p>
+          <p>My research asks how agents can reason beyond what they have directly observed. I investigate active observation, evidence-linked belief revision, and physical and intent reasoning under partial observability, building on multimodal foundation models, spatial intelligence, and long-form video understanding.</p>
+        </div>
+
         <nav class="hero-cycle" aria-label="Research cycle">
           <a class="is-cycle-active" href="#focus-observe" data-cycle-link="observe" data-cycle-index="1"><span>01</span><strong>Observe</strong><small>Select evidence</small></a>
           <i aria-hidden="true"></i>
@@ -104,34 +129,9 @@
           <i aria-hidden="true"></i>
           <a href="#focus-evolve" data-cycle-link="evolve" data-cycle-index="3"><span>03</span><strong>Evolve</strong><small>Evolve with evidence</small></a>
         </nav>
-      </div>
 
-      <div class="profile-bio reveal">
-        <p>I am a master's student at <strong>East China Normal University</strong>, advised by Prof. Lizhuang Ma and Prof. Xin Tan. I am currently a visiting research intern with the <strong>NYU AI4CE Lab</strong> and <strong>Tsinghua University Spatial Intelligence Lab</strong>.</p>
-        <p>My research asks how agents can reason beyond what they have directly observed. I investigate active observation, evidence-linked belief revision, and physical and intent reasoning under partial observability, building on multimodal foundation models, spatial intelligence, and long-form video understanding.</p>
-      </div>
-
-      <div class="profile-links reveal" aria-label="Profiles and contact">
-        <a href="mailto:Grady10086@gmail.com"><i data-lucide="mail" aria-hidden="true"></i>Email</a>
-        <a href="https://scholar.google.com/citations?user=RtYRKvEAAAAJ" target="_blank" rel="noopener"><i data-lucide="graduation-cap" aria-hidden="true"></i>Google Scholar</a>
-        <a href="https://github.com/Grady10086" target="_blank" rel="noopener"><i data-lucide="github" aria-hidden="true"></i>GitHub</a>
-        <a href="https://www.linkedin.com/in/tianjun-gu-851166404" target="_blank" rel="noopener"><i data-lucide="linkedin" aria-hidden="true"></i>LinkedIn</a>
-        <a href="assets/documents/Tianjun_Gu_CV.pdf" target="_blank" rel="noopener"><i data-lucide="file-text" aria-hidden="true"></i>CV</a>
-      </div>
-
-      <aside class="profile-aside reveal" aria-label="Current academic information">
-        <div class="aside-block">
-          <p class="aside-label">Current</p>
-          <p><strong>NYU CREO / AI4CE</strong><br>Visiting Research Intern</p>
-          <p><strong>Tsinghua Spatial Intelligence Lab</strong><br>Visiting Research Intern</p>
-          <p><strong>DMCV Lab</strong><br>Graduate Researcher · SJTU–ECNU</p>
-        </div>
-        <div class="aside-block">
-          <p class="aside-label">Research interests</p>
-          <p>Active observation<br>Revisable world memory<br>Reusable world knowledge<br>Physical &amp; intent reasoning</p>
-        </div>
         <div class="availability"><span aria-hidden="true"></span>Actively seeking Fall 2027 PhD opportunities</div>
-      </aside>
+      </div>
     </section>
 
     <section class="research-focus shell reveal" aria-labelledby="focus-title">
