@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F3F7FB">
+  <meta name="description" content="Interactive research experiments and public result analyses by Tianjun Gu.">
+  <meta property="og:title" content="Experiments | Tianjun Gu">
+  <meta property="og:description" content="Explore the public EscherVerse human-model gap across 27 vision-language models.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://grady10086.github.io/tianjungu.github.io/experiments.html">
+  <meta property="og:image" content="https://grady10086.github.io/tianjungu.github.io/assets/experiments/escher-human-gap.webp">
+  <link rel="canonical" href="https://grady10086.github.io/tianjungu.github.io/experiments.html">
+  <title>Experiments | Tianjun Gu</title>
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem("theme") === "dark" ? "dark" : "light";
+    } catch (_) {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+  <link rel="icon" href="assets/xiaogu-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/xiaogu-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REX8G8DYST"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-REX8G8DYST');
+  </script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="experiments.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="wordmark" href="index.html#about" aria-label="Tianjun Gu, home">
+        <span class="wordmark-mark" aria-hidden="true"><img src="assets/xiaogu-icon.png" alt="" width="540" height="540"></span>
+        <span class="wordmark-name">Tianjun Gu</span>
+      </a>
+
+      <button class="nav-toggle icon-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation" data-nav-toggle>
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+
+      <div class="nav-links" id="nav-links" data-nav-links>
+        <a href="index.html#about">About</a>
+        <a href="index.html#news">News</a>
+        <a href="index.html#publications">Publications</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="experiments.html" aria-current="page">Experiments</a>
+        <a class="nav-cv" href="assets/documents/Tianjun_Gu_CV.pdf" target="_blank" rel="noopener">CV <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        <button class="theme-toggle icon-button" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch to dark theme" data-theme-toggle>
+          <i data-lucide="moon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+    <div class="page-progress" aria-hidden="true"><i data-page-progress></i></div>
+  </header>
+
+  <main id="main" class="experiment-page">
+    <section class="experiment-hero shell reveal" id="experiment-top">
+      <p class="eyebrow">Experiment 01 · Public result explorer</p>
+      <h1>How far are vision-language models from human teleo-spatial reasoning?</h1>
+      <p class="experiment-deck">An interactive view of the public EscherVerse evaluation, comparing 27 vision-language models with an independent first-pass human baseline across physical dynamics, reference frames, and goal-directed action.</p>
+      <div class="experiment-actions">
+        <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener">Paper <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        <a href="https://github.com/Grady10086/EscherVerse" target="_blank" rel="noopener">Code &amp; data <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="result-strip" aria-label="Key public results">
+        <div><strong>90.62%</strong><span>Human mean</span></div>
+        <div><strong>57.26%</strong><span>Best model</span></div>
+        <div><strong>33.36</strong><span>Point gap</span></div>
+        <div><strong>27</strong><span>Models evaluated</span></div>
+      </div>
+    </section>
+
+    <section class="experiment-visual shell reveal" aria-labelledby="gap-title">
+      <div class="experiment-copy">
+        <p class="section-index">Observed gap</p>
+        <h2 id="gap-title">More capable models still remain far below people.</h2>
+        <p>The strongest evaluated model reaches 57.26% overall accuracy. The human mean is 90.62%, and every one of the 11 annotators scores above the strongest model in the released aggregate record.</p>
+        <p>This is not a generic perception benchmark: the questions require models to connect visible geometry with physical change, viewpoint, and intent.</p>
+      </div>
+      <figure class="experiment-figure">
+        <img src="assets/experiments/escher-human-gap.webp" alt="EscherVerse comparison showing a large accuracy gap between evaluated vision-language models and human annotators" width="1566" height="1600">
+        <figcaption>Public figure from the EscherVerse release. Human results are aggregate first-pass scores; item-level judgments remain private.</figcaption>
+      </figure>
+    </section>
+
+    <section class="model-explorer shell reveal" aria-labelledby="explorer-title">
+      <div class="explorer-heading">
+        <div>
+          <p class="section-index">Explore the evidence</p>
+          <h2 id="explorer-title">Model score registry</h2>
+        </div>
+        <p>Filter the released rows by model family. Bar length uses the same 0–100 accuracy scale for models and people.</p>
+      </div>
+
+      <div class="explorer-controls">
+        <div class="filter-tabs" role="group" aria-label="Filter model family">
+          <button class="is-active" type="button" data-experiment-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-experiment-filter="open-weight" aria-pressed="false">Open-weight</button>
+          <button type="button" data-experiment-filter="SFT" aria-pressed="false">Fine-tuned</button>
+          <button type="button" data-experiment-filter="closed API" aria-pressed="false">Closed API</button>
+          <button type="button" data-experiment-filter="human" aria-pressed="false">Human</button>
+        </div>
+        <label class="sort-control">Sort
+          <select data-experiment-sort>
+            <option value="score">Highest score</option>
+            <option value="name">Model name</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="model-chart" data-model-chart aria-live="polite"></div>
+      <p class="explorer-summary" data-explorer-summary></p>
+    </section>
+
+    <section class="experiment-notes shell reveal" aria-labelledby="notes-title">
+      <div>
+        <p class="section-index">Reading the result</p>
+        <h2 id="notes-title">What this experiment supports, and what it does not.</h2>
+      </div>
+      <div class="note-columns">
+        <article><span>01</span><h3>Supported</h3><p>A large empirical human–model gap persists under the unified EscherVerse zero-shot protocol, including for strong proprietary systems.</p></article>
+        <article><span>02</span><h3>Not implied</h3><p>The aggregate gap does not establish that every error is caused by reasoning alone; perception, temporal sampling, and answer extraction can also contribute.</p></article>
+        <article><span>03</span><h3>Reproducibility</h3><p>The public registry distinguishes fresh-inference routes from configuration references and aggregate-only rows instead of treating every reported number as equally reproducible.</p></article>
+      </div>
+      <p class="experiment-provenance">Source: EscherVerse public release accompanying <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener"><em>Vision-language models lag human performance on physical dynamics and intent reasoning</em></a>, accepted in principle at <em>Nature Communications</em>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>© <span data-year></span> Tianjun Gu</p>
+      <div><a href="index.html">Home</a><a href="https://scholar.google.com/citations?user=RtYRKvEAAAAJ" target="_blank" rel="noopener">Scholar</a><a href="https://github.com/Grady10086" target="_blank" rel="noopener">GitHub</a><a href="privacy.html">Privacy</a></div>
+      <a href="#experiment-top">Back to top <i data-lucide="arrow-up" aria-hidden="true"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
