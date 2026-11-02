@@ -1944,6 +1944,102 @@ body.companion-active .wordmark-mark img {
   gap: 80px;
 }
 
+.insight-discussion {
+  display: grid;
+  padding-top: 86px;
+  padding-bottom: 90px;
+  border-top: 1px solid var(--soft-line);
+  grid-template-columns: minmax(260px, 0.65fr) minmax(0, 1.35fr);
+  gap: 80px;
+}
+
+.insight-heading h2 {
+  margin: 10px 0 20px;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.13;
+}
+
+.insight-heading > p:last-child {
+  max-width: 380px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.insight-list {
+  display: grid;
+  grid-column: 2;
+}
+
+.insight-list article {
+  display: grid;
+  padding: 22px 0 24px;
+  border-top: 1px solid var(--line);
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 28px;
+}
+
+.insight-list article:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.insight-metric strong,
+.insight-metric span {
+  display: block;
+}
+
+.insight-metric strong {
+  color: var(--maui);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.insight-metric span {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.insight-list h3,
+.insight-list p {
+  margin: 0;
+}
+
+.insight-list h3 {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.insight-list p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.insight-boundary {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.65;
+  grid-column: 2;
+}
+
+.insight-boundary a {
+  color: var(--marina);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--marina) 35%, transparent);
+  text-underline-offset: 3px;
+}
+
 .note-columns {
   display: grid;
   gap: 0;
@@ -2469,7 +2565,8 @@ body.companion-active .wordmark-mark img {
   }
 
   .experiment-visual,
-  .experiment-notes {
+  .experiment-notes,
+  .insight-discussion {
     gap: 48px;
   }
 
@@ -2537,7 +2634,8 @@ body.companion-active .wordmark-mark img {
   }
 
   .experiment-visual,
-  .experiment-notes {
+  .experiment-notes,
+  .insight-discussion {
     padding-top: 62px;
     padding-bottom: 66px;
     grid-template-columns: 1fr;
@@ -2578,8 +2676,19 @@ body.companion-active .wordmark-mark img {
 
   .experiment-copy h2,
   .explorer-heading h2,
-  .experiment-notes h2 {
+  .experiment-notes h2,
+  .insight-heading h2 {
     font-size: 32px;
+  }
+
+  .insight-list,
+  .insight-boundary {
+    grid-column: 1;
+  }
+
+  .insight-list article {
+    grid-template-columns: 108px minmax(0, 1fr);
+    gap: 18px;
   }
 
   .model-explorer {
@@ -2643,6 +2752,11 @@ body.companion-active .wordmark-mark img {
 @media (max-width: 480px) {
   .experiment-hero h1 {
     font-size: 38px;
+  }
+
+  .insight-list article {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .result-strip strong {

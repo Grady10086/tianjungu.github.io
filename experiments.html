@@ -133,6 +133,29 @@
       </div>
     </section>
 
+    <section class="insight-discussion shell reveal" aria-labelledby="insight-title">
+      <div class="insight-heading">
+        <p class="section-index">What the results suggest</p>
+        <h2 id="insight-title">The bottleneck is not simply seeing more.</h2>
+        <p>Three analyses point to the same conclusion: progress depends on how a model organizes evidence across time, viewpoints, and goals.</p>
+      </div>
+      <div class="insight-list">
+        <article>
+          <div class="insight-metric"><strong>52.5%</strong><span>of sampled errors</span></div>
+          <div><h3>The largest error groups lie beyond recognition.</h3><p>Spatiotemporal grounding and reference-frame errors account for 52.5% of a stratified 300-error sample; perception and recognition account for 12.1%. Better object recognition alone is unlikely to close the gap.</p></div>
+        </article>
+        <article>
+          <div class="insight-metric"><strong>96.6%</strong><span>variance on PC1</span></div>
+          <div><h3>The capabilities share a broad bottleneck.</h3><p>Across 27 models, the six category scores have a median Spearman correlation of 0.854, and one component explains 96.6% of their variation. Models that score higher on intent also tend to score higher on dynamics and reference frames.</p></div>
+        </article>
+        <article>
+          <div class="insight-metric"><strong>+7.5 pp</strong><span>content effect</span></div>
+          <div><h3>What models study changes what they learn.</h3><p>With equal 1,409-example LoRA budgets, intent-focused data produced a 7.5-point content-specific advantage over dynamics-focused data (95% clustered bootstrap interval: 3.1–12.2). Data composition matters, not only data volume.</p></div>
+        </article>
+      </div>
+      <p class="insight-boundary">These analyses describe this model panel and evaluation protocol. They identify testable bottlenecks, not a causal decomposition of intelligence. Released analyses: <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/failure_mode" target="_blank" rel="noopener">error taxonomy</a>, <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/concept_structure" target="_blank" rel="noopener">concept structure</a>, and <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/sft_ablation" target="_blank" rel="noopener">SFT ablation</a>.</p>
+    </section>
+
     <section class="experiment-notes shell reveal" aria-labelledby="notes-title">
       <div>
         <p class="section-index">For researchers</p>
