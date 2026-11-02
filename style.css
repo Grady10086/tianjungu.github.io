@@ -1605,6 +1605,15 @@ body.companion-active .wordmark-mark img {
   line-height: 1.75;
 }
 
+.experiment-copy strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.experiment-case {
+  grid-template-columns: minmax(0, 1.28fr) minmax(260px, 0.72fr);
+}
+
 .experiment-figure {
   margin: 0;
 }
@@ -1624,10 +1633,157 @@ body.companion-active .wordmark-mark img {
   line-height: 1.55;
 }
 
+.gap-chart {
+  margin: 0;
+  padding: 34px 32px 26px;
+  background: var(--surface);
+  border: 1px solid var(--soft-line);
+  border-radius: 6px;
+}
+
+.gap-scale {
+  display: flex;
+  margin: 0 72px 8px 178px;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 8px;
+}
+
+.gap-row {
+  display: grid;
+  min-height: 78px;
+  align-items: center;
+  border-top: 1px solid var(--soft-line);
+  grid-template-columns: 154px minmax(120px, 1fr) 62px;
+  gap: 24px;
+}
+
+.gap-row > div:first-child strong,
+.gap-row > div:first-child span {
+  display: block;
+}
+
+.gap-row > div:first-child strong {
+  font-size: 12px;
+}
+
+.gap-row > div:first-child span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 8px;
+}
+
+.gap-track {
+  height: 16px;
+  overflow: hidden;
+  background: var(--soft-line);
+  border-radius: 2px;
+}
+
+.gap-track i {
+  display: block;
+  width: var(--gap-score);
+  height: 100%;
+  background: var(--marina);
+}
+
+.gap-row-human .gap-track i {
+  background: var(--maui);
+}
+
+.gap-row > strong {
+  justify-self: end;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.gap-callout {
+  display: flex;
+  margin-top: 22px;
+  padding-top: 18px;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 9px;
+  border-top: 1px solid var(--line);
+}
+
+.gap-callout strong {
+  color: var(--maui);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.gap-callout span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.gap-chart figcaption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 9px;
+  text-align: right;
+}
+
 .model-explorer {
   padding-top: 86px;
   padding-bottom: 90px;
   border-top: 1px solid var(--soft-line);
+}
+
+.registry-details {
+  margin-top: 36px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.registry-details summary {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.registry-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.registry-details summary > span:first-child {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.registry-details summary > span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.registry-details summary svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 180ms ease;
+}
+
+.registry-details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.registry-body {
+  padding-bottom: 22px;
 }
 
 .explorer-heading {
@@ -1828,10 +1984,9 @@ body.companion-active .wordmark-mark img {
 }
 
 .experiment-provenance {
-  margin: 0;
+  margin: 22px 0 0;
   color: var(--muted);
   font-size: 10px;
-  grid-column: 2;
 }
 
 .experiment-provenance a {
@@ -2393,6 +2548,34 @@ body.companion-active .wordmark-mark img {
     position: static;
   }
 
+  .experiment-case .experiment-copy {
+    order: -1;
+  }
+
+  .gap-chart {
+    padding: 26px 20px 22px;
+  }
+
+  .gap-scale {
+    display: none;
+  }
+
+  .gap-row {
+    padding: 15px 0;
+    grid-template-columns: minmax(0, 1fr) 64px;
+    gap: 10px 14px;
+  }
+
+  .gap-track {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .gap-row > strong {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
   .experiment-copy h2,
   .explorer-heading h2,
   .experiment-notes h2 {
@@ -2412,6 +2595,13 @@ body.companion-active .wordmark-mark img {
   .explorer-controls {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .registry-details summary {
+    padding: 16px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
   }
 
   .filter-tabs {

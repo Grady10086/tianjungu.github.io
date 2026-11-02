@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F3F7FB">
-  <meta name="description" content="Interactive research experiments and public result analyses by Tianjun Gu.">
+  <meta name="description" content="A concise, visual research note on why video models still lag people in understanding physical change and intent.">
   <meta property="og:title" content="Experiments | Tianjun Gu">
-  <meta property="og:description" content="Explore the public EscherVerse human-model gap across 27 vision-language models.">
+  <meta property="og:description" content="Why video models still miss what happened and why: evidence from EscherVerse.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://grady10086.github.io/tianjungu.github.io/experiments.html">
-  <meta property="og:image" content="https://grady10086.github.io/tianjungu.github.io/assets/experiments/escher-human-gap.webp">
+  <meta property="og:image" content="https://grady10086.github.io/tianjungu.github.io/assets/experiments/escher-task.webp">
   <link rel="canonical" href="https://grady10086.github.io/tianjungu.github.io/experiments.html">
   <title>Experiments | Tianjun Gu</title>
   <script>
@@ -68,9 +68,9 @@
 
   <main id="main" class="experiment-page">
     <section class="experiment-hero shell reveal" id="experiment-top">
-      <p class="eyebrow">Experiment 01 · Public result explorer</p>
-      <h1>How far are vision-language models from human teleo-spatial reasoning?</h1>
-      <p class="experiment-deck">An interactive view of the public EscherVerse evaluation, comparing 27 vision-language models with an independent first-pass human baseline across physical dynamics, reference frames, and goal-directed action.</p>
+      <p class="eyebrow">Research note 01 · EscherVerse</p>
+      <h1>Why video models still miss what happened and why.</h1>
+      <p class="experiment-deck">Most spatial tests ask where objects are. EscherVerse asks harder questions: what changed, what will happen next, and what a person is trying to do. We tested 27 vision-language models against an independent human baseline.</p>
       <div class="experiment-actions">
         <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener">Paper <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
         <a href="https://github.com/Grady10086/EscherVerse" target="_blank" rel="noopener">Code &amp; data <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
@@ -83,58 +83,99 @@
       </div>
     </section>
 
-    <section class="experiment-visual shell reveal" aria-labelledby="gap-title">
+    <section class="experiment-visual experiment-task shell reveal" aria-labelledby="task-title">
       <div class="experiment-copy">
-        <p class="section-index">Observed gap</p>
-        <h2 id="gap-title">More capable models still remain far below people.</h2>
-        <p>The strongest evaluated model reaches 57.26% overall accuracy. The human mean is 90.62%, and every one of the 11 annotators scores above the strongest model in the released aggregate record.</p>
-        <p>This is not a generic perception benchmark: the questions require models to connect visible geometry with physical change, viewpoint, and intent.</p>
+        <p class="section-index">01 · The task</p>
+        <h2 id="task-title">Spatial understanding is more than locating objects.</h2>
+        <p>A model may know that a cup is beside a person and still fail to predict where the cup will move when the person reaches for a drink.</p>
+        <p>We use <strong>teleo-spatial intelligence</strong> to describe this ability: linking space to physical change, viewpoint, and goal-directed action.</p>
       </div>
       <figure class="experiment-figure">
-        <img src="assets/experiments/escher-human-gap.webp" alt="EscherVerse comparison showing a large accuracy gap between evaluated vision-language models and human annotators" width="1566" height="1600">
-        <figcaption>Public figure from the EscherVerse release. Human results are aggregate first-pass scores; item-level judgments remain private.</figcaption>
+        <img src="assets/experiments/escher-task.webp" alt="Comparison between static geometric perception and reasoning about physical change, future states, and human intent" width="1800" height="820">
+        <figcaption>Static geometry asks where things are. Teleo-spatial reasoning asks how the scene changes and what an action is trying to achieve.</figcaption>
       </figure>
+    </section>
+
+    <section class="experiment-visual shell reveal" aria-labelledby="gap-title">
+      <div class="experiment-copy">
+        <p class="section-index">02 · The result</p>
+        <h2 id="gap-title">The gap is 33 points, not a rounding error.</h2>
+        <p>The strongest evaluated model reaches 57.26% accuracy. People average 90.62%, and the lowest human score is still well above the best model.</p>
+        <p>The same pattern holds across open-weight, fine-tuned, and closed systems in the released registry.</p>
+      </div>
+      <figure class="gap-chart" aria-label="Human mean accuracy 90.62 percent compared with best model accuracy 57.26 percent">
+        <div class="gap-scale" aria-hidden="true"><span>0</span><span>50</span><span>100%</span></div>
+        <div class="gap-row gap-row-human">
+          <div><strong>People</strong><span>11 annotators · range 84.81–95.14</span></div>
+          <div class="gap-track"><i style="--gap-score: 90.62%"></i></div>
+          <strong>90.62%</strong>
+        </div>
+        <div class="gap-row gap-row-model">
+          <div><strong>Best model</strong><span>Gemini-2.5-Pro</span></div>
+          <div class="gap-track"><i style="--gap-score: 57.26%"></i></div>
+          <strong>57.26%</strong>
+        </div>
+        <div class="gap-callout"><strong>33.36</strong><span>percentage-point gap</span></div>
+        <figcaption>Overall accuracy under the released EscherVerse protocol. Human scores are first-pass aggregates.</figcaption>
+      </figure>
+    </section>
+
+    <section class="experiment-visual experiment-case shell reveal" aria-labelledby="case-title">
+      <figure class="experiment-figure">
+        <img src="assets/experiments/escher-case-study.webp" alt="Video case studies where vision-language models confuse camera motion, object motion, translation, and rotation" width="1198" height="752">
+        <figcaption>Representative errors from real videos. Correct interpretations are shown in green; misleading motion explanations are shown in red.</figcaption>
+      </figure>
+      <div class="experiment-copy">
+        <p class="section-index">03 · How models fail</p>
+        <h2 id="case-title">Seeing motion is not the same as understanding it.</h2>
+        <p>Models often describe a plausible movement without tracking whose motion it is. A camera pan becomes object motion; translation becomes rotation.</p>
+        <p>Models need to track the camera, actors, and scene over time. Stronger frame-level recognition alone will not fix these errors.</p>
+      </div>
+    </section>
+
+    <section class="experiment-notes shell reveal" aria-labelledby="notes-title">
+      <div>
+        <p class="section-index">For researchers</p>
+        <h2 id="notes-title">Three questions worth testing next.</h2>
+      </div>
+      <div class="note-columns">
+        <article><span>01</span><h3>State</h3><p>Can a model explicitly track the camera, objects, people, and their changing relations instead of repeatedly re-reading isolated frames?</p></article>
+        <article><span>02</span><h3>Evidence</h3><p>Can matched and counterfactual examples teach the difference between camera motion, object motion, and goal-directed action?</p></article>
+        <article><span>03</span><h3>Diagnosis</h3><p>Can evaluation separate failures of perception, temporal memory, and reasoning rather than collapsing them into one final accuracy?</p></article>
+      </div>
     </section>
 
     <section class="model-explorer shell reveal" aria-labelledby="explorer-title">
       <div class="explorer-heading">
         <div>
-          <p class="section-index">Explore the evidence</p>
-          <h2 id="explorer-title">Model score registry</h2>
+          <p class="section-index">Full evidence</p>
+          <h2 id="explorer-title">Inspect the model registry.</h2>
         </div>
-        <p>Filter the released rows by model family. Bar length uses the same 0–100 accuracy scale for models and people.</p>
+        <p>Open the registry to compare every released result on the same 0–100 scale.</p>
       </div>
 
-      <div class="explorer-controls">
-        <div class="filter-tabs" role="group" aria-label="Filter model family">
-          <button class="is-active" type="button" data-experiment-filter="all" aria-pressed="true">All</button>
-          <button type="button" data-experiment-filter="open-weight" aria-pressed="false">Open-weight</button>
-          <button type="button" data-experiment-filter="SFT" aria-pressed="false">Fine-tuned</button>
-          <button type="button" data-experiment-filter="closed API" aria-pressed="false">Closed API</button>
-          <button type="button" data-experiment-filter="human" aria-pressed="false">Human</button>
+      <details class="registry-details">
+        <summary><span>Open all model results</span><span>28 entries including the human mean <i data-lucide="chevron-down" aria-hidden="true"></i></span></summary>
+        <div class="registry-body">
+          <div class="explorer-controls">
+            <div class="filter-tabs" role="group" aria-label="Filter model family">
+              <button class="is-active" type="button" data-experiment-filter="all" aria-pressed="true">All</button>
+              <button type="button" data-experiment-filter="open-weight" aria-pressed="false">Open-weight</button>
+              <button type="button" data-experiment-filter="SFT" aria-pressed="false">Fine-tuned</button>
+              <button type="button" data-experiment-filter="closed API" aria-pressed="false">Closed API</button>
+              <button type="button" data-experiment-filter="human" aria-pressed="false">Human</button>
+            </div>
+            <label class="sort-control">Sort
+              <select data-experiment-sort>
+                <option value="score">Highest score</option>
+                <option value="name">Model name</option>
+              </select>
+            </label>
+          </div>
+          <div class="model-chart" data-model-chart aria-live="polite"></div>
+          <p class="explorer-summary" data-explorer-summary></p>
         </div>
-        <label class="sort-control">Sort
-          <select data-experiment-sort>
-            <option value="score">Highest score</option>
-            <option value="name">Model name</option>
-          </select>
-        </label>
-      </div>
-
-      <div class="model-chart" data-model-chart aria-live="polite"></div>
-      <p class="explorer-summary" data-explorer-summary></p>
-    </section>
-
-    <section class="experiment-notes shell reveal" aria-labelledby="notes-title">
-      <div>
-        <p class="section-index">Reading the result</p>
-        <h2 id="notes-title">What this experiment supports, and what it does not.</h2>
-      </div>
-      <div class="note-columns">
-        <article><span>01</span><h3>Supported</h3><p>A large empirical human–model gap persists under the unified EscherVerse zero-shot protocol, including for strong proprietary systems.</p></article>
-        <article><span>02</span><h3>Not implied</h3><p>The aggregate gap does not establish that every error is caused by reasoning alone; perception, temporal sampling, and answer extraction can also contribute.</p></article>
-        <article><span>03</span><h3>Reproducibility</h3><p>The public registry distinguishes fresh-inference routes from configuration references and aggregate-only rows instead of treating every reported number as equally reproducible.</p></article>
-      </div>
+      </details>
       <p class="experiment-provenance">Source: EscherVerse public release accompanying <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener"><em>Vision-language models lag human performance on physical dynamics and intent reasoning</em></a>, accepted in principle at <em>Nature Communications</em>.</p>
     </section>
   </main>
