@@ -2040,51 +2040,27 @@ body.companion-active .wordmark-mark img {
   text-underline-offset: 3px;
 }
 
-.note-columns {
-  display: grid;
-  gap: 0;
+.discussion-body {
+  max-width: 720px;
   grid-column: 2;
 }
 
-.note-columns article {
-  display: grid;
-  padding: 20px 0 22px;
-  border-top: 1px solid var(--line);
-  grid-template-columns: 38px 140px minmax(0, 1fr);
-  gap: 16px;
-}
-
-.note-columns article:last-child {
-  border-bottom: 1px solid var(--line);
-}
-
-.note-columns span {
-  color: var(--maui);
-  font-size: 9px;
-  font-weight: 700;
-}
-
-.note-columns h3,
-.note-columns p {
-  margin: 0;
-}
-
-.note-columns h3 {
+.discussion-body p {
+  margin: 0 0 18px;
+  color: var(--muted);
   font-size: 13px;
+  line-height: 1.8;
 }
 
-.note-columns p {
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.7;
-}
-
-.discussion-intro {
-  max-width: 380px;
-  margin: 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.75;
+.discussion-body blockquote {
+  margin: 28px 0;
+  padding: 20px 0 20px 24px;
+  color: var(--ink);
+  border-left: 3px solid var(--maui);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .experiment-provenance {
@@ -2746,14 +2722,9 @@ body.companion-active .wordmark-mark img {
     grid-row: 1;
   }
 
-  .note-columns,
+  .discussion-body,
   .experiment-provenance {
     grid-column: 1;
-  }
-
-  .note-columns article {
-    grid-template-columns: 30px minmax(90px, 0.45fr) minmax(0, 1fr);
-    gap: 12px;
   }
 }
 
@@ -2776,12 +2747,9 @@ body.companion-active .wordmark-mark img {
     margin-left: -8px;
   }
 
-  .note-columns article {
-    grid-template-columns: 28px minmax(0, 1fr);
-  }
-
-  .note-columns p {
-    grid-column: 2;
+  .discussion-body blockquote {
+    padding-left: 18px;
+    font-size: 21px;
   }
 }
 

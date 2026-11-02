@@ -142,30 +142,31 @@
       <div class="insight-list">
         <article>
           <div class="insight-metric"><strong>52.5%</strong><span>of sampled errors</span></div>
-          <div><h3>The largest error groups lie beyond recognition.</h3><p>Spatiotemporal grounding and reference-frame errors account for 52.5% of a stratified 300-error sample; perception and recognition account for 12.1%. Better object recognition alone is unlikely to close the gap.</p></div>
+          <div><h3>The largest error groups lie beyond recognition.</h3><p>Error annotations concentrate on spatiotemporal grounding and reference-frame failures, while perception and recognition form a much smaller category. Better object recognition alone is unlikely to close the gap.</p></div>
         </article>
         <article>
           <div class="insight-metric"><strong>96.6%</strong><span>variance on PC1</span></div>
-          <div><h3>The capabilities share a broad bottleneck.</h3><p>Across 27 models, the six category scores have a median Spearman correlation of 0.854, and one component explains 96.6% of their variation. Models that score higher on intent also tend to score higher on dynamics and reference frames.</p></div>
+          <div><h3>The capabilities share a broad bottleneck.</h3><p>Category scores rise and fall together across the model panel. Models that perform better on intent also tend to perform better on dynamics and reference frames, which points to a common representational constraint.</p></div>
         </article>
         <article>
           <div class="insight-metric"><strong>+7.5 pp</strong><span>content effect</span></div>
-          <div><h3>What models study changes what they learn.</h3><p>With equal 1,409-example LoRA budgets, intent-focused data produced a 7.5-point content-specific advantage over dynamics-focused data (95% clustered bootstrap interval: 3.1–12.2). Data composition matters, not only data volume.</p></div>
+          <div><h3>What models study changes what they learn.</h3><p>Under matched training budgets, intent-focused and dynamics-focused data produce different capability profiles. The composition of supervision shapes what improves, even when the amount of supervision stays fixed.</p></div>
         </article>
       </div>
       <p class="insight-boundary">These analyses describe this model panel and evaluation protocol. They identify testable bottlenecks, not a causal decomposition of intelligence. Released analyses: <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/failure_mode" target="_blank" rel="noopener">error taxonomy</a>, <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/concept_structure" target="_blank" rel="noopener">concept structure</a>, and <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/sft_ablation" target="_blank" rel="noopener">SFT ablation</a>.</p>
     </section>
 
     <section class="experiment-notes shell reveal" aria-labelledby="notes-title">
-      <div>
+      <div class="discussion-heading">
         <p class="section-index">Discussion</p>
-        <h2 id="notes-title">Build the scene before explaining it.</h2>
-        <p class="discussion-intro">My reading is that current models often reason over an unstable account of the video. Longer answers cannot repair a mistaken camera frame, a lost object, or an action attached to the wrong person.</p>
+        <h2 id="notes-title">What is missing between perception and reasoning?</h2>
       </div>
-      <div class="note-columns">
-        <article><span>01</span><h3>Reasoning is not state estimation</h3><p>Across four matched Instruct/Thinking pairs, Thinking changes accuracy by only −1.06 to +0.98 points. Extra reasoning can make an answer more coherent without making the underlying scene model more accurate. A better system should first externalize who moved, whether the camera moved, what changed, and what remains uncertain.</p></article>
-        <article><span>02</span><h3>Shared does not mean identical</h3><p>The category scores move together, yet targeted supervision produces targeted gains. This suggests a shared world-state representation with distinct update rules for dynamics, viewpoint, and intent—not one monolithic “reasoning” module and not six isolated skills.</p></article>
-        <article><span>03</span><h3>Evaluation should force belief revision</h3><p>A stronger test would reveal evidence in stages, change the camera while holding the scene fixed, or alter an actor’s goal while preserving the motion. The model should update a stated belief and show which observation changed it. That would test whether it maintains a world model rather than matches a familiar answer pattern.</p></article>
+      <div class="discussion-body">
+        <p>The results could be read as a call for larger video models or longer reasoning traces. We think that diagnosis is incomplete. A model can recognize every visible entity and still misassign motion or intent. It may treat camera movement as object movement, or attach an action to the wrong person. Once the scene state is wrong, later reasoning can be coherent and still describe the wrong world.</p>
+        <p>This suggests treating video understanding as belief maintenance rather than repeated description. A video model should carry forward a revisable state of the scene: entities, relations, reference frames, possible goals, and unresolved uncertainty. Each new observation should update that state instead of triggering a fresh interpretation of the entire video.</p>
+        <blockquote>Our working hypothesis is that spatial reasoning improves when the model must expose and revise its scene state before producing an answer.</blockquote>
+        <p>The benchmark does not establish this mechanism on its own. Some errors may still come from temporal sampling, answer extraction, or uneven pretraining coverage. These alternatives matter because they imply different fixes. Better frame selection addresses missing evidence; structured state updates address evidence that was seen but organized incorrectly.</p>
+        <p>The training analysis adds another constraint. The skills appear to share a representation, but they are not interchangeable. We therefore favor a shared scene state with distinct learning signals for dynamics, viewpoint, and intent. Evaluation should make those updates observable. Evidence could be revealed in stages; the camera could change while the scene stays fixed; an actor's goal could change while the motion stays the same. Success would require a correct answer and the right belief update from the right evidence.</p>
       </div>
     </section>
 
