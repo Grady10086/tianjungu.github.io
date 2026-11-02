@@ -467,6 +467,19 @@ body.companion-active .wordmark-mark img {
   font-weight: 600;
 }
 
+.profile-bio a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration-color: rgba(80, 133, 195, 0.5);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.profile-bio a:hover {
+  color: var(--marina);
+  text-decoration-color: currentColor;
+}
+
 .profile-links {
   display: grid;
   margin-top: 14px;
@@ -1339,7 +1352,7 @@ body.companion-active .wordmark-mark img {
   font-size: 11px;
 }
 
-.detail-group article > div:last-child {
+.detail-group article > div + div {
   display: grid;
   align-content: start;
   justify-items: end;
