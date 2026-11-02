@@ -2079,6 +2079,14 @@ body.companion-active .wordmark-mark img {
   line-height: 1.7;
 }
 
+.discussion-intro {
+  max-width: 380px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
 .experiment-provenance {
   margin: 22px 0 0;
   color: var(--muted);

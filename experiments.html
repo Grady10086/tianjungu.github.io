@@ -158,13 +158,14 @@
 
     <section class="experiment-notes shell reveal" aria-labelledby="notes-title">
       <div>
-        <p class="section-index">For researchers</p>
-        <h2 id="notes-title">Three questions worth testing next.</h2>
+        <p class="section-index">Discussion</p>
+        <h2 id="notes-title">Build the scene before explaining it.</h2>
+        <p class="discussion-intro">My reading is that current models often reason over an unstable account of the video. Longer answers cannot repair a mistaken camera frame, a lost object, or an action attached to the wrong person.</p>
       </div>
       <div class="note-columns">
-        <article><span>01</span><h3>State</h3><p>Can a model explicitly track the camera, objects, people, and their changing relations instead of repeatedly re-reading isolated frames?</p></article>
-        <article><span>02</span><h3>Evidence</h3><p>Can matched and counterfactual examples teach the difference between camera motion, object motion, and goal-directed action?</p></article>
-        <article><span>03</span><h3>Diagnosis</h3><p>Can evaluation separate failures of perception, temporal memory, and reasoning rather than collapsing them into one final accuracy?</p></article>
+        <article><span>01</span><h3>Reasoning is not state estimation</h3><p>Across four matched Instruct/Thinking pairs, Thinking changes accuracy by only −1.06 to +0.98 points. Extra reasoning can make an answer more coherent without making the underlying scene model more accurate. A better system should first externalize who moved, whether the camera moved, what changed, and what remains uncertain.</p></article>
+        <article><span>02</span><h3>Shared does not mean identical</h3><p>The category scores move together, yet targeted supervision produces targeted gains. This suggests a shared world-state representation with distinct update rules for dynamics, viewpoint, and intent—not one monolithic “reasoning” module and not six isolated skills.</p></article>
+        <article><span>03</span><h3>Evaluation should force belief revision</h3><p>A stronger test would reveal evidence in stages, change the camera while holding the scene fixed, or alter an actor’s goal while preserving the motion. The model should update a stated belief and show which observation changed it. That would test whether it maintains a world model rather than matches a familiar answer pattern.</p></article>
       </div>
     </section>
 
