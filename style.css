@@ -1395,6 +1395,178 @@ body.companion-active .wordmark-mark img {
   overflow: hidden;
 }
 
+.essay-page {
+  overflow: hidden;
+}
+
+.essay-header {
+  padding-top: 92px;
+  padding-bottom: 54px;
+}
+
+.essay-meta,
+.essay-kicker {
+  margin: 0;
+  color: var(--maui);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.essay-header h1 {
+  max-width: 1030px;
+  margin: 18px 0 26px;
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: clamp(52px, 6vw, 78px);
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.essay-lede {
+  max-width: 790px;
+  margin: 0;
+  color: var(--muted);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+.essay-byline {
+  display: flex;
+  margin-top: 34px;
+  align-items: center;
+  gap: 22px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.essay-byline span {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.essay-byline a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--marina);
+  font-weight: 700;
+}
+
+.essay-byline svg {
+  width: 12px;
+  height: 12px;
+}
+
+.essay-cover {
+  margin-bottom: 88px;
+}
+
+.essay-cover img,
+.essay-figure-wide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--surface);
+  border: 1px solid var(--soft-line);
+  border-radius: 4px;
+}
+
+.essay-cover figcaption,
+.essay-figure-wide figcaption,
+.essay-evidence figcaption {
+  margin-top: 11px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.essay-content {
+  width: min(720px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.essay-section {
+  padding: 0 0 72px;
+}
+
+.essay-section + .essay-section {
+  padding-top: 72px;
+  border-top: 1px solid var(--soft-line);
+}
+
+.essay-section h2 {
+  margin: 12px 0 26px;
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.essay-section p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.essay-section p:last-child {
+  margin-bottom: 0;
+}
+
+.essay-opening::first-letter {
+  float: left;
+  margin: 8px 9px 0 0;
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 62px;
+  font-weight: 600;
+  line-height: 0.72;
+}
+
+.essay-section em {
+  color: var(--ink);
+}
+
+.essay-section .essay-evidence,
+.essay-section .essay-figure-wide {
+  width: min(1040px, calc(100vw - 32px));
+  margin: 46px 0 42px 50%;
+  transform: translateX(-50%);
+}
+
+.essay-evidence {
+  padding: 38px 40px 28px;
+}
+
+.essay-section blockquote {
+  margin: 38px 0;
+  padding: 6px 0 6px 28px;
+  color: var(--ink);
+  border-left: 3px solid var(--maui);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.essay-conclusion {
+  padding-bottom: 100px;
+}
+
+.essay-appendix {
+  border-top: 1px solid var(--soft-line);
+}
+
+.essay-appendix .experiment-provenance a {
+  color: var(--marina);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--marina) 35%, transparent);
+  text-underline-offset: 3px;
+}
+
 .experiment-preview {
   background: var(--canvas);
 }
@@ -2561,6 +2733,74 @@ body.companion-active .wordmark-mark img {
 }
 
 @media (max-width: 720px) {
+  .essay-header {
+    padding-top: 60px;
+    padding-bottom: 42px;
+  }
+
+  .essay-header h1 {
+    margin-top: 14px;
+    font-size: 44px;
+    line-height: 1.02;
+  }
+
+  .essay-lede {
+    font-size: 18px;
+  }
+
+  .essay-byline {
+    margin-top: 28px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+
+  .essay-byline span {
+    width: 100%;
+  }
+
+  .essay-cover {
+    margin-bottom: 62px;
+  }
+
+  .essay-section {
+    padding-bottom: 56px;
+  }
+
+  .essay-section + .essay-section {
+    padding-top: 56px;
+  }
+
+  .essay-section h2 {
+    margin-bottom: 22px;
+    font-size: 34px;
+  }
+
+  .essay-section p {
+    font-size: 14px;
+    line-height: 1.82;
+  }
+
+  .essay-section .essay-evidence,
+  .essay-section .essay-figure-wide {
+    margin-top: 36px;
+    margin-bottom: 34px;
+  }
+
+  .essay-evidence {
+    padding: 26px 20px 22px;
+  }
+
+  .essay-section blockquote {
+    margin: 32px 0;
+    padding-left: 20px;
+    font-size: 24px;
+  }
+
+  .essay-conclusion {
+    padding-bottom: 72px;
+  }
+
   .experiment-preview-layout {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -2729,6 +2969,18 @@ body.companion-active .wordmark-mark img {
 }
 
 @media (max-width: 480px) {
+  .essay-header h1 {
+    font-size: 39px;
+  }
+
+  .essay-section h2 {
+    font-size: 31px;
+  }
+
+  .essay-section blockquote {
+    font-size: 22px;
+  }
+
   .experiment-hero h1 {
     font-size: 38px;
   }

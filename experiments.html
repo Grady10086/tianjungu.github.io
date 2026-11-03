@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F3F7FB">
-  <meta name="description" content="A concise, visual research note on why video models still lag people in understanding physical change and intent.">
+  <meta name="description" content="A research essay on scene state, reference frames, and what video models need before they can reason about physical change and intent.">
   <meta property="og:title" content="Experiments | Tianjun Gu">
-  <meta property="og:description" content="Why video models still miss what happened and why: evidence from EscherVerse.">
+  <meta property="og:description" content="Before a video model can reason, it has to keep track of the world.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://grady10086.github.io/tianjungu.github.io/experiments.html">
   <meta property="og:image" content="https://grady10086.github.io/tianjungu.github.io/assets/experiments/escher-task.webp">
@@ -66,117 +66,94 @@
     <div class="page-progress" aria-hidden="true"><i data-page-progress></i></div>
   </header>
 
-  <main id="main" class="experiment-page">
-    <section class="experiment-hero shell reveal" id="experiment-top">
-      <p class="eyebrow">Research note 01 · EscherVerse</p>
-      <h1>Why video models still miss what happened and why.</h1>
-      <p class="experiment-deck">Most spatial tests ask where objects are. EscherVerse asks harder questions: what changed, what will happen next, and what a person is trying to do. We tested 27 vision-language models against an independent human baseline.</p>
-      <div class="experiment-actions">
-        <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener">Paper <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-        <a href="https://github.com/Grady10086/EscherVerse" target="_blank" rel="noopener">Code &amp; data <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-      </div>
-      <div class="result-strip" aria-label="Key public results">
-        <div><strong>90.62%</strong><span>Human mean</span></div>
-        <div><strong>57.26%</strong><span>Best model</span></div>
-        <div><strong>33.36</strong><span>Point gap</span></div>
-        <div><strong>27</strong><span>Models evaluated</span></div>
-      </div>
-    </section>
+  <main id="main" class="essay-page">
+    <article class="research-essay" id="experiment-top">
+      <header class="essay-header shell reveal">
+        <p class="essay-meta">Research note · November 2026 · EscherVerse</p>
+        <h1>Before a video model can reason, it has to keep track of the world.</h1>
+        <p class="essay-lede">A model can recognize every object in a clip and still misunderstand what moved, whose viewpoint changed, or why a person acted. That distinction changes how we think video reasoning should be built and evaluated.</p>
+        <div class="essay-byline">
+          <span>By Tianjun Gu</span>
+          <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener">Paper <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          <a href="https://github.com/Grady10086/EscherVerse" target="_blank" rel="noopener">Code &amp; data <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </header>
 
-    <section class="experiment-visual experiment-task shell reveal" aria-labelledby="task-title">
-      <div class="experiment-copy">
-        <p class="section-index">01 · The task</p>
-        <h2 id="task-title">Spatial understanding is more than locating objects.</h2>
-        <p>A model may know that a cup is beside a person and still fail to predict where the cup will move when the person reaches for a drink.</p>
-        <p>We use <strong>teleo-spatial intelligence</strong> to describe this ability: linking space to physical change, viewpoint, and goal-directed action.</p>
-      </div>
-      <figure class="experiment-figure">
+      <figure class="essay-cover shell reveal">
         <img src="assets/experiments/escher-task.webp" alt="Comparison between static geometric perception and reasoning about physical change, future states, and human intent" width="1800" height="820">
-        <figcaption>Static geometry asks where things are. Teleo-spatial reasoning asks how the scene changes and what an action is trying to achieve.</figcaption>
+        <figcaption>Static geometry describes a scene. Teleo-spatial reasoning follows how that scene changes and what an action is trying to achieve.</figcaption>
       </figure>
-    </section>
 
-    <section class="experiment-visual shell reveal" aria-labelledby="gap-title">
-      <div class="experiment-copy">
-        <p class="section-index">02 · The result</p>
-        <h2 id="gap-title">The gap is 33 points, not a rounding error.</h2>
-        <p>The strongest evaluated model reaches 57.26% accuracy. People average 90.62%, and the lowest human score is still well above the best model.</p>
-        <p>The same pattern holds across open-weight, fine-tuned, and closed systems in the released registry.</p>
-      </div>
-      <figure class="gap-chart" aria-label="Human mean accuracy 90.62 percent compared with best model accuracy 57.26 percent">
-        <div class="gap-scale" aria-hidden="true"><span>0</span><span>50</span><span>100%</span></div>
-        <div class="gap-row gap-row-human">
-          <div><strong>People</strong><span>11 annotators · range 84.81–95.14</span></div>
-          <div class="gap-track"><i style="--gap-score: 90.62%"></i></div>
-          <strong>90.62%</strong>
-        </div>
-        <div class="gap-row gap-row-model">
-          <div><strong>Best model</strong><span>Gemini-2.5-Pro</span></div>
-          <div class="gap-track"><i style="--gap-score: 57.26%"></i></div>
-          <strong>57.26%</strong>
-        </div>
-        <div class="gap-callout"><strong>33.36</strong><span>percentage-point gap</span></div>
-        <figcaption>Overall accuracy under the released EscherVerse protocol. Human scores are first-pass aggregates.</figcaption>
-      </figure>
-    </section>
+      <div class="essay-content">
+        <section class="essay-section reveal">
+          <p class="essay-opening">Most spatial benchmarks stop once a model can locate objects and describe their relations. Video asks for something less stable. The camera moves, objects disappear, people act toward goals, and later evidence can change the meaning of an earlier frame.</p>
+          <p>EscherVerse began from a concern that a model may answer questions about visible geometry without maintaining a usable account of the scene. We use <em>teleo-spatial intelligence</em> for the ability to connect space with physical change, viewpoint, and goal-directed action. The leaderboard records the gap; our main interest is where the underlying account of the scene breaks.</p>
+        </section>
 
-    <section class="experiment-visual experiment-case shell reveal" aria-labelledby="case-title">
-      <figure class="experiment-figure">
-        <img src="assets/experiments/escher-case-study.webp" alt="Video case studies where vision-language models confuse camera motion, object motion, translation, and rotation" width="1198" height="752">
-        <figcaption>Representative errors from real videos. Correct interpretations are shown in green; misleading motion explanations are shown in red.</figcaption>
-      </figure>
-      <div class="experiment-copy">
-        <p class="section-index">03 · How models fail</p>
-        <h2 id="case-title">Seeing motion is not the same as understanding it.</h2>
-        <p>Models often describe a plausible movement without tracking whose motion it is. A camera pan becomes object motion; translation becomes rotation.</p>
-        <p>Models need to track the camera, actors, and scene over time. Stronger frame-level recognition alone will not fix these errors.</p>
-      </div>
-    </section>
+        <section class="essay-section reveal" aria-labelledby="diagnosis-title">
+          <p class="essay-kicker">The diagnosis</p>
+          <h2 id="diagnosis-title">The familiar explanation is too simple.</h2>
+          <p>The human-model gap persists across model families and training regimes. It is tempting to treat that gap as another scaling problem: add a larger backbone, sample more frames, or ask the model to reason for longer. Those changes may help, but the released comparisons do not support a consistent story in which more inference alone repairs the failure.</p>
+          <p>The more consequential question is what the model is reasoning over. A fluent explanation can begin from a mistaken reference frame or an action attached to the wrong actor. More reasoning then elaborates the mistake instead of correcting it.</p>
+          <figure class="gap-chart essay-evidence" aria-label="Human mean accuracy 90.62 percent compared with best model accuracy 57.26 percent">
+            <div class="gap-scale" aria-hidden="true"><span>0</span><span>50</span><span>100%</span></div>
+            <div class="gap-row gap-row-human">
+              <div><strong>People</strong><span>11 annotators · range 84.81–95.14</span></div>
+              <div class="gap-track"><i style="--gap-score: 90.62%"></i></div>
+              <strong>90.62%</strong>
+            </div>
+            <div class="gap-row gap-row-model">
+              <div><strong>Best model</strong><span>Gemini-2.5-Pro</span></div>
+              <div class="gap-track"><i style="--gap-score: 57.26%"></i></div>
+              <strong>57.26%</strong>
+            </div>
+            <div class="gap-callout"><strong>33.36</strong><span>percentage-point gap</span></div>
+            <figcaption>Overall accuracy under the released EscherVerse protocol. Human scores are first-pass aggregates.</figcaption>
+          </figure>
+        </section>
 
-    <section class="insight-discussion shell reveal" aria-labelledby="insight-title">
-      <div class="insight-heading">
-        <p class="section-index">What the results suggest</p>
-        <h2 id="insight-title">The bottleneck is not simply seeing more.</h2>
-        <p>Three analyses point to the same conclusion: progress depends on how a model organizes evidence across time, viewpoints, and goals.</p>
-      </div>
-      <div class="insight-list">
-        <article>
-          <div class="insight-metric"><strong>52.5%</strong><span>of sampled errors</span></div>
-          <div><h3>The largest error groups lie beyond recognition.</h3><p>Error annotations concentrate on spatiotemporal grounding and reference-frame failures, while perception and recognition form a much smaller category. Better object recognition alone is unlikely to close the gap.</p></div>
-        </article>
-        <article>
-          <div class="insight-metric"><strong>96.6%</strong><span>variance on PC1</span></div>
-          <div><h3>The capabilities share a broad bottleneck.</h3><p>Category scores rise and fall together across the model panel. Models that perform better on intent also tend to perform better on dynamics and reference frames, which points to a common representational constraint.</p></div>
-        </article>
-        <article>
-          <div class="insight-metric"><strong>+7.5 pp</strong><span>content effect</span></div>
-          <div><h3>What models study changes what they learn.</h3><p>Under matched training budgets, intent-focused and dynamics-focused data produce different capability profiles. The composition of supervision shapes what improves, even when the amount of supervision stays fixed.</p></div>
-        </article>
-      </div>
-      <p class="insight-boundary">These analyses describe this model panel and evaluation protocol. They identify testable bottlenecks, not a causal decomposition of intelligence. Released analyses: <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/failure_mode" target="_blank" rel="noopener">error taxonomy</a>, <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/concept_structure" target="_blank" rel="noopener">concept structure</a>, and <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/sft_ablation" target="_blank" rel="noopener">SFT ablation</a>.</p>
-    </section>
+        <section class="essay-section reveal" aria-labelledby="camera-title">
+          <p class="essay-kicker">Reading the errors</p>
+          <h2 id="camera-title">The camera is part of the scene model.</h2>
+          <p>Several errors that look like failures of motion understanding are more specific. The model sees movement but assigns it to the wrong source. A camera pan becomes an object trajectory; translation becomes rotation; an observer-relative change is reported as a change in the world.</p>
+          <figure class="essay-figure-wide">
+            <img src="assets/experiments/escher-case-study.webp" alt="Video case studies where vision-language models confuse camera motion, object motion, translation, and rotation" width="1198" height="752">
+            <figcaption>Representative cases from real videos. The examples separate visible motion from the reference frame needed to interpret it.</figcaption>
+          </figure>
+          <p>This distinction matters for intervention. If recognition were the main problem, a stronger visual encoder would be the natural fix. Reference-frame errors instead point toward temporal state, viewpoint tracking, and an explicit separation between camera, actors, and world. The model needs to preserve those roles across the clip rather than infer them again for each question.</p>
+        </section>
 
-    <section class="experiment-notes shell reveal" aria-labelledby="notes-title">
-      <div class="discussion-heading">
-        <p class="section-index">Discussion</p>
-        <h2 id="notes-title">What is missing between perception and reasoning?</h2>
-      </div>
-      <div class="discussion-body">
-        <p>The results could be read as a call for larger video models or longer reasoning traces. We think that diagnosis is incomplete. A model can recognize every visible entity and still misassign motion or intent. It may treat camera movement as object movement, or attach an action to the wrong person. Once the scene state is wrong, later reasoning can be coherent and still describe the wrong world.</p>
-        <p>This suggests treating video understanding as belief maintenance rather than repeated description. A video model should carry forward a revisable state of the scene: entities, relations, reference frames, possible goals, and unresolved uncertainty. Each new observation should update that state instead of triggering a fresh interpretation of the entire video.</p>
-        <blockquote>Our working hypothesis is that spatial reasoning improves when the model must expose and revise its scene state before producing an answer.</blockquote>
-        <p>The benchmark does not establish this mechanism on its own. Some errors may still come from temporal sampling, answer extraction, or uneven pretraining coverage. These alternatives matter because they imply different fixes. Better frame selection addresses missing evidence; structured state updates address evidence that was seen but organized incorrectly.</p>
-        <p>The training analysis adds another constraint. The skills appear to share a representation, but they are not interchangeable. We therefore favor a shared scene state with distinct learning signals for dynamics, viewpoint, and intent. Evaluation should make those updates observable. Evidence could be revealed in stages; the camera could change while the scene stays fixed; an actor's goal could change while the motion stays the same. Success would require a correct answer and the right belief update from the right evidence.</p>
-      </div>
-    </section>
+        <section class="essay-section reveal" aria-labelledby="belief-title">
+          <p class="essay-kicker">A working hypothesis</p>
+          <h2 id="belief-title">Video understanding may be closer to belief maintenance than repeated description.</h2>
+          <p>We think a video model should carry a revisable scene state: entities, relations, reference frames, possible goals, and unresolved uncertainty. Each observation should update that state. The final answer would then be a readout from an evolving account of the world, rather than a fresh interpretation assembled at the end.</p>
+          <blockquote>Spatial reasoning should improve when a model must expose and revise its scene state before it answers.</blockquote>
+          <p>This mechanism is not established by the benchmark. Missing frames, answer extraction, and uneven pretraining coverage can produce similar errors. The alternatives imply different fixes, which is why they should be separated experimentally. Better frame selection addresses missing evidence; structured state updates address evidence that was available but organized incorrectly.</p>
+        </section>
 
-    <section class="model-explorer shell reveal" aria-labelledby="explorer-title">
+        <section class="essay-section reveal" aria-labelledby="learning-title">
+          <p class="essay-kicker">Learning</p>
+          <h2 id="learning-title">A shared representation does not make the skills interchangeable.</h2>
+          <p>The category analysis suggests that dynamics, viewpoint, and intent depend on a broad common representation. The training analysis adds an important qualification: changing the content of supervision changes where the model improves. The evidence therefore fits neither a collection of isolated modules nor a single undifferentiated reasoning skill.</p>
+          <p>Our current design preference is a shared scene state with distinct learning signals for physical change, reference frames, and goals. That structure allows transfer through a common representation while preserving the supervision each capability needs.</p>
+        </section>
+
+        <section class="essay-section essay-conclusion reveal" aria-labelledby="test-title">
+          <p class="essay-kicker">What would change our mind?</p>
+          <h2 id="test-title">The next experiment should make belief revision observable.</h2>
+          <p>A stronger evaluation would reveal evidence in stages and ask the model to state what it currently believes. The camera could change while the scene stays fixed, or an actor's goal could change while the motion stays the same. The model should identify which observation changed its conclusion.</p>
+          <p>If better frame selection removes the errors, the scene-state hypothesis becomes less necessary. If an explicit state remains accurate but the answer is wrong, the bottleneck lies later in reasoning or readout. Either outcome would be more informative than another aggregate score. The aim is to learn whether a model reaches the right answer for the right reason, and where that process fails when it does not.</p>
+        </section>
+      </div>
+    </article>
+
+    <section class="model-explorer essay-appendix shell reveal" aria-labelledby="explorer-title">
       <div class="explorer-heading">
         <div>
-          <p class="section-index">Full evidence</p>
-          <h2 id="explorer-title">Inspect the model registry.</h2>
+          <p class="section-index">Appendix</p>
+          <h2 id="explorer-title">Released model registry</h2>
         </div>
-        <p>Open the registry to compare every released result on the same 0–100 scale.</p>
+        <p>The full result table remains available for checking individual models and reproduction routes.</p>
       </div>
 
       <details class="registry-details">
@@ -201,7 +178,7 @@
           <p class="explorer-summary" data-explorer-summary></p>
         </div>
       </details>
-      <p class="experiment-provenance">Source: EscherVerse public release accompanying <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener"><em>Vision-language models lag human performance on physical dynamics and intent reasoning</em></a>, accepted in principle at <em>Nature Communications</em>.</p>
+      <p class="experiment-provenance">This note discusses the public EscherVerse release accompanying <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener"><em>Vision-language models lag human performance on physical dynamics and intent reasoning</em></a>, accepted in principle at <em>Nature Communications</em>. Supporting analyses: <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/failure_mode" target="_blank" rel="noopener">error taxonomy</a>, <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/concept_structure" target="_blank" rel="noopener">concept structure</a>, and <a href="https://github.com/Grady10086/EscherVerse/tree/main/experiments/sft_ablation" target="_blank" rel="noopener">SFT ablation</a>.</p>
     </section>
   </main>
 
