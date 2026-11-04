@@ -344,6 +344,7 @@ const classifyResourceLink = (anchor) => {
   if (href.includes("linkedin.com")) return "linkedin";
   if (href.includes("github.com")) return "github";
   if (href.includes("arxiv.org") || href.includes("doi.org") || href.includes("openaccess.thecvf.com")) return "paper";
+  if (anchor.closest(".tool-feature")) return "project";
   if (anchor.closest(".publication")) return "project";
 
   return null;

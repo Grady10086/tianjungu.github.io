@@ -736,6 +736,172 @@ body.companion-active .wordmark-mark img {
   background: var(--paper);
 }
 
+.section-tools {
+  background: var(--surface);
+}
+
+.tool-feature {
+  display: grid;
+  padding: 22px 0;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  gap: 52px;
+}
+
+.tool-preview {
+  position: relative;
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  background: #191321;
+  border: 1px solid var(--soft-line);
+  border-radius: 6px;
+  box-shadow: 0 16px 34px var(--shadow);
+}
+
+.tool-preview::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(to top, rgba(14, 10, 19, 0.58), transparent 32%);
+  pointer-events: none;
+}
+
+.tool-preview img {
+  width: 100%;
+  height: 470px;
+  aspect-ratio: 1.55 / 1;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tool-preview > span {
+  position: absolute;
+  z-index: 1;
+  right: 18px;
+  bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tool-preview svg,
+.tool-links svg {
+  width: 14px;
+  height: 14px;
+}
+
+.tool-preview:hover img,
+.tool-preview:focus-visible img {
+  transform: scale(1.018);
+}
+
+.tool-body {
+  min-width: 0;
+}
+
+.tool-meta {
+  display: flex;
+  margin: 0 0 18px;
+  align-items: center;
+  gap: 18px;
+  color: var(--maui);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tool-meta span + span::before {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-right: 18px;
+  background: var(--sky);
+  border-radius: 50%;
+  content: "";
+  vertical-align: 1px;
+}
+
+.tool-body h3 {
+  margin: 0;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.tool-tagline {
+  margin: 14px 0 18px;
+  color: var(--marina);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.28;
+}
+
+.tool-body > p:not(.tool-meta):not(.tool-tagline) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.tool-capabilities {
+  display: flex;
+  margin: 22px 0 0;
+  padding: 14px 0;
+  gap: 0;
+  border-top: 1px solid var(--soft-line);
+  border-bottom: 1px solid var(--soft-line);
+  list-style: none;
+}
+
+.tool-capabilities li {
+  padding: 0 13px;
+  color: var(--muted);
+  border-left: 1px solid var(--soft-line);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.tool-capabilities li:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.tool-capabilities li:last-child {
+  padding-right: 0;
+}
+
+.tool-links {
+  display: flex;
+  margin-top: 21px;
+  align-items: center;
+  gap: 22px;
+}
+
+.tool-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--marina);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tool-links a:hover {
+  color: var(--maui);
+}
+
 .news-layout {
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr);
@@ -2340,6 +2506,19 @@ body.companion-active .wordmark-mark img {
     gap: 42px;
   }
 
+  .tool-feature {
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: 34px;
+  }
+
+  .tool-preview img {
+    height: 400px;
+  }
+
+  .tool-body h3 {
+    font-size: 40px;
+  }
+
   .research-focus {
     grid-template-columns: 1fr;
     gap: 34px;
@@ -2518,6 +2697,33 @@ body.companion-active .wordmark-mark img {
   .section-heading {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .tool-feature {
+    padding: 18px 0 24px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .tool-preview img {
+    height: 320px;
+    aspect-ratio: 1.45 / 1;
+  }
+
+  .tool-body h3 {
+    font-size: 38px;
+  }
+
+  .tool-capabilities {
+    align-items: stretch;
+  }
+
+  .tool-capabilities li {
+    flex: 1;
+  }
+
+  .tool-links a {
+    min-height: 44px;
   }
 
   .publication-atlas {
