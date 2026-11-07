@@ -90,8 +90,9 @@
   <main id="main">
     <section class="profile shell" id="about">
       <aside class="profile-rail reveal" aria-label="Academic profile">
-        <figure class="profile-photo">
-          <img src="assets/profile/tianjun-gu-avatar.jpg" alt="Portrait of Tianjun Gu" width="1080" height="1620">
+        <figure class="profile-photo" role="img" aria-label="Portrait of Tianjun Gu">
+          <img class="profile-photo-day" src="assets/profile/tianjun-gu-avatar.jpg" alt="" width="1080" height="1620" aria-hidden="true">
+          <img class="profile-photo-night" src="assets/profile/tianjun-gu-avatar-night.webp" alt="" width="1200" height="1601" aria-hidden="true">
         </figure>
 
         <div class="profile-links" aria-label="Profiles and contact">
@@ -119,15 +120,15 @@
 
         <div class="profile-bio">
           <p>I am a master's student at <strong>East China Normal University</strong> and a member of the SJTU–ECNU DMCV Lab, working with Prof. Lizhuang Ma and Prof. Xin Tan. I am also a visiting research intern at the <strong>NYU AI4CE Lab</strong>, working with Prof. Chen Feng, and at the <strong>Tsinghua University Spatial Intelligence Lab</strong>, working with Prof. Yiming Li.</p>
-          <p>My research asks how agents can build and revise beliefs about the physical world beyond what they have directly observed. This thread connects <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener">EscherVerse</a> on physical and intent reasoning, <a href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener">VSI-Super-Wild</a> on long-form spatial world states, and <a href="#paper-sesb">Palimpsest</a> on evidence-linked, self-evolving spatial belief.</p>
+          <p>My research asks how agents can build and revise beliefs about the physical world beyond what they have directly observed. This thread connects <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener">EscherVerse</a> on physical and intent reasoning, <a href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener">VSI-Super-Wild</a> on long-form spatial world states, and <a href="#paper-sesb">Palimpsest</a> on observation-grounded, self-evolving spatial belief.</p>
         </div>
 
         <nav class="hero-cycle" aria-label="Research cycle">
-          <a class="is-cycle-active" href="#focus-observe" data-cycle-link="observe" data-cycle-index="1"><span>01</span><strong>Observe</strong><small>Select evidence</small></a>
+          <a class="is-cycle-active" href="#focus-observe" data-cycle-link="observe" data-cycle-index="1"><span>01</span><strong>Observe</strong><small>Seek informative views</small></a>
           <i aria-hidden="true"></i>
           <a href="#focus-revise" data-cycle-link="revise" data-cycle-index="2"><span>02</span><strong>Revise</strong><small>Update belief</small></a>
           <i aria-hidden="true"></i>
-          <a href="#focus-evolve" data-cycle-link="evolve" data-cycle-index="3"><span>03</span><strong>Evolve</strong><small>Evolve with evidence</small></a>
+          <a href="#focus-evolve" data-cycle-link="evolve" data-cycle-index="3"><span>03</span><strong>Evolve</strong><small>Evolve through feedback</small></a>
         </nav>
 
         <div class="availability"><span aria-hidden="true"></span>Actively seeking Fall 2027 PhD opportunities</div>
@@ -139,16 +140,16 @@
         <p class="section-index">Research focus</p>
         <p class="focus-mode" aria-hidden="true"><span>World-state cycle</span><strong data-focus-mode>Observe</strong></p>
         <h2 id="focus-title">How should an agent learn a world it cannot fully observe?</h2>
-        <p class="focus-statement">An embodied agent rarely sees the whole physical world. It must decide where to look, what to remember, and when new evidence should change what it believes.</p>
+        <p class="focus-statement">An embodied agent rarely sees the whole physical world. It must decide where to look, what to remember, and when new observations or interaction outcomes should change what it believes.</p>
       </div>
       <div class="focus-grid" data-scroll-focus>
         <article id="focus-observe" data-scroll-item data-companion="observe" data-focus-label="Observe">
           <span>01</span>
-          <div><h3>Active observation</h3><p>Choose when to inspect a new viewpoint, revisit the world, or retrieve earlier evidence in order to resolve consequential uncertainty under limited observation budgets.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">Palimpsest</a><a href="#paper-doraemon">DORAEMON</a></div></div>
+          <div><h3>Active observation</h3><p>Choose when to inspect a new viewpoint, revisit the world, or recover an earlier perceptual trace in order to resolve consequential uncertainty under limited observation budgets.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">Palimpsest</a><a href="#paper-doraemon">DORAEMON</a></div></div>
         </article>
         <article id="focus-revise" data-scroll-item data-companion="remember" data-focus-label="Revise">
           <span>02</span>
-          <div><h3>Revisable world memory</h3><p>Maintain entities, relations, and events with provenance, temporal scope, and uncertainty, while distinguishing genuine world change from interpretation error or missing evidence.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">Palimpsest</a><a href="#paper-vsi">VSI-Super-Wild</a></div></div>
+          <div><h3>Revisable world memory</h3><p>Maintain entities, relations, and events with provenance, temporal scope, and uncertainty, while distinguishing genuine world change from interpretation error or incomplete observation.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">Palimpsest</a><a href="#paper-vsi">VSI-Super-Wild</a></div></div>
         </article>
         <article id="focus-evolve" data-scroll-item data-companion="evolve" data-focus-label="Evolve">
           <span>03</span>
@@ -197,7 +198,7 @@
       <div class="publication-atlas reveal" data-publication-atlas>
         <div class="atlas-intro">
           <p class="section-index">Core research trajectory</p>
-          <h3>From selective evidence to reusable world knowledge.</h3>
+          <h3>From selective observation to reusable world knowledge.</h3>
         </div>
         <div class="atlas-matrix" aria-label="Thematic map of representative publications">
           <div class="atlas-axis" aria-hidden="true"><span>Representative work</span><span>Observe</span><span>Revise</span><span>Evolve</span></div>
@@ -248,13 +249,13 @@
         <article class="publication reveal" id="paper-sesb" data-scroll-item data-companion="belief">
           <span class="paper-index" aria-hidden="true">03</span>
           <div class="publication-thumb" aria-label="Palimpsest paper overview figure">
-            <img src="assets/projects/sesb-overview.jpg" alt="Palimpsest paper overview showing query-driven spatial belief evolution from video evidence" width="1200" height="676" loading="lazy">
+            <img src="assets/projects/sesb-overview.jpg" alt="Palimpsest paper overview showing query-driven spatial belief evolution from video observations" width="1200" height="676" loading="lazy">
           </div>
           <div class="publication-body">
             <p class="venue"><span>Under Review</span></p>
             <h3>Palimpsest: Spatial Belief Improvement through Self-Evolving Agents</h3>
             <p class="authors"><strong>Tianjun Gu</strong>, Shao Zeng, Ruixin Zhang, Haoran Li, Chenghua Gong, Haonan Wang, Yuan Xie, Jingyu Gong, Jingyun Zhang, Jun Wang, Rizen Guo, Lizhuang Ma, Shouhong Ding, Xin Tan</p>
-            <p class="summary"><strong>What it contributes.</strong> A self-evolving spatial belief that retrieves evidence, revises intermediate representations, and supports query-driven reasoning over long videos.</p>
+            <p class="summary"><strong>What it contributes.</strong> A self-evolving spatial belief that retrieves query-relevant observations, revises intermediate representations, and supports reasoning over long videos.</p>
             <div class="paper-links"><a href="mailto:Grady10086@gmail.com?subject=Palimpsest%20manuscript%20request">Request manuscript</a></div>
           </div>
         </article>
@@ -338,7 +339,7 @@
           <div class="tool-body">
             <p class="tool-meta"><span>Independent project</span><span>Open source</span></p>
             <h3>Prismatica</h3>
-            <p class="tool-tagline">Turn evidence into a figure worth examining.</p>
+            <p class="tool-tagline">Turn research results into a figure worth examining.</p>
             <p>Prismatica is an interactive scientific visualization studio for moving from raw results to publication-ready figures. It combines 24 adaptable visual studies with local data editing, linked views, reproducible Python references, and editable SVG export.</p>
             <ul class="tool-capabilities" aria-label="Prismatica capabilities">
               <li>Interactive studies</li>
