@@ -74,6 +74,7 @@
 
       <div class="nav-links" id="nav-links" data-nav-links>
         <a href="#about">About</a>
+        <a href="#research">Research</a>
         <a href="#news">News</a>
         <a href="#publications">Publications</a>
         <a href="#tools">Tools</a>
@@ -120,7 +121,7 @@
 
         <div class="profile-bio">
           <p>I am a master's student at <strong>East China Normal University</strong> and a member of the SJTU–ECNU DMCV Lab, working with Prof. Lizhuang Ma and Prof. Xin Tan. I am also a visiting research intern at the <strong>NYU AI4CE Lab</strong>, working with Prof. Chen Feng, and at the <strong>Tsinghua University Spatial Intelligence Lab</strong>, working with Prof. Yiming Li.</p>
-          <p>My research asks how agents can build and revise beliefs about the physical world beyond what they have directly observed. This thread connects <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener">EscherVerse</a> on physical and intent reasoning, <a href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener">VSI-Super-Wild</a> on long-form spatial world states, and <a href="#paper-sesb">Palimpsest</a> on observation-grounded, self-evolving spatial belief.</p>
+          <p>My current direction, active spatial supersensing, treats perception as a decision problem: an agent uses spatial memory to identify what it does not know, seek informative observations, and revise a persistent world belief through interaction feedback. It grows from <a href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener">EscherVerse</a>, <a href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener">VSI-Super-Wild</a>, and <a href="#paper-sesb">Palimpsest</a>.</p>
         </div>
 
         <nav class="hero-cycle" aria-label="Research cycle">
@@ -135,25 +136,25 @@
       </div>
     </section>
 
-    <section class="research-focus shell reveal" aria-labelledby="focus-title">
+    <section class="research-focus shell reveal" id="research" aria-labelledby="focus-title">
       <div class="focus-intro">
-        <p class="section-index">Research focus</p>
-        <p class="focus-mode" aria-hidden="true"><span>World-state cycle</span><strong data-focus-mode>Observe</strong></p>
-        <h2 id="focus-title">How should an agent learn a world it cannot fully observe?</h2>
-        <p class="focus-statement">An embodied agent rarely sees the whole physical world. It must decide where to look, what to remember, and when new observations or interaction outcomes should change what it believes.</p>
+        <p class="section-index">Research interests</p>
+        <p class="focus-mode" aria-hidden="true"><span>Research progression</span><strong data-focus-mode>Observe</strong></p>
+        <h2 id="focus-title">How can an agent learn a world it cannot fully observe?</h2>
+        <p class="focus-statement">My work follows one progression: acquire the missing view, revise a persistent account of the world, then turn interaction feedback into knowledge that transfers beyond the current task.</p>
       </div>
       <div class="focus-grid" data-scroll-focus>
         <article id="focus-observe" data-scroll-item data-companion="observe" data-focus-label="Observe">
           <span>01</span>
-          <div><h3>Active observation</h3><p>Choose when to inspect a new viewpoint, revisit the world, or recover an earlier perceptual trace in order to resolve consequential uncertainty under limited observation budgets.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">Palimpsest</a><a href="#paper-doraemon">DORAEMON</a></div></div>
+          <div><h3><small>Partial views</small><i aria-hidden="true">&rarr;</i> Active observation</h3><p>When the current view is insufficient, an agent should identify what is missing and choose the viewpoint, moment, or interaction most likely to resolve that uncertainty.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-active">Dreaming Beyond the View</a><a href="#paper-vsi">VSI-Super-Wild</a></div></div>
         </article>
         <article id="focus-revise" data-scroll-item data-companion="remember" data-focus-label="Revise">
           <span>02</span>
-          <div><h3>Revisable world memory</h3><p>Maintain entities, relations, and events with provenance, temporal scope, and uncertainty, while distinguishing genuine world change from interpretation error or incomplete observation.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">Palimpsest</a><a href="#paper-vsi">VSI-Super-Wild</a></div></div>
+          <div><h3><small>New observations</small><i aria-hidden="true">&rarr;</i> Revisable world belief</h3><p>New evidence should update only the entities, relations, and events it bears on, while preserving provenance and separating genuine world change from earlier interpretation error.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-sesb">Palimpsest</a><a href="#paper-doraemon">DORAEMON</a></div></div>
         </article>
         <article id="focus-evolve" data-scroll-item data-companion="evolve" data-focus-label="Evolve">
           <span>03</span>
-          <div><h3>Reusable physical-world knowledge</h3><p>Test what remains useful when goals and questions change, distinguishing what frozen memory can support from what requires renewed observation.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-vsi">VSI-Super-Wild</a><a href="#paper-escher">EscherVerse</a></div></div>
+          <div><h3><small>Interaction feedback</small><i aria-hidden="true">&rarr;</i> Transferable physical intelligence</h3><p>An agent should learn which observations and updates remain useful when goals, viewpoints, and environments change, and when renewed interaction is still necessary.</p><div class="focus-evidence"><span>Representative work</span><a href="#paper-active">Dreaming Beyond the View</a><a href="#paper-escher">EscherVerse</a></div></div>
         </article>
       </div>
     </section>
@@ -189,7 +190,7 @@
           <p class="section-index">Research</p>
           <h2>Selected publications</h2>
           <div class="publication-progress" aria-hidden="true">
-            <span data-scroll-current>01</span><i></i><span>07</span>
+            <span data-scroll-current>01</span><i></i><span>08</span>
           </div>
         </div>
         <p>Representative work in spatial reasoning, video understanding, and embodied intelligence. * denotes equal contribution.</p>
@@ -208,11 +209,14 @@
           <a class="atlas-row" href="#paper-vsi" data-atlas-paper="paper-vsi">
             <span class="atlas-name"><small>02</small>VSI-Super-Wild</span><span class="atlas-cell"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span>
           </a>
+          <a class="atlas-row" href="#paper-active" data-atlas-paper="paper-active">
+            <span class="atlas-name"><small>03</small>Active Supersensing</span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span>
+          </a>
           <a class="atlas-row" href="#paper-sesb" data-atlas-paper="paper-sesb">
-            <span class="atlas-name"><small>03</small>Palimpsest</span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell"><i></i></span>
+            <span class="atlas-name"><small>04</small>Palimpsest</span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell"><i></i></span>
           </a>
           <a class="atlas-row" href="#paper-doraemon" data-atlas-paper="paper-doraemon">
-            <span class="atlas-name"><small>04</small>DORAEMON</span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell"><i></i></span>
+            <span class="atlas-name"><small>05</small>DORAEMON</span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell is-covered"><i></i></span><span class="atlas-cell"><i></i></span>
           </a>
         </div>
       </div>
@@ -246,8 +250,23 @@
           </div>
         </article>
 
-        <article class="publication reveal" id="paper-sesb" data-scroll-item data-companion="belief">
+        <article class="publication reveal" id="paper-active" data-scroll-item data-companion="explore">
           <span class="paper-index" aria-hidden="true">03</span>
+          <div class="publication-thumb manuscript-thumb active-supersensing-thumb" aria-label="Conceptual mark for active spatial supersensing">
+            <i data-lucide="scan-eye" aria-hidden="true"></i>
+            <span>Active Spatial Supersensing</span>
+            <small>Observe · Revise · Transfer</small>
+          </div>
+          <div class="publication-body">
+            <p class="venue"><span>Work in Progress</span><span class="publication-status">ICML</span></p>
+            <h3>Dreaming Beyond the View: Towards Active Spatial Supersensing</h3>
+            <p class="authors"><strong>Tianjun Gu</strong> et al.</p>
+            <p class="summary"><strong>Research direction.</strong> An agent uses spatial memory to diagnose what it still does not know, actively acquires complementary observations, and turns the resulting experience into world knowledge that can support later tasks.</p>
+          </div>
+        </article>
+
+        <article class="publication reveal" id="paper-sesb" data-scroll-item data-companion="belief">
+          <span class="paper-index" aria-hidden="true">04</span>
           <div class="publication-thumb" aria-label="Palimpsest paper overview figure">
             <img src="assets/projects/sesb-overview.jpg" alt="Palimpsest paper overview showing query-driven spatial belief evolution from video observations" width="1200" height="676" loading="lazy">
           </div>
@@ -261,7 +280,7 @@
         </article>
 
         <article class="publication reveal" id="paper-doraemon" data-scroll-item data-companion="navigate">
-          <span class="paper-index" aria-hidden="true">04</span>
+          <span class="paper-index" aria-hidden="true">05</span>
           <a class="publication-thumb" href="https://grady10086.github.io/DORAEMON/" target="_blank" rel="noopener" aria-label="Open DORAEMON project page">
             <img src="assets/projects/doraemon-fig4.jpg" alt="DORAEMON Figure 4 showing its topological map and hierarchical construction" width="1200" height="708" loading="lazy">
           </a>
@@ -278,7 +297,7 @@
         </article>
 
         <article class="publication reveal" id="paper-efficient-mllm" data-scroll-item data-companion="survey">
-          <span class="paper-index" aria-hidden="true">05</span>
+          <span class="paper-index" aria-hidden="true">06</span>
           <a class="publication-thumb" href="https://doi.org/10.1007/s44267-025-00099-6" target="_blank" rel="noopener" aria-label="Open efficient multimodal large language models survey">
             <img src="assets/projects/efficient-mllm-architecture.jpg" alt="Architecture of an efficient multimodal large language model with a lightweight vision encoder, token compression, and efficient projector" width="1200" height="676" loading="lazy">
           </a>
@@ -292,7 +311,7 @@
         </article>
 
         <article class="publication reveal" id="paper-low-light" data-scroll-item data-companion="enhance">
-          <span class="paper-index" aria-hidden="true">06</span>
+          <span class="paper-index" aria-hidden="true">07</span>
           <a class="publication-thumb" href="https://openaccess.thecvf.com/content/ICCV2025/html/Wang_From_Enhancement_to_Understanding_Build_a_Generalized_Bridge_for_Low-light_ICCV_2025_paper.html" target="_blank" rel="noopener" aria-label="Open low-light vision paper">
             <img src="assets/projects/low-light-understanding-teaser.jpg" alt="Framework connecting low-light enhancement with semantic understanding for improved generalization" width="1200" height="676" loading="lazy">
           </a>
@@ -306,7 +325,7 @@
         </article>
 
         <article class="publication reveal" id="paper-sasgan" data-scroll-item data-companion="generate">
-          <span class="paper-index" aria-hidden="true">07</span>
+          <span class="paper-index" aria-hidden="true">08</span>
           <a class="publication-thumb" href="https://doi.org/10.11996/JG.j.2095-302X.2024010102" target="_blank" rel="noopener" aria-label="Open SASGAN theatrical masks paper">
             <img src="assets/projects/sasgan-theatrical-masks.jpg" alt="Representative theatrical mask samples used in the SASGAN study" width="1200" height="676" loading="lazy">
           </a>

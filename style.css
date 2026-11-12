@@ -713,6 +713,23 @@ body.companion-active .wordmark-mark img {
   line-height: 1.2;
 }
 
+.focus-grid h3 small {
+  color: var(--maui);
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.focus-grid h3 i {
+  margin: 0 7px;
+  color: var(--sky);
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+}
+
 .focus-grid p {
   max-width: 610px;
   margin: 0;
@@ -1371,6 +1388,22 @@ body.companion-active .wordmark-mark img {
   color: var(--muted);
   font-size: 8px;
   text-transform: uppercase;
+}
+
+.active-supersensing-thumb {
+  background:
+    linear-gradient(90deg, transparent 49.7%, rgba(82, 162, 180, 0.28) 50%, transparent 50.3%),
+    linear-gradient(rgba(138, 186, 211, 0.12), rgba(138, 186, 211, 0.12));
+}
+
+.active-supersensing-thumb svg {
+  width: 30px;
+  height: 30px;
+  color: var(--maui);
+}
+
+.active-supersensing-thumb span {
+  font-size: 19px;
 }
 
 .publication-body h3 {
