@@ -1390,22 +1390,6 @@ body.companion-active .wordmark-mark img {
   text-transform: uppercase;
 }
 
-.active-supersensing-thumb {
-  background:
-    linear-gradient(90deg, transparent 49.7%, rgba(82, 162, 180, 0.28) 50%, transparent 50.3%),
-    linear-gradient(rgba(138, 186, 211, 0.12), rgba(138, 186, 211, 0.12));
-}
-
-.active-supersensing-thumb svg {
-  width: 30px;
-  height: 30px;
-  color: var(--maui);
-}
-
-.active-supersensing-thumb span {
-  font-size: 19px;
-}
-
 .publication-body h3 {
   margin: 6px 0 7px;
   font-size: 18px;
