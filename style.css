@@ -69,6 +69,27 @@ body.nav-open {
   overflow: hidden;
 }
 
+.ambient-field {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.52;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+:root[data-theme="dark"] .ambient-field {
+  opacity: 0.68;
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -783,11 +804,11 @@ body.companion-active .wordmark-mark img {
 
 .section-news,
 .section-experience {
-  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 96%, transparent);
 }
 
 .section-tools {
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
 }
 
 .tool-feature {
@@ -2607,6 +2628,14 @@ body.companion-active .wordmark-mark img {
     width: min(calc(100% - 32px), var(--shell));
   }
 
+  .ambient-field {
+    opacity: 0.36;
+  }
+
+  :root[data-theme="dark"] .ambient-field {
+    opacity: 0.48;
+  }
+
   .wordmark-name {
     display: none;
   }
@@ -2902,6 +2931,12 @@ body.companion-active .wordmark-mark img {
 
   .site-footer > .shell > a {
     justify-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-field {
+    opacity: 0.26;
   }
 }
 
