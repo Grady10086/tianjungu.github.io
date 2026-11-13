@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>走出几何的笼子，Physical AI 才刚刚开始 | Tianjun Gu</title>
+<meta name="description" content="机器人越来越能干，但在有人活动的空间里，先弄清该做什么，本身就是一种能力。"><meta name="theme-color" content="#f8f5f0">
+<link rel="canonical" href="https://grady10086.github.io/tianjungu.github.io/blog/physical-ai/"><link rel="stylesheet" href="../blog.css">
+<meta property="og:title" content="走出几何的笼子，Physical AI 才刚刚开始"><meta property="og:description" content="机器人越来越能干，但在有人活动的空间里，先弄清该做什么，本身就是一种能力。"><meta property="og:url" content="https://grady10086.github.io/tianjungu.github.io/blog/physical-ai/"><meta property="og:type" content="article"><meta property="og:image" content="https://grady10086.github.io/tianjungu.github.io/blog/physical-ai/images/robot-history.webp">
+</head><body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="masthead"><a class="brand" href="../../">Tianjun Gu</a><nav aria-label="站点导航"><a href="../">Blog</a><a href="../../">主页</a></nav></header>
+<main id="main"><article>
+<header class="article-header reading"><p class="eyebrow">研究随笔 <span></span> Spatial Intelligence</p>
+<h1>走出几何的笼子，<br class="title-break">Physical AI 才刚刚开始</h1><p class="deck">机器人越来越能干，但在有人活动的空间里，先弄清该做什么，本身就是一种能力。</p>
+<p class="byline"><a href="../../">Tianjun Gu</a><time datetime="2026-11-13">2026 年 11 月 13 日</time></p></header>
+<nav class="toc reading" aria-label="文章目录"><a href="#geometry">几何的局限</a><a href="#intent">意图的维度</a><a href="#sim2real">Sim2Real 的边界</a><a href="#evaluation">迈向交互决策</a><a href="#action">由意图驱动的主动行为</a><a href="#references">参考文献</a></nav>
+<div class="prose">
+<div class="opening"><p>1961 年，Unimate 第一次进入通用汽车的工厂，按预先编好的程序搬运铸件。<sup class="cite"><a href="#ref-1" aria-label="参考文献 1">1</a></sup> 今天，机器人的活动范围比那个工位大得多。它们可以在仿真中练习灵巧操作，从不同机器人和真实场景的数据中学习，还能把一部分技能带到训练时没见过的家庭里。<sup class="cite"><a href="#ref-2" aria-label="参考文献 2">2</a><span aria-hidden="true">,</span><a href="#ref-3" aria-label="参考文献 3">3</a><span aria-hidden="true">,</span><a href="#ref-4" aria-label="参考文献 4">4</a></sup> 有人把这一连串进展看作机器人接近自己的“GPT 时刻”。但许多示范仍有一个容易被忽略的前提：机器人开始行动之前，已经有人告诉它要做什么。</p>
+<p>固定工位可以把目标写进程序，开放环境却很少提前交代这么多。人正在做什么、哪些东西暂时不能动、此刻介入会不会打断别人的工作，通常要到现场才知道。当机器人从实验室走到有人活动的空间，适应新的环境，也意味着理解人为什么在改变这个环境。</p>
+<figure class="wide"><img src="images/robot-history.webp" alt="横幅并置人类搬运与协作的变化，以及从早期工业机械臂到移动操作机器人的演进" width="2172" height="724" fetchpriority="high" decoding="async"><figcaption><span>图 1</span> 从固定工位到共享空间。插画为概念示意。</figcaption></figure>
+<blockquote>人的目标，是物理世界里一个看不见的变量；而人的意图，却在时刻改变物理世界。</blockquote></div>
+<section id="geometry"><h2><span>01</span>几何的局限</h2><p>把一个空间重建得足够准确，下一步该做什么就会变得清楚吗？三维表征可以告诉机器人哪里有空位、哪些东西够得着，以及一段动作会不会撞上障碍。它却不能仅凭场景几何判断，眼前哪个变化值得配合，哪个变化应该留给人自己完成。<strong>同一个空间状态，可以对应不同的目标。</strong></p>
+<figure class="wide"><img src="images/geometry-cage.webp" alt="同一个工作间左侧被定格在几何网格中，右侧随着人与机器人的相互回应沿时间连续分叉" width="2172" height="724" loading="lazy" decoding="async"><figcaption><span>图 2</span> 左侧是同一个瞬间的几何表征；右侧是从这个瞬间出发、会随双方行动继续变化的未来。</figcaption></figure>
+<p>我们把这种局限叫作“几何的笼子”。如果机器人只在变化发生之后更新地图，它当然可以知道哪里变了，却未必知道为什么会变。更难的是，机器人自己的介入也会改变人接下来的行动。空间智能必须把这层关系纳入判断：谁在改变环境，变化服务于什么目标，以及介入会带来什么后果。</p></section>
+<section id="intent"><h2><span>02</span>意图的维度</h2><p>看到物体开始运动，我们会试着从结果反推作用力、支撑或碰撞等原因。<sup class="cite"><a href="#ref-5" aria-label="参考文献 5">5</a></sup> 看到一个人行动，也可以提出类似的问题：在他看到的环境里，什么目标能解释他的动作？认知科学中的逆向规划把这个问题写成从动作与情境推断目标。<sup class="cite"><a href="#ref-6" aria-label="参考文献 6">6</a></sup> 同一动作往往支持不止一种解释，换到行动者的视角，有些原先合理的解释才会变得不那么可能。</p>
+<figure class="wide"><img src="images/teleo-spatial.webp" alt="同一个搬箱动作对应多个可能目标，换到行动者视角后，门口与桌面的可用性提供了不同线索" width="2172" height="724" loading="lazy" decoding="async"><figcaption><span>图 3</span> 从同一个动作可以反推多个目标；行动者能看到什么、能走到哪里，会改变我们对这些目标的判断。</figcaption></figure>
+<p>这是我们在 EscherVerse 中提出意图空间智能（Teleo-Spatial Intelligence, TSI）的出发点：把物理动态、行动者的视角和潜在目标放在同一次推断里。<sup class="cite"><a href="#ref-7" aria-label="参考文献 7">7</a></sup> 物理条件限定了什么动作可行；人的目标则改变了我们对下一步会发生什么的预期。我们的研究用真实视频检验现有模型的这类推理能力，发现模型整体仍落后于人类。这项结果说明，看清场景和看懂行为之间有一段需要单独测量的距离，但它还不能告诉我们这种差距会怎样影响机器人的协作。</p></section>
+<section id="sim2real"><h2><span>03</span>Sim2Real 的边界</h2><p>Sim2Real 已经证明，机器人可以在仿真里练习，再把部分能力带到真实硬件上。域随机化让策略碰到不同的渲染参数、摩擦或动力学条件，减少它对某一套仿真设定的依赖。<sup class="cite"><a href="#ref-8" aria-label="参考文献 8">8</a><span aria-hidden="true">,</span><a href="#ref-9" aria-label="参考文献 9">9</a></sup> 可当机器人要与人共享空间时，变化的不只是环境参数。人会看到机器人做了什么，并据此调整自己的下一步。人机协作中已经有研究把这种相互适应直接纳入模型。<sup class="cite"><a href="#ref-10" aria-label="参考文献 10">10</a></sup></p>
+<figure class="wide"><img src="images/sim2real.webp" alt="左侧仿真重复同一条人的运动轨迹，右侧机器人侧移让路后，原本停步的人继续前进" width="2172" height="724" loading="lazy" decoding="async"><figcaption><span>图 4</span> 轨迹回放可以复现曾经发生的动作；交互还需要回答，机器人换一种做法之后，人会怎样回应。</figcaption></figure>
+<p>动作捕捉能让仿真里的人走得很真实。可如果这条轨迹只是回放，机器人提前让开、晚一点让开，甚至留在原地，人依然会照着同一条轨迹走。对人机协作而言，<strong>更难跨越的差距，有时是人能否对机器人的行动作出回应。</strong> 同一个房间可以被重建得很逼真，里面的互动却仍然是预先写好的。</p></section>
+<section id="evaluation"><h2><span>04</span>迈向交互决策</h2><p>随着基础模型变强，从完整视频里写出一段合理的解释正变得越来越容易。Cambrian-S 和 VSI-Super-Wild 把空间理解推向了更长、更复杂的时间尺度：跟踪物体，记住空间关系，理解真实事件如何演变。<sup class="cite"><a href="#ref-11" aria-label="参考文献 11">11</a><span aria-hidden="true">,</span><a href="#ref-12" aria-label="参考文献 12">12</a></sup> 这些工作让我们更清楚地看见，持续观察本身就很难。但长程视频问答通常考察的是模型能否根据给定观察回答问题；机器人面对的则是一个还没有发生完的场景。</p>
+<figure class="wide"><img src="images/spatial-supersensing.webp" alt="连续横幅呈现长程视频中的空间线索，以及从观看事件到在事件中作出决定的区别" width="2172" height="724" loading="lazy" decoding="async"><figcaption><span>图 5</span> 长程观察延伸了模型能利用的证据；闭环行动检验这些证据能否支撑当下的决定。概念图参考 Cambrian-S 与 VSI-Super-Wild。</figcaption></figure>
+<p>一次事后解释可以很有说服力。可如果把视频停在机器人必须行动的那一刻，当时的证据够吗？这个问题可以先用截断视频来测：只给决策时已经发生的事，看看模型会保留哪些解释、对它们有多确定。接下来还得让判断进入行动，看它带来的结果。机器人选择等待、让出空间，还是用一句话确认，都会改变接下来能看到什么、能做什么。<sup class="cite"><a href="#ref-13" aria-label="参考文献 13">13</a><span aria-hidden="true">,</span><a href="#ref-14" aria-label="参考文献 14">14</a></sup></p></section>
+<section id="action"><h2><span>05</span>由意图驱动的主动行为</h2><p>如何在真实世界里测量对意图的理解？一种做法是把判断与协作结果对照起来：机器人行动之前认为人想做什么，采取行动之后，人的工作是否更顺利，是否需要停下来纠正它？结果也要结合控制能力来读。抓取失败未必是误解了目标；任务碰巧完成，也不能证明它判断对了意图。人的确认、纠正以及行动造成的物理后果，可以一起帮我们看清是哪里出了问题。</p>
+<p>1961 年的 Unimate 接到一套明确的程序，照着做就能完成工作。走进真实世界的机器人，常常连“帮什么忙”都要在现场弄清楚。我们期待的 Spatial Intelligence in the Wild，最终要经得起这个朴素的检验：当人的目标没有被写进指令里，机器人能否在有限的线索下作出合适的回应，并在发现自己猜错时及时调整？</p></section>
+<section id="references" class="references"><h2>参考文献</h2><ol>
+<li id="ref-1">The Henry Ford. <a href="https://www.thehenryford.org/collections/explore/artifact/183434">Unimate Industrial Robot, 1961</a>. <span>馆藏档案.</span></li>
+<li id="ref-2">OpenAI et al. <a href="https://arxiv.org/abs/1808.00177">Learning Dexterous In-Hand Manipulation</a>. <span>2018.</span></li>
+<li id="ref-3">Open X-Embodiment Collaboration. <a href="https://arxiv.org/abs/2310.08864">Open X-Embodiment: Robotic Learning Datasets and RT-X Models</a>. <span>ICRA 2024.</span></li>
+<li id="ref-4">Physical Intelligence et al. <a href="https://www.pi.website/blog/pi05">π₀.₅: A Vision-Language-Action Model with Open-World Generalization</a>. <span>2025.</span></li>
+<li id="ref-5">Battaglia, Hamrick & Tenenbaum. <a href="https://doi.org/10.1073/pnas.1306572110">Simulation as an engine of physical scene understanding</a>. <span>PNAS, 2013.</span></li>
+<li id="ref-6">Baker, Saxe & Tenenbaum. <a href="https://doi.org/10.1016/j.cognition.2009.07.005">Action understanding as inverse planning</a>. <span>Cognition, 2009.</span></li>
+<li id="ref-7">Gu et al. <a href="https://arxiv.org/abs/2601.01547">Vision-language models lag human performance on physical dynamics and intent reasoning</a>. <span>arXiv:2601.01547；获 Nature Communications 原则性接收.</span></li>
+<li id="ref-8">Tobin et al. <a href="https://arxiv.org/abs/1703.06907">Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World</a>. <span>IROS 2017.</span></li>
+<li id="ref-9">Peng et al. <a href="https://arxiv.org/abs/1710.06537">Sim-to-Real Transfer of Robotic Control with Dynamics Randomization</a>. <span>ICRA 2018.</span></li>
+<li id="ref-10">Nikolaidis et al. <a href="https://arxiv.org/abs/1701.07851">Human-Robot Mutual Adaptation in Shared Autonomy</a>. <span>HRI 2017.</span></li>
+<li id="ref-11">Yang et al. <a href="https://cambrian-mllm.github.io/cambrian-s/">Cambrian-S: Towards Spatial Supersensing in Video</a>. <span>2025.</span></li>
+<li id="ref-12">Gu et al. <a href="https://vsi-super-wild.github.io/">Towards Spatial Supersensing in the Wild</a>. <span>ECCV 2026.</span></li>
+<li id="ref-13">Levine. <a href="https://proceedings.mlr.press/v164/levine22a.html">Understanding the World Through Action</a>. <span>CoRL, PMLR 164.</span></li>
+<li id="ref-14">Ren et al. <a href="https://robot-help.github.io/">Robots That Ask for Help: Uncertainty Alignment for Large Language Model Planners</a>. <span>CoRL 2023.</span></li>
+</ol></section>
+</div>
+</article></main>
+<footer class="footer"><a href="../">← 返回 Blog</a><a href="../../">Tianjun Gu</a></footer>
+</body></html>
