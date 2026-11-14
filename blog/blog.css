@@ -6,7 +6,7 @@
   --accent: #34596d;
   --rule: #d5d4cb;
   --wash: #e9edf0;
-  --read: 780px;
+  --read: 840px;
   --wide: 1090px;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
   scroll-padding-top: 24px;
@@ -39,6 +39,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-
 .eyebrow span { height: 3px; width: 3px; border-radius: 50%; background: currentColor; }
 h1, h2, blockquote { font-family: Georgia, "Songti SC", "Noto Serif CJK SC", "Noto Serif SC", SimSun, serif; }
 h1 { margin: 0; font-size: clamp(1.91rem, 5.6vw, 3.8rem); font-weight: 700; line-height: 1.16; letter-spacing: -.035em; }
+/* Size the title against the same column used by the text and figures. */
+.article-header { container-type: inline-size; }
+.article-header h1 { font-size: min(3.8rem, 7cqi); white-space: nowrap; }
+.article-header:lang(en) h1 { font-size: min(2.15rem, 3.05cqi); }
 .deck { margin: 22px 0; font-size: clamp(1.04rem, 2vw, 1.24rem); color: var(--muted); line-height: 1.7; text-wrap: balance; }
 .byline { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; margin: 0; color: var(--muted); font-size: .87rem; }
 .byline a { color: var(--ink); text-decoration: none; font-weight: 600; }
