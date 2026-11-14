@@ -41,7 +41,8 @@ h1, h2, blockquote { font-family: Georgia, "Songti SC", "Noto Serif CJK SC", "No
 h1 { margin: 0; font-size: clamp(1.91rem, 5.6vw, 3.8rem); font-weight: 700; line-height: 1.16; letter-spacing: -.035em; }
 /* Size the title against the same column used by the text and figures. */
 .article-header { container-type: inline-size; }
-.article-header h1 { font-size: min(2.35rem, 4.15cqi); white-space: nowrap; }
+.article-header h1 { font-size: min(3.8rem, 7cqi); white-space: nowrap; }
+.article-header:lang(en) h1 { font-size: min(2.75rem, 4.22cqi); }
 .deck { margin: 22px 0; font-size: clamp(1.04rem, 2vw, 1.24rem); color: var(--muted); line-height: 1.7; text-wrap: balance; }
 .byline { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; margin: 0; color: var(--muted); font-size: .87rem; }
 .byline a { color: var(--ink); text-decoration: none; font-weight: 600; }
