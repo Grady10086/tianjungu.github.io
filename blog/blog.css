@@ -6,7 +6,7 @@
   --accent: #34596d;
   --rule: #d5d4cb;
   --wash: #e9edf0;
-  --read: 710px;
+  --read: 780px;
   --wide: 1090px;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
   scroll-padding-top: 24px;
@@ -45,7 +45,7 @@ h1 { margin: 0; font-size: clamp(1.91rem, 5.6vw, 3.8rem); font-weight: 700; line
 .toc { display: flex; flex-wrap: wrap; gap: 9px 17px; padding: 15px 0; border-block: 1px solid var(--rule); font-size: .81rem; }
 .toc a { text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
-.prose { width: min(var(--wide), calc(100% - 44px)); margin: 31px auto 0; }
+.prose { width: min(var(--read), calc(100% - 44px)); margin: 31px auto 0; }
 .prose p, .prose h2, .prose blockquote, .prose ol {
   width: min(var(--read), 100%); margin-inline: auto;
 }
