@@ -66,6 +66,7 @@ h1 { margin: 0; font-size: clamp(1.91rem, 5.6vw, 3.8rem); font-weight: 700; line
 .wide { margin: clamp(20px, 3vw, 35px) 0; }
 .wide img, .entry img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 3px; background: var(--wash); }
 figcaption { margin: 9px auto 0; max-width: var(--read); width: 100%; color: var(--muted); font-size: .8rem; line-height: 1.6; }
+.figure-credit { display: block; font-size: .72rem; margin-top: .3em; }
 figcaption span { color: var(--accent); font-weight: 650; margin-right: .42em; }
 .cite { font-size: .68em; margin-left: .22em; line-height: 0; color: var(--accent); white-space: nowrap; }
 .cite a { text-decoration: none; padding-inline: .1em; }
