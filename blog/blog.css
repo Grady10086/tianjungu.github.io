@@ -84,7 +84,7 @@ figcaption span { color: var(--accent); font-weight: 650; margin-right: .42em; }
 .entry .eyebrow { margin-top: 20px; }
 .entry { container-type: inline-size; }
 .entry h2 { font-size: min(2.25rem, 7cqi); margin: 0; line-height: 1.25; white-space: nowrap; }
-.entry p:not(.eyebrow) { color: var(--muted); line-height: 1.65; }
+.entry h2:lang(en) { font-size: min(2.25rem, 3.7cqi); }
 .entry-more { display: inline-block; margin-top: 3px; color: var(--accent); font-size: .88rem; }
 @media (max-width: 480px) {
   .reading, .prose, .masthead, .footer { width: calc(100% - 32px); }
