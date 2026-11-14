@@ -75,6 +75,18 @@ figcaption span { color: var(--accent); font-weight: 650; margin-right: .42em; }
 .references ol { padding-left: 1.6em; font-size: .88rem; line-height: 1.62; }
 .references li { padding-left: .35em; margin-block: .55em; overflow-wrap: anywhere; }
 .references li span { color: var(--muted); }
+.references .own-work {
+  display: inline-block;
+  padding: 0 .45em;
+  margin-inline-end: .25em;
+  border: 1px solid var(--rule);
+  border-radius: .25em;
+  background: var(--wash);
+  color: var(--accent);
+  font-size: .8em;
+  font-weight: 650;
+  white-space: nowrap;
+}
 .references li:target { background: var(--wash); }
 .footer { border-top: 1px solid var(--rule); }
 .blog-index { min-height: 69vh; padding: clamp(55px, 8vw, 90px) 0 58px; }
