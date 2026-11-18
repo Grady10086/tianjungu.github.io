@@ -284,22 +284,20 @@ companionTargets.forEach((target) => {
 const dualMedia = [...document.querySelectorAll("[data-dual-media]")];
 
 dualMedia.forEach((media) => {
-  const controls = [...media.querySelectorAll("[data-media-view]")];
+  const control = media.querySelector("[data-media-cycle]");
+  const count = media.querySelector("[data-media-count]");
   let currentView = "primary";
 
   const setView = (view) => {
     currentView = view === "secondary" ? "secondary" : "primary";
     media.classList.toggle("is-secondary", currentView === "secondary");
-    controls.forEach((control) => {
-      control.setAttribute("aria-pressed", String(control.dataset.mediaView === currentView));
-    });
+    count.textContent = currentView === "secondary" ? "2 / 2" : "1 / 2";
+    control.setAttribute("aria-label", currentView === "secondary" ? "Show first figure" : "Show second figure");
   };
 
-  controls.forEach((control) => {
-    control.addEventListener("click", (event) => {
-      event.stopPropagation();
-      setView(control.dataset.mediaView);
-    });
+  control.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setView(currentView === "primary" ? "secondary" : "primary");
   });
 
   media.addEventListener("click", () => setView(currentView === "primary" ? "secondary" : "primary"));

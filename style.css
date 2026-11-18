@@ -1358,10 +1358,8 @@ body.companion-active .wordmark-mark img {
 }
 
 .publication-dual {
-  display: grid;
-  aspect-ratio: auto;
+  aspect-ratio: 16 / 9;
   cursor: pointer;
-  grid-template-rows: auto 34px;
   isolation: isolate;
 }
 
@@ -1410,44 +1408,54 @@ body.companion-active .wordmark-mark img {
   opacity: 1;
 }
 
-.media-toggle {
-  position: relative;
-  display: grid;
-  width: 100%;
-  padding: 3px;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  gap: 2px;
-  background: var(--surface-raised);
-  border-top: 1px solid var(--soft-line);
-  z-index: 4;
-}
-
-.media-toggle button {
-  min-width: 0;
-  min-height: 27px;
-  padding: 0 7px;
-  color: var(--muted);
-  background: transparent;
-  border: 0;
-  border-radius: 2px;
+.media-cycle {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: inline-flex;
+  min-width: 58px;
+  min-height: 30px;
+  padding: 0 8px 0 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #f4f9ff;
+  background: rgba(42, 50, 68, 0.82);
+  border: 1px solid rgba(244, 249, 255, 0.34);
+  border-radius: 4px;
+  box-shadow: 0 5px 16px rgba(20, 28, 43, 0.16);
+  backdrop-filter: blur(8px);
   cursor: pointer;
   font-size: 9px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  transition: color 180ms ease, background-color 180ms ease;
+  transition: background-color 180ms ease, transform 180ms ease;
+  z-index: 4;
 }
 
-.media-toggle button[aria-pressed="true"] {
-  color: var(--ink);
-  background: rgba(138, 186, 211, 0.24);
+.media-cycle:hover {
+  background: rgba(42, 50, 68, 0.94);
+  transform: translateX(1px);
 }
 
-.media-toggle button:focus-visible {
+.media-cycle:focus-visible {
   outline: 2px solid var(--sky);
   outline-offset: 1px;
+}
+
+.media-cycle svg {
+  width: 13px;
+  height: 13px;
+  stroke-width: 1.8;
+}
+
+.media-cycle .cycle-back,
+.publication-dual.is-secondary .media-cycle .cycle-forward {
+  display: none;
+}
+
+.publication-dual.is-secondary .media-cycle .cycle-back {
+  display: block;
 }
 
 .publication.is-scroll-active .publication-thumb img,
