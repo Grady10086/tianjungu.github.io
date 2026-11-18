@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261118b">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-REX8G8DYST"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -41,8 +41,8 @@
     gtag('config', 'G-REX8G8DYST');
   </script>
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-  <script src="ambient-field.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="ambient-field.js?v=20261118b" defer></script>
+  <script src="script.js?v=20261118b" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -230,11 +230,13 @@
       <div class="publication-list featured-publications" data-scroll-focus data-scroll-counter="[data-scroll-current]">
         <article class="publication reveal" id="paper-escher" data-scroll-item data-companion="intent">
           <span class="paper-index" aria-hidden="true">01</span>
-          <a class="publication-thumb" href="https://arxiv.org/abs/2601.01547" target="_blank" rel="noopener" aria-label="Open EscherVerse paper">
-            <img src="assets/projects/escher-panel-a.jpg" alt="EscherVerse Figure 1 panel contrasting geometric perception with teleo-spatial intelligence across six capabilities" width="1200" height="676" loading="lazy">
-          </a>
+          <div class="publication-thumb publication-dual" data-dual-media tabindex="0" role="group" aria-label="EscherVerse concept and failure cases">
+            <img class="media-primary" src="assets/projects/escher-panel-a.jpg" alt="EscherVerse concept contrasting geometric perception with teleo-spatial intelligence" width="1200" height="676" loading="lazy">
+            <img class="media-secondary" src="assets/projects/escher-cases.webp" alt="EscherVerse cases showing physical-dynamics and intent-reasoning failures" width="1200" height="676" loading="lazy">
+            <span class="media-divider" aria-hidden="true"></span><span class="media-label media-label-left">Concept</span><span class="media-label media-label-right">Cases</span>
+          </div>
           <div class="publication-body">
-            <p class="venue"><span>Nature Communications</span><span class="publication-status">Accepted</span></p>
+            <p class="venue"><span>Nature Communications</span></p>
             <h3>Vision-language models lag human performance on physical dynamics and intent reasoning</h3>
             <p class="authors"><strong>Tianjun Gu</strong>, Jingyu Gong, Zhizhong Zhang, Yuan Xie, Lizhuang Ma, Xin Tan, Athanasios V</p>
             <p class="summary"><strong>What it contributes.</strong> EscherVerse exposes the gap between current VLMs and humans in physical-dynamics and intent reasoning across 11,328 real-world videos.</p>
@@ -244,9 +246,11 @@
 
         <article class="publication reveal" id="paper-vsi" data-scroll-item data-companion="world">
           <span class="paper-index" aria-hidden="true">02</span>
-          <a class="publication-thumb" href="https://vsi-super-wild.github.io/" target="_blank" rel="noopener" aria-label="Open VSI-Super-Wild project page">
-            <img src="assets/projects/vsi-teaser.jpg" alt="VSI-Super-Wild paper teaser illustrating agent, object, and environment world-state reasoning" width="1200" height="676">
-          </a>
+          <div class="publication-thumb publication-dual" data-dual-media tabindex="0" role="group" aria-label="VSI-Super-Wild tasks and duration analysis">
+            <img class="media-primary" src="assets/projects/vsi-teaser.jpg" alt="VSI-Super-Wild teaser illustrating agent, object, and environment world-state reasoning" width="1200" height="676">
+            <img class="media-secondary" src="assets/projects/vsi-duration.webp" alt="VSI-Super-Wild performance degradation across increasing video durations" width="1200" height="676" loading="lazy">
+            <span class="media-divider" aria-hidden="true"></span><span class="media-label media-label-left">Tasks</span><span class="media-label media-label-right">Duration</span>
+          </div>
           <div class="publication-body">
             <p class="venue"><span>ECCV 2026</span><span class="publication-status">Poster</span></p>
             <h3>Towards Spatial Supersensing in the Wild</h3>
@@ -258,8 +262,10 @@
 
         <article class="publication reveal" id="paper-active" data-scroll-item data-companion="explore">
           <span class="paper-index" aria-hidden="true">03</span>
-          <div class="publication-thumb" aria-label="Active spatial supersensing research vision">
-            <img src="assets/projects/active-spatial-supersensing.webp" alt="Research vision for active spatial supersensing, showing observed experience, inferred relations, and unknown regions in a partially observed home" width="1672" height="941" loading="lazy">
+          <div class="publication-thumb publication-dual" data-dual-media tabindex="0" role="group" aria-label="Active spatial supersensing vision and information-gain analysis">
+            <img class="media-primary" src="assets/projects/active-spatial-supersensing.webp" alt="Active spatial supersensing vision with observed experience, inferred relations, and unknown regions" width="1672" height="941" loading="lazy">
+            <img class="media-secondary" src="assets/projects/active-information-gain.webp" alt="Accumulated information gain from active observation across multimodal models" width="1200" height="676" loading="lazy">
+            <span class="media-divider" aria-hidden="true"></span><span class="media-label media-label-left">Vision</span><span class="media-label media-label-right">Gain</span>
           </div>
           <div class="publication-body">
             <h3>Dreaming Beyond the View: Towards Active Spatial Supersensing</h3>
@@ -270,8 +276,10 @@
 
         <article class="publication reveal" id="paper-sesb" data-scroll-item data-companion="belief">
           <span class="paper-index" aria-hidden="true">04</span>
-          <div class="publication-thumb" aria-label="Palimpsest teaser figure">
-            <img src="assets/projects/palimpsest-teaser.webp" alt="Palimpsest teaser showing how an agent builds, revisits, evolves, and reads a persistent spatial world belief" width="1671" height="978" loading="lazy">
+          <div class="publication-thumb publication-dual" data-dual-media tabindex="0" role="group" aria-label="Palimpsest teaser and method">
+            <img class="media-primary" src="assets/projects/palimpsest-teaser.webp" alt="Palimpsest teaser showing how an agent builds, revisits, evolves, and reads a persistent spatial world belief" width="1671" height="978" loading="lazy">
+            <img class="media-secondary" src="assets/projects/palimpsest-method.webp" alt="Palimpsest method for building, evolving, and reading layered spatial beliefs" width="1200" height="676" loading="lazy">
+            <span class="media-divider" aria-hidden="true"></span><span class="media-label media-label-left">Teaser</span><span class="media-label media-label-right">Method</span>
           </div>
           <div class="publication-body">
             <p class="venue"><span>Under Review</span></p>
@@ -284,9 +292,11 @@
 
         <article class="publication reveal" id="paper-doraemon" data-scroll-item data-companion="navigate">
           <span class="paper-index" aria-hidden="true">05</span>
-          <a class="publication-thumb" href="https://grady10086.github.io/DORAEMON/" target="_blank" rel="noopener" aria-label="Open DORAEMON project page">
-            <img src="assets/projects/doraemon-fig4.jpg" alt="DORAEMON Figure 4 showing its topological map and hierarchical construction" width="1200" height="708" loading="lazy">
-          </a>
+          <div class="publication-thumb publication-dual" data-dual-media tabindex="0" role="group" aria-label="DORAEMON memory structure and navigation cases">
+            <img class="media-primary" src="assets/projects/doraemon-fig4.jpg" alt="DORAEMON topological map and hierarchical construction" width="1200" height="708" loading="lazy">
+            <img class="media-secondary" src="assets/projects/doraemon-navigation.webp" alt="DORAEMON comparison of VLM navigation, human navigation, and imitation" width="1200" height="676" loading="lazy">
+            <span class="media-divider" aria-hidden="true"></span><span class="media-label media-label-left">Memory</span><span class="media-label media-label-right">Navigation</span>
+          </div>
           <div class="publication-body">
             <p class="venue"><span>Under Review</span></p>
             <h3>DORAEMON: Decentralized Ontology-aware Reliable Agent with Enhanced Memory Oriented Navigation</h3>
@@ -301,9 +311,11 @@
 
         <article class="publication reveal" id="paper-efficient-mllm" data-scroll-item data-companion="survey">
           <span class="paper-index" aria-hidden="true">06</span>
-          <a class="publication-thumb" href="https://doi.org/10.1007/s44267-025-00099-6" target="_blank" rel="noopener" aria-label="Open efficient multimodal large language models survey">
-            <img src="assets/projects/efficient-mllm-architecture.jpg" alt="Architecture of an efficient multimodal large language model with a lightweight vision encoder, token compression, and efficient projector" width="1200" height="676" loading="lazy">
-          </a>
+          <div class="publication-thumb publication-dual" data-dual-media tabindex="0" role="group" aria-label="Efficient MLLM architecture and research timeline">
+            <img class="media-primary" src="assets/projects/efficient-mllm-architecture.jpg" alt="Efficient multimodal large language model architecture" width="1200" height="676" loading="lazy">
+            <img class="media-secondary" src="assets/projects/efficient-mllm-timeline.webp" alt="Timeline of efficient multimodal large language model families" width="1200" height="676" loading="lazy">
+            <span class="media-divider" aria-hidden="true"></span><span class="media-label media-label-left">Design</span><span class="media-label media-label-right">Timeline</span>
+          </div>
           <div class="publication-body">
             <p class="venue"><span>Visual Intelligence</span><span class="publication-status">2025</span></p>
             <h3>Efficient Multimodal Large Language Models: A Survey</h3>
@@ -315,9 +327,11 @@
 
         <article class="publication reveal" id="paper-low-light" data-scroll-item data-companion="enhance">
           <span class="paper-index" aria-hidden="true">07</span>
-          <a class="publication-thumb" href="https://openaccess.thecvf.com/content/ICCV2025/html/Wang_From_Enhancement_to_Understanding_Build_a_Generalized_Bridge_for_Low-light_ICCV_2025_paper.html" target="_blank" rel="noopener" aria-label="Open low-light vision paper">
-            <img src="assets/projects/low-light-understanding-teaser.jpg" alt="Framework connecting low-light enhancement with semantic understanding for improved generalization" width="1200" height="676" loading="lazy">
-          </a>
+          <div class="publication-thumb publication-dual" data-dual-media tabindex="0" role="group" aria-label="Low-light understanding framework and qualitative results">
+            <img class="media-primary" src="assets/projects/low-light-understanding-teaser.jpg" alt="Framework connecting low-light enhancement with semantic understanding" width="1200" height="676" loading="lazy">
+            <img class="media-secondary" src="assets/projects/low-light-results.webp" alt="Qualitative low-light enhancement comparison across methods" width="1200" height="676" loading="lazy">
+            <span class="media-divider" aria-hidden="true"></span><span class="media-label media-label-left">Framework</span><span class="media-label media-label-right">Results</span>
+          </div>
           <div class="publication-body">
             <p class="venue"><span>ICCV 2025</span><span class="publication-status">Poster</span></p>
             <h3>From Enhancement to Understanding: Build a Generalized Bridge for Low-light Vision via Semantically Consistent Unsupervised Fine-tuning</h3>
@@ -329,9 +343,11 @@
 
         <article class="publication reveal" id="paper-sasgan" data-scroll-item data-companion="generate">
           <span class="paper-index" aria-hidden="true">08</span>
-          <a class="publication-thumb" href="https://doi.org/10.11996/JG.j.2095-302X.2024010102" target="_blank" rel="noopener" aria-label="Open SASGAN theatrical masks paper">
-            <img src="assets/projects/sasgan-theatrical-masks.jpg" alt="Representative theatrical mask samples used in the SASGAN study" width="1200" height="676" loading="lazy">
-          </a>
+          <div class="publication-thumb publication-dual" data-dual-media tabindex="0" role="group" aria-label="SASGAN generated masks and attention mechanism">
+            <img class="media-primary" src="assets/projects/sasgan-theatrical-masks.jpg" alt="Representative theatrical mask samples from the SASGAN study" width="1200" height="676" loading="lazy">
+            <img class="media-secondary" src="assets/projects/sasgan-attention.webp" alt="Self-attention mechanism used in SASGAN" width="1200" height="676" loading="lazy">
+            <span class="media-divider" aria-hidden="true"></span><span class="media-label media-label-left">Samples</span><span class="media-label media-label-right">Attention</span>
+          </div>
           <div class="publication-body">
             <p class="venue"><span>Journal of Graphics</span><span class="publication-status">2024</span></p>
             <h3>Diversified Generation of Theatrical Masks Based on SASGAN</h3>

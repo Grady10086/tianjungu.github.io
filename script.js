@@ -281,7 +281,53 @@ companionTargets.forEach((target) => {
   target.addEventListener("focusout", () => setCompanionActive(false));
 });
 
-if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
+const dualMedia = [...document.querySelectorAll("[data-dual-media]")];
+const finePointer = window.matchMedia("(pointer: fine)").matches;
+
+dualMedia.forEach((media) => {
+  const restingSplit = 76;
+  let split = restingSplit;
+
+  const setSplit = (value) => {
+    split = Math.max(0, Math.min(100, value));
+    media.style.setProperty("--media-split", `${split.toFixed(1)}%`);
+  };
+
+  if (finePointer) {
+    media.addEventListener("pointermove", (event) => {
+      const rect = media.getBoundingClientRect();
+      media.classList.add("is-dragging");
+      setSplit(((event.clientX - rect.left) / rect.width) * 100);
+    });
+
+    media.addEventListener("pointerleave", () => {
+      media.classList.remove("is-dragging");
+      setSplit(restingSplit);
+    });
+  }
+
+  media.addEventListener("click", () => setSplit(split < 50 ? 100 : 0));
+  media.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      setSplit(split - 10);
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      setSplit(split + 10);
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      setSplit(0);
+    } else if (event.key === "End") {
+      event.preventDefault();
+      setSplit(100);
+    } else if (event.key === " " || event.key === "Enter") {
+      event.preventDefault();
+      setSplit(split < 50 ? 100 : 0);
+    }
+  });
+});
+
+if (!reducedMotion && finePointer) {
   document.querySelectorAll(".publication-thumb").forEach((thumb) => {
     thumb.addEventListener("pointermove", (event) => {
       const rect = thumb.getBoundingClientRect();
