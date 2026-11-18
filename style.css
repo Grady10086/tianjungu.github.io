@@ -1283,7 +1283,7 @@ body.companion-active .wordmark-mark img {
   background: var(--surface);
   border: 1px solid var(--soft-line);
   border-radius: 8px;
-  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
   gap: 36px;
   transition: opacity 260ms ease, transform 320ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 240ms ease;
 }
@@ -1347,7 +1347,7 @@ body.companion-active .wordmark-mark img {
 .publication-thumb {
   display: grid;
   position: relative;
-  width: 260px;
+  width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
   overflow: hidden;
@@ -1358,10 +1358,11 @@ body.companion-active .wordmark-mark img {
 }
 
 .publication-dual {
-  --media-split: 76%;
-  cursor: ew-resize;
+  display: grid;
+  aspect-ratio: auto;
+  cursor: pointer;
+  grid-template-rows: auto 34px;
   isolation: isolate;
-  touch-action: pan-y;
 }
 
 .publication-dual:focus-visible {
@@ -1374,79 +1375,84 @@ body.companion-active .wordmark-mark img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transform: scale(1) translate3d(var(--media-x, 0), var(--media-y, 0), 0);
-  transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1);
+  transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1), transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.publication-dual img {
+.media-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.publication-dual .media-stage img {
   position: absolute;
   inset: 0;
 }
 
+.publication-dual .media-primary {
+  opacity: 1;
+  z-index: 1;
+}
+
 .publication-dual .media-secondary {
-  clip-path: inset(0 0 0 var(--media-split));
-  transition: clip-path 180ms ease-out, transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
   z-index: 2;
 }
 
-.media-divider {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: var(--media-split);
-  width: 1px;
-  background: rgba(244, 249, 255, 0.92);
-  box-shadow: 0 0 0 1px rgba(42, 50, 68, 0.2);
-  pointer-events: none;
-  transform: translateX(-0.5px);
-  transition: left 180ms ease-out;
-  z-index: 3;
+.publication-dual.is-secondary .media-primary {
+  opacity: 0;
 }
 
-.media-divider::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 18px;
-  height: 28px;
-  border: 1px solid rgba(42, 50, 68, 0.2);
-  border-radius: 9px;
-  background: rgba(244, 249, 255, 0.92);
-  content: "";
-  transform: translate(-50%, -50%);
+.publication-dual.is-secondary .media-secondary {
+  opacity: 1;
 }
 
-.media-label {
-  position: absolute;
-  bottom: 8px;
-  padding: 3px 6px;
-  color: #f4f9ff;
-  background: rgba(42, 50, 68, 0.78);
+.media-toggle {
+  position: relative;
+  display: grid;
+  width: 100%;
+  padding: 3px;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 2px;
+  background: var(--surface-raised);
+  border-top: 1px solid var(--soft-line);
+  z-index: 4;
+}
+
+.media-toggle button {
+  min-width: 0;
+  min-height: 27px;
+  padding: 0 7px;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
   font-size: 9px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0;
-  pointer-events: none;
   text-transform: uppercase;
-  z-index: 4;
+  transition: color 180ms ease, background-color 180ms ease;
 }
 
-.media-label-left {
-  left: 8px;
+.media-toggle button[aria-pressed="true"] {
+  color: var(--ink);
+  background: rgba(138, 186, 211, 0.24);
 }
 
-.media-label-right {
-  right: 8px;
-}
-
-.publication-dual.is-dragging .media-secondary,
-.publication-dual.is-dragging .media-divider {
-  transition: none;
+.media-toggle button:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 1px;
 }
 
 .publication.is-scroll-active .publication-thumb img,
 .publication:hover .publication-thumb img {
-  transform: scale(1.035) translate3d(var(--media-x, 0), var(--media-y, 0), 0);
+  transform: scale(1.018);
 }
 
 .publication-thumb.contain img {
@@ -2684,12 +2690,12 @@ body.companion-active .wordmark-mark img {
   }
 
   .publication {
-    grid-template-columns: 190px minmax(0, 1fr);
+    grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
     gap: 24px;
   }
 
   .publication-thumb {
-    width: 190px;
+    width: 100%;
     height: auto;
   }
 
@@ -2753,6 +2759,17 @@ body.companion-active .wordmark-mark img {
 
   .nav-links a::after {
     display: none;
+  }
+
+  .publication {
+    padding: 20px;
+    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .publication-thumb {
+    max-width: 560px;
   }
 
   .profile {

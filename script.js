@@ -282,66 +282,47 @@ companionTargets.forEach((target) => {
 });
 
 const dualMedia = [...document.querySelectorAll("[data-dual-media]")];
-const finePointer = window.matchMedia("(pointer: fine)").matches;
 
 dualMedia.forEach((media) => {
-  const restingSplit = 76;
-  let split = restingSplit;
+  const controls = [...media.querySelectorAll("[data-media-view]")];
+  let currentView = "primary";
 
-  const setSplit = (value) => {
-    split = Math.max(0, Math.min(100, value));
-    media.style.setProperty("--media-split", `${split.toFixed(1)}%`);
+  const setView = (view) => {
+    currentView = view === "secondary" ? "secondary" : "primary";
+    media.classList.toggle("is-secondary", currentView === "secondary");
+    controls.forEach((control) => {
+      control.setAttribute("aria-pressed", String(control.dataset.mediaView === currentView));
+    });
   };
 
-  if (finePointer) {
-    media.addEventListener("pointermove", (event) => {
-      const rect = media.getBoundingClientRect();
-      media.classList.add("is-dragging");
-      setSplit(((event.clientX - rect.left) / rect.width) * 100);
+  controls.forEach((control) => {
+    control.addEventListener("click", (event) => {
+      event.stopPropagation();
+      setView(control.dataset.mediaView);
     });
+  });
 
-    media.addEventListener("pointerleave", () => {
-      media.classList.remove("is-dragging");
-      setSplit(restingSplit);
-    });
-  }
-
-  media.addEventListener("click", () => setSplit(split < 50 ? 100 : 0));
+  media.addEventListener("click", () => setView(currentView === "primary" ? "secondary" : "primary"));
   media.addEventListener("keydown", (event) => {
+    if (event.target.closest("button")) return;
     if (event.key === "ArrowLeft") {
       event.preventDefault();
-      setSplit(split - 10);
+      setView("primary");
     } else if (event.key === "ArrowRight") {
       event.preventDefault();
-      setSplit(split + 10);
+      setView("secondary");
     } else if (event.key === "Home") {
       event.preventDefault();
-      setSplit(0);
+      setView("primary");
     } else if (event.key === "End") {
       event.preventDefault();
-      setSplit(100);
+      setView("secondary");
     } else if (event.key === " " || event.key === "Enter") {
       event.preventDefault();
-      setSplit(split < 50 ? 100 : 0);
+      setView(currentView === "primary" ? "secondary" : "primary");
     }
   });
 });
-
-if (!reducedMotion && finePointer) {
-  document.querySelectorAll(".publication-thumb").forEach((thumb) => {
-    thumb.addEventListener("pointermove", (event) => {
-      const rect = thumb.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width - 0.5) * -6;
-      const y = ((event.clientY - rect.top) / rect.height - 0.5) * -6;
-      thumb.style.setProperty("--media-x", `${x.toFixed(2)}px`);
-      thumb.style.setProperty("--media-y", `${y.toFixed(2)}px`);
-    });
-    thumb.addEventListener("pointerleave", () => {
-      thumb.style.removeProperty("--media-x");
-      thumb.style.removeProperty("--media-y");
-    });
-  });
-}
 
 document.querySelectorAll("[data-year]").forEach((element) => {
   element.textContent = new Date().getFullYear();
